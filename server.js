@@ -22,12 +22,13 @@ bot.on('message', async message =>{
 if(message.author.bot) return;
 
 if(message.content.startsWith(prefix + "createticket")) {
-        
+   
     if(userTickets.has(message.author.id) || 
     message.guild.channels.cache.some(channel => channel.name.toLowerCase() === message.author.username + 's-ticket')) {
         message.author.send(`<@${message.author.id}>, you already have a ticket!`);
     } 
     else {
+      
         let guild = message.guild;
 
         guild.channels.create(`${message.author.username}s-ticket`, {
@@ -63,6 +64,7 @@ if(message.content.startsWith(prefix + "createticket")) {
                 }
             ]
         }).then(ch => {
+          message.delete()
             userTickets.set(message.author.id, ch.id);
         }).catch(err => console.log(err));
     }
