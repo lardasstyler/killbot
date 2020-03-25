@@ -1,7 +1,15 @@
+const http = require('http');
+const express = require('express');
+const app = express();
+app.use(express.static('public'));
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200)
+});
+app.listen(process.env.PORT);
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const prefix = 't!'
-const token = 'NjkxODg3MTE4MzgwODI2NjU2.XnmlDg.fSKY3C6wWq4p4nQ2nmKUdAepamg';
 var userTickets = new Map();
 
 
@@ -92,4 +100,4 @@ if(message.content.startsWith(prefix + "createticket")) {
 })
 
 
-bot.login(token)
+bot.login(process.env.TOKEN)
