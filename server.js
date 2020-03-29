@@ -44,23 +44,7 @@ if(message.content.startsWith(prefix + "createticket")) {
                 },
                 {
                     allow: 'VIEW_CHANNEL',
-                    id: '689638910275485778'
-                },
-                {
-                    allow: 'VIEW_CHANNEL',
-                    id: '689638877345874114'
-                },
-                {
-                    allow: 'VIEW_CHANNEL',
-                    id: '689638820148543552'
-                },
-                {
-                    allow: 'VIEW_CHANNEL',
-                    id: '690979066983219241'
-                },
-                {
-                    allow: 'VIEW_CHANNEL',
-                    id: '457182175075500053'
+                    id: '684812734453383173'
                 }
             ]
         }).then(ch => {
