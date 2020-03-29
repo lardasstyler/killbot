@@ -73,6 +73,7 @@ if(message.content.startsWith(prefix + "createticket")) {
          const embed = new Discord.MessageEmbed();
          embed.setTitle("Help Desk")
          embed.addField("Ticket Commands", "t!createticket\nt!closeticket")
+         embed.setColor("BLUE")
          message.channel.send(embed)
      }
 
