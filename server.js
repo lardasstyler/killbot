@@ -10,6 +10,7 @@ app.listen(process.env.PORT);
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const prefix = 't!'
+const stats = require('covid19-stats')
 var userTickets = new Map();
 
 
@@ -19,6 +20,7 @@ bot.on('ready', message =>{
 })
 
 bot.on('message', async message =>{
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 
 if(message.content.startsWith(prefix + "createticket")) {
@@ -75,6 +77,45 @@ if(message.content.startsWith(prefix + "createticket")) {
          embed.addField("Ticket Commands", "t!createticket\nt!closeticket")
          embed.setColor("BLUE")
          message.channel.send(embed)
+     } else if (message.content.startsWith(prefix + "coronavirus")) {
+          let total = await stats.getStats();
+    let embed = new Discord.RichEmbed();
+  if (!args[1]) {
+    embed.setTitle('Totals for coronavirus:');
+    embed.setColor('#FF0000')
+    embed.addField('Total cases:', total[0].totalCases, true)
+    embed.addField('Active cases:', total[0].activeCases, true)
+    embed.addField('Active cases:', total[0].activeCases, true)
+    embed.addField('Total deaths:', total[0].totalDeaths, true)
+    embed.addField('New deaths (Today):', total[0].newDeaths, true)
+    embed.addField('Total recovered:', total[0].totalRecovered, true)
+    
+    embed.setImage('https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/HEAD/assets/img/logo.png')
+    message.channel.send(embed)
+  }
+    else {
+      const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+var index = total.findIndex(obj => obj.country==capitalize(args[1]));
+      console.log(index)
+      if (index == '-1') return message.channel.send('Sorry, but please include a valid country!')
+      else {
+        embed.setTitle(`Totals for ${capitalize(args[1])}:`);
+    embed.setColor('#FF0000')
+    embed.addField('Total cases:', total[index].totalCases, true)
+    embed.addField('Active cases:', total[index].activeCases, true)
+    embed.addField('Active cases:', total[index].activeCases, true)
+    embed.addField('Total deaths:', total[index].totalDeaths, true)
+    embed.addField('New deaths (Today):', total[index].newDeaths, true)
+    embed.addField('Total recovered:', total[index].totalRecovered, true)
+    
+    embed.setImage('https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/HEAD/assets/img/logo.png')
+    message.channel.send(embed)
+      }
+      
+    }
      }
 
 
