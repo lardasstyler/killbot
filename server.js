@@ -131,7 +131,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     let embed = new Discord.MessageEmbed();
   if (!args[1]) {
     embed.setTitle('Totals for coronavirus:');
-    embed.setColor('#FF0000')
+    embed.setColor('BLUE')
     embed.addField('Total cases:', total[0].totalCases, true)
     embed.addField('Active cases:', total[0].activeCases, true)
     embed.addField('Critical cases:', total[0].criticalCases, true)
