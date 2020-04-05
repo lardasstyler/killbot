@@ -71,7 +71,7 @@ if(message.content.startsWith(prefix + "createticket")) {
     } else if (message.content.startsWith(prefix + "help")) {
          const embed = new Discord.MessageEmbed();
          embed.setTitle("Help Desk")
-         embed.addField("Ticket Commands", "t!createticket\nt!closeticket")
+         embed.addField("Ticket Commands", "t!createticket\nt!closeticket\nt!coronavirus/covid19")
          embed.setColor("BLUE")
          message.channel.send(embed)
      } else if (message.content.startsWith(prefix + "coronavirus")) {
@@ -159,7 +159,6 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
     embed.addField('Total deaths:', total[index].totalDeaths, true)
     embed.addField('New deaths (Today):', total[index].newDeaths, true)
     embed.addField('Total recovered:', total[index].totalRecovered, true)
-    embed.setFooter(`Requested by `)
     
     embed.setImage('https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/HEAD/assets/img/logo.png')
     message.channel.send(embed)
