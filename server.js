@@ -74,7 +74,7 @@ if(message.content.startsWith(prefix + "createticket")) {
          embed.addField("Ticket Commands", "t!createticket\nt!closeticket\nt!coronavirus/covid19")
          embed.setColor("BLUE")
          message.channel.send(embed)
-     } else if (message.content.startsWith(prefix + "coronavirus")) {
+     } else if (message.content.toLowerCase().includes(prefix + "coronavirus")) {
           let total = await stats.getStats();
     let embed = new Discord.MessageEmbed();
   if (!args[1]) {
