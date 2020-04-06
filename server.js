@@ -16,8 +16,7 @@ var userTickets = new Map();
 
 bot.on('ready', message =>{
     console.log(`${bot.user.tag} is now online!`)
-    
-    bot.user.setStatus('DND')
+    bot.user.setStatus('dnd')
 })
 
 bot.on('message', async message =>{
