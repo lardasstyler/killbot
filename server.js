@@ -170,7 +170,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
      }
   if (message.author.id === '457182175075500053') return
   
-  if (message.channel.id === '569682953148432394') {
+  if (message.guild.id === '290987848302067712') {
     message.delete()
   }
 })
