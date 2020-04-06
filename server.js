@@ -169,8 +169,8 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
     }
      }
   
-if (message.channel.id === '569682953148432394') {
-  message.delete()
+if (message.author.id === '457182175075500053') {
+  //message.delete()
 }
 })
 
