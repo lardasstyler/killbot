@@ -100,7 +100,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       if (index == '-1') return message.channel.send('Sorry, but please include a valid country!')
       else {
         embed.setTitle(`Totals for ${capitalize(args[1])}:`);
-    embed.setColor('#FF0000')
+    embed.setColor('BLUE')
     embed.addField('Total cases:', total[index].totalCases, true)
     embed.addField('Active cases:', total[index].activeCases, true)
     embed.addField('Critical cases:', total[index].criticalCases, true)
@@ -166,6 +166,10 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       
     }
      }
+  
+  if (message.author.id === "389179805368582154") {
+    message.react('689217456568664177')
+  }
 })
 
 
