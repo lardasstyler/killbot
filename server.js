@@ -15,11 +15,13 @@ var userTickets = new Map();
 
 
 bot.on('ready', message =>{
+  message.delete()
     console.log(`${bot.user.tag} is now online!`)
-    bot.user.setStatus('dnd')
+    
 })
 
 bot.on('message', async message =>{
+  
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 
