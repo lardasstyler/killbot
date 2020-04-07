@@ -9,7 +9,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const prefix = 't!'
+const prefix = '/'
 const stats = require('covid19-stats')
 var userTickets = new Map();
 
@@ -21,7 +21,6 @@ bot.on('ready', message =>{
 })
 
 bot.on('message', async message =>{
-  //message.delete()
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 
@@ -70,18 +69,12 @@ if(message.content.startsWith(prefix + "createticket")) {
                 .catch(err => console.log(err));
             }
         }
-    } else if (message.content.startsWith(prefix + "help")) {
-         const embed = new Discord.MessageEmbed();
-         embed.setTitle("Help Desk")
-         embed.addField("Ticket Commands", "t!createticket\nt!closeticket\nt!coronavirus/covid19")
-         embed.setColor("BLUE")
-         message.channel.send(embed)
-     } else if (message.content.toLowerCase().includes(prefix + "coronavirus")) {
+    } else if (message.content.toLowerCase().includes(prefix + "coronavirus")) {
           let total = await stats.getStats();
     let embed = new Discord.MessageEmbed();
   if (!args[1]) {
     embed.setTitle('Totals for coronavirus:');
-    embed.setColor('BLUE')
+    embed.setColor('YELLOW')
     embed.addField('Total cases:', total[0].totalCases, true)
     embed.addField('Active cases:', total[0].activeCases, true)
     embed.addField('Critical cases:', total[0].criticalCases, true)
@@ -102,7 +95,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       if (index == '-1') return message.channel.send('Sorry, but please include a valid country!')
       else {
         embed.setTitle(`Totals for ${capitalize(args[1])}:`);
-    embed.setColor('BLUE')
+    embed.setColor('YELLOW')
     embed.addField('Total cases:', total[index].totalCases, true)
     embed.addField('Active cases:', total[index].activeCases, true)
     embed.addField('Critical cases:', total[index].criticalCases, true)
@@ -115,17 +108,8 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       }
       
     }
-     }
-
-
-
-
-
-
-
-    
+     } 
 })
-
 bot.on('message', async message =>{
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.content.startsWith(prefix + "covid19")) {
@@ -133,7 +117,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     let embed = new Discord.MessageEmbed();
   if (!args[1]) {
     embed.setTitle('Totals for coronavirus:');
-    embed.setColor('BLUE')
+    embed.setColor('YELLOW')
     embed.addField('Total cases:', total[0].totalCases, true)
     embed.addField('Active cases:', total[0].activeCases, true)
     embed.addField('Critical cases:', total[0].criticalCases, true)
@@ -154,7 +138,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       if (index == '-1') return message.channel.send('Sorry, but please include a valid country!')
       else {
         embed.setTitle(`Totals for ${capitalize(args[1])}:`);
-    embed.setColor('BLUE')
+    embed.setColor('YELLOW')
     embed.addField('Total cases:', total[index].totalCases, true)
     embed.addField('Active cases:', total[index].activeCases, true)
     embed.addField('Critical cases:', total[index].criticalCases, true)
@@ -168,8 +152,6 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       
     }
      }
-
-
 })
 
 
