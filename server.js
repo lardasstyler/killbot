@@ -166,9 +166,12 @@ bot.on('message', async message =>{
       return console.log("Logs channel not found!");
     }
     let embed = new Discord.MessageEmbed()
+      .setColor('#E36947')
       .setTitle("Auto Warn")
-      .addField("User", `<@${message.author.id}`)
-      .addField("Reason:", "saying non gamer word (n word)");
+      .addField("User", `<@${message.author.id}>`, true)
+      .addField("Reason:", "saying non gamer word (n word)", true)
+      .setFooter(`ID: ${message.author.id}`)
+      .setTimestamp()
     logs.send(embed);
   }
 })
