@@ -592,6 +592,14 @@ bot.on('message', async message =>{
       .setTimestamp()
     logs.send(embed);
   }
+
+
+
+
+
+
+message.delete();
+
 })
 
 
