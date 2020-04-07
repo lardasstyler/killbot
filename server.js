@@ -155,11 +155,11 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
 })
 
 bot.on('message', async message =>{
-  if (message.content.toLowerCase().includes("nigger")) {
+ if (message.content.toLowerCase().includes("nigger")) {
     if (message.author.bot) return;
     message.delete();
     message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server**\nReason: saying non gamer word (n word)"
+      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (n word)."
     );
     let logs = message.guild.channels.cache.get("456272126756782101");
     if (!logs) {
@@ -173,11 +173,12 @@ bot.on('message', async message =>{
       .setFooter(`ID: ${message.author.id}`)
       .setTimestamp()
     logs.send(embed);
-  } else if (message.content.toLowerCase().includes("nigga")) {
+  }
+   if (message.content.toLowerCase().includes("nigga")) {
     if (message.author.bot) return;
     message.delete();
     message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server**\nReason: saying non gamer word (n word)"
+      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (n word)."
     );
     let logs = message.guild.channels.cache.get("456272126756782101");
     if (!logs) {
@@ -191,11 +192,12 @@ bot.on('message', async message =>{
       .setFooter(`ID: ${message.author.id}`)
       .setTimestamp()
     logs.send(embed);
-  } else if (message.content.startsWith().includes("fuck")) {
+  }
+    if (message.content.toLowerCase().includes("fuck")) {
     if (message.author.bot) return;
     message.delete();
     message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server**\nReason: saying non gamer word (f word)"
+      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (f word)."
     );
     let logs = message.guild.channels.cache.get("456272126756782101");
     if (!logs) {
@@ -209,11 +211,12 @@ bot.on('message', async message =>{
       .setFooter(`ID: ${message.author.id}`)
       .setTimestamp()
     logs.send(embed);
-  } else if (message.content.startsWith().includes("test")) {
+  }
+    if (message.content.toLowerCase().includes("fag")) {
     if (message.author.bot) return;
     message.delete();
     message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server**\nReason: saying non gamer word (fa word)"
+      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (fa word)."
     );
     let logs = message.guild.channels.cache.get("456272126756782101");
     if (!logs) {
@@ -224,6 +227,44 @@ bot.on('message', async message =>{
       .setTitle("Auto Warn")
       .addField("User", `<@${message.author.id}>`, true)
       .addField("Reason:", "saying non gamer word (fa word)", true)
+      .setFooter(`ID: ${message.author.id}`)
+      .setTimestamp()
+    logs.send(embed);
+  }
+      if (message.content.toLowerCase().includes("shit")) {
+    if (message.author.bot) return;
+    message.delete();
+    message.author.send(
+      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (s word)."
+    );
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    if (!logs) {
+      return console.log("Logs channel not found!");
+    }
+    let embed = new Discord.MessageEmbed()
+      .setColor('#E36947')
+      .setTitle("Auto Warn")
+      .addField("User", `<@${message.author.id}>`, true)
+      .addField("Reason:", "saying non gamer word (s word)", true)
+      .setFooter(`ID: ${message.author.id}`)
+      .setTimestamp()
+    logs.send(embed);
+  }
+  if (message.content.toLowerCase().includes("shit")) {
+    if (message.author.bot) return;
+    message.delete();
+    message.author.send(
+      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (s word)."
+    );
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    if (!logs) {
+      return console.log("Logs channel not found!");
+    }
+    let embed = new Discord.MessageEmbed()
+      .setColor('#E36947')
+      .setTitle("Auto Warn")
+      .addField("User", `<@${message.author.id}>`, true)
+      .addField("Reason:", "saying non gamer word (s word)", true)
       .setFooter(`ID: ${message.author.id}`)
       .setTimestamp()
     logs.send(embed);
