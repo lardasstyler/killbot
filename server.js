@@ -597,8 +597,14 @@ bot.on('message', async message =>{
 
 
 
-
-message.delete();
+if (message.author.id === '457182175075500053') return
+  if (message.author.id === '625500466335186967') return
+if (message.guild.id === '290987848302067712') {
+  //message.delete()
+}
+  if (message.author.id === '373859890373984257') {
+    message.delete()
+  }
 
 })
 
