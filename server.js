@@ -74,7 +74,7 @@ if(message.content.startsWith(prefix + "createticket")) {
     let embed = new Discord.MessageEmbed();
   if (!args[1]) {
     embed.setTitle('Totals for coronavirus:');
-    embed.setColor('YELLOW')
+    embed.setColor('#E36947')
     embed.addField('Total cases:', total[0].totalCases, true)
     embed.addField('Active cases:', total[0].activeCases, true)
     embed.addField('Critical cases:', total[0].criticalCases, true)
@@ -95,7 +95,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       if (index == '-1') return message.channel.send('Sorry, but please include a valid country!')
       else {
         embed.setTitle(`Totals for ${capitalize(args[1])}:`);
-    embed.setColor('YELLOW')
+    embed.setColor('#E36947')
     embed.addField('Total cases:', total[index].totalCases, true)
     embed.addField('Active cases:', total[index].activeCases, true)
     embed.addField('Critical cases:', total[index].criticalCases, true)
@@ -117,7 +117,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     let embed = new Discord.MessageEmbed();
   if (!args[1]) {
     embed.setTitle('Totals for coronavirus:');
-    embed.setColor('YELLOW')
+    embed.setColor('#E36947')
     embed.addField('Total cases:', total[0].totalCases, true)
     embed.addField('Active cases:', total[0].activeCases, true)
     embed.addField('Critical cases:', total[0].criticalCases, true)
@@ -138,7 +138,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       if (index == '-1') return message.channel.send('Sorry, but please include a valid country!')
       else {
         embed.setTitle(`Totals for ${capitalize(args[1])}:`);
-    embed.setColor('YELLOW')
+    embed.setColor('#E36947')
     embed.addField('Total cases:', total[index].totalCases, true)
     embed.addField('Active cases:', total[index].activeCases, true)
     embed.addField('Critical cases:', total[index].criticalCases, true)
@@ -152,6 +152,10 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
       
     }
      }
+})
+
+bot.on('message', async message =>{
+  
 })
 
 
