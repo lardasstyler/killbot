@@ -191,6 +191,42 @@ bot.on('message', async message =>{
       .setFooter(`ID: ${message.author.id}`)
       .setTimestamp()
     logs.send(embed);
+  } else if (message.content.startsWith().includes("fuck")) {
+    if (message.author.bot) return;
+    message.delete();
+    message.author.send(
+      "**You were warned in PigPig and Raging’s Discord Server**\nReason: saying non gamer word (f word)"
+    );
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    if (!logs) {
+      return console.log("Logs channel not found!");
+    }
+    let embed = new Discord.MessageEmbed()
+      .setColor('#E36947')
+      .setTitle("Auto Warn")
+      .addField("User", `<@${message.author.id}>`, true)
+      .addField("Reason:", "saying non gamer word (f word)", true)
+      .setFooter(`ID: ${message.author.id}`)
+      .setTimestamp()
+    logs.send(embed);
+  } else if (message.content.startsWith().includes("test")) {
+    if (message.author.bot) return;
+    message.delete();
+    message.author.send(
+      "**You were warned in PigPig and Raging’s Discord Server**\nReason: saying non gamer word (fa word)"
+    );
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    if (!logs) {
+      return console.log("Logs channel not found!");
+    }
+    let embed = new Discord.MessageEmbed()
+      .setColor('#E36947')
+      .setTitle("Auto Warn")
+      .addField("User", `<@${message.author.id}>`, true)
+      .addField("Reason:", "saying non gamer word (fa word)", true)
+      .setFooter(`ID: ${message.author.id}`)
+      .setTimestamp()
+    logs.send(embed);
   }
 })
 
