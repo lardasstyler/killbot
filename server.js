@@ -169,9 +169,7 @@ var index = total.findIndex(obj => obj.country==capitalize(args[1]));
     }
      }
 
-if (message.author.id === '334475646116036618') {
-  message.delete()
-}
+
 })
 
 
