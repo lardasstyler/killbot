@@ -742,6 +742,13 @@ bot.on("message", async message => {
     .setTimestamp()
     message.channel.send(embed)
   }
+  if (message.content === prefix + "help whos joe") {
+   let embed = new Discord.MessageEmbed()
+   .setColor("BLUE")
+   .setTitle("Who's Joe?")
+   .setDescription("From my calculations, apparently 'Joe' is JOE MAMA! HA, GOTTEM!")
+   message.channel.send(embed)
+  }
   if (message.content === prefix + "help credits") {
     let embed = new Discord.MessageEmbed()
     .setColor("YELLOW")
