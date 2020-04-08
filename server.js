@@ -685,11 +685,6 @@ bot.on("message", async message => {
     var output = choices[Math.floor(Math.random() * choices.length)];
     message.channel.send(`<@${message.author.id}> => ${output}`);
   }
-  if (message.content.toLowerCase().includes("poll")) {
-    if (message.channel.id !== "607042156368101437") return;
-    message.react("👍");
-    message.react("👎");
-  }
   if (message.content.startsWith(prefix + "gamermeter")) {
     var choices = [
       "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
@@ -755,6 +750,11 @@ bot.on("message", async message => {
     .setTimestamp()
     message.channel.send(embed)  
     }
+    if (message.content.toLowerCase().includes("poll")) {
+    if (message.channel.id !== "607042156368101437") return;
+    message.react("👍");
+    message.react("👎");
+  }
 });
 bot.on("guildMemberAdd", member => {
   let welcome = member.guild.channels.cache.find(
