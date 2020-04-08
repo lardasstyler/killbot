@@ -734,9 +734,27 @@ bot.on("message", async message => {
     }
   if (message.content === prefix + "help commands") {
     let embed = new Discord.MessageEmbed()
+    .setColor("#770D19")
     .setTitle("Commands")
-    .addField("ban", "This command removes ")
+    .addField("ban", "This command removes a member from the guild. Only for staff members.")
+    .addField("kick", "This command temporarily removes a member from the guild. Only for staff members.")
+    .addField("membercount", "States the guilds member count!")
+    .addField("yesno", "Executing this command will make the bot state yes or no.")
+    .addField("gamermeter", "Shows you how epic you are at gaming.")
+    .addField("createticket", "Support command. If you need any help from a staff member just execute this command and ping a staff member in the ticket.")
+    .addField("closeticket", "Support Command. Closes the ticket once you create it.")
+    .setFooter(`Requested by ${message.author.tag}`)
+    .setTimestamp()
+    message.channel.send(embed)
   }
+  if (message.content === prefix + "help credits") {
+    let embed = new Discord.MessageEmbed()
+    .setColor("YELLOW")
+    .setDescription("This bot and its entirety was made by the Discord.js Beginners Support community. Join our server for your JavaScript worries. https://discord.gg/htuxXBm (Non gamer words allowed)")
+    .setFooter(`Requested by ${message.author.tag}`)
+    .setTimestamp()
+    message.channel.send(embed)  
+    }
 });
 bot.on("guildMemberAdd", member => {
   let welcome = member.guild.channels.cache.find(
