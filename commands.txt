@@ -4,3 +4,5 @@ membercount
 marry
 yesno
 gamermeter
+createticket
+closeticket
