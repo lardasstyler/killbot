@@ -1,0 +1,6 @@
+ban
+kick
+membercount
+marry
+yesno
+gamermeter

@@ -689,7 +689,7 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   }
-  if (message.content.startsWith(prefix + "coolmeter")) {
+  if (message.content.startsWith(prefix + "gamermeter")) {
     var choices = [
       "🟥🟩🟩🟩🟩🟩🟩🟩🟩🟩",
       "🟥🟥🟩🟩🟩🟩🟩🟩🟩🟩",
@@ -699,8 +699,13 @@ bot.on("message", async message => {
       "🟥🟥🟥🟥🟥🟥🟩🟩🟩🟩",
       "🟥🟥🟥🟥🟥🟥🟥🟩🟩🟩",
       "🟥🟥🟥🟥🟥🟥🟥🟥🟩🟩",
-      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟩"
-    ]
+      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟩",
+      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
+    ];
+    var output = choices[Math.floor(Math.random() * choices.length)];
+    const embed = new Discord.MessageEmbed()
+    .setDescription(`**Lame** | ${output} | **Gamer**`)
+    message.channel.send(embed)
   }
 });
 bot.on("guildMemberAdd", member => {
