@@ -638,16 +638,16 @@ bot.on('message', async message =>{
     .setTimestamp()
     message.channel.send(embed)
   }
-
-
-
-if (message.author.id === '457182175075500053') return
-if (message.guild.id === '290987848302067712') {
-  //message.delete()
-}
-  if (message.author.id === '334475646116036618') {
-    //message.delete()
+  if (message.content.startsWith(prefix + "marry")) {
+    const user = message.mentions.members.first()
+    if (!user) return message.channel.send("Please state a person you would like to marry!");
+    ifd 
   }
+  if (message.content.toLowerCase().includes('poll')) {
+      if (message.channel.id !== '607042156368101437') return
+        message.react('👍')
+        message.react('👎')
+      }
 
 })
 bot.on('guildMemberAdd', member  =>{
