@@ -592,7 +592,24 @@ bot.on('message', async message =>{
       .setTimestamp()
     logs.send(embed);
   }
-
+  if (message.content.startsWith(prefix + "ban")) {
+    if (!message.member.hasPermission("BAN_MEMBERS"))
+      return message.channel.send(
+        "You do not have permission to use that command!"
+      );
+    message.delete();
+    const user1 = message.mentions.members.first();
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    if (!user1) return message.channel.send("Please state a user to ban!");
+    await user1.ban(), message.channel.send(`${user1} was banned!`);
+    const embed = new Discord.MessageEmbed()
+      .setTitle("Banned User")
+      .addField("User:", `${user1}`, true)
+      .addField("Mod:", `<$@{message.author.id}>`, true)
+      .setFooter(`USERS ID: ${user1.id}`)
+      .setTimestamp()
+    logs.send(embed);
+  }
 
 
 
