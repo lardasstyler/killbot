@@ -642,9 +642,7 @@ bot.on('message', async message =>{
     const user = message.mentions.members.first()
     if (!user) return message.channel.send("Please state a person you would like to marry!");
     if (user) return message.channel.send(`⛪ <@${message.author.id}> ** has proposed to**` + ` ${user} 💍\n💍 ${user.user.username}` + ", Do you accept? 🔔\n**Type `yes` to accept or `no` to decline.**")
-    await (message.content.includes("yes")) {
-      
-    }
+    await (message.content === "yes") 
   }
   if (message.content.toLowerCase().includes('poll')) {
       if (message.channel.id !== '607042156368101437') return
