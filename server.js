@@ -603,10 +603,30 @@ bot.on('message', async message =>{
     if (!user1) return message.channel.send("Please state a user to ban!");
     await user1.ban(), message.channel.send(`${user1} was banned!`);
     const embed = new Discord.MessageEmbed()
+      .setColor('#E36947')
       .setTitle("Banned User")
-      .addField("User:", `${user1}`, true)
-      .addField("Mod:", `<$@{message.author.id}>`, true)
+      .addField("User:", `<@${user1.tag}>`, true)
+      .addField("Mod:", `<@${message.author.id}>`, true)
       .setFooter(`USERS ID: ${user1.id}`)
+      .setTimestamp()
+    logs.send(embed);
+  }
+  if (message.content.startsWith(prefix + "kick")) {
+    if (!message.member.hasPermission("KICK_MEMBERS"))
+      return message.channel.send(
+        "You do not have the permission to use that command!"
+      );
+    message.delete();
+    const user = message.mentions.members.first();
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    if (!user) return message.channel.send("Please state a user to kick!");
+    await user.kick(), message.channel.send(`${user} was kicked!`);
+    let embed = new Discord.MessageEmbed()
+       .setColor('#E36947')
+       .setTitle("Kicked User")
+      .addField("User:", `<@${user.username}>` + `${message.user.discriminator}`, true)
+      .addField("Mod:", `<@${message.author.id}>`, true)
+      .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp()
     logs.send(embed);
   }
