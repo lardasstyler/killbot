@@ -15,8 +15,7 @@ var userTickets = new Map();
 
 
 bot.on('ready', message =>{
-  
-    console.log(`${bot.user.tag} is now online!`)
+    bot.user.setActivity(`${bot.users.cache.size} members`, {type: 'WATCHING'})
     
 })
 
