@@ -762,6 +762,9 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   }
+  if (message.author.id === '625500466335186967') {
+    //message.delete()
+  }
 
 });
 bot.on("guildMemberAdd", member => {
