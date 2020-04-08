@@ -647,5 +647,10 @@ bot.on('guildMemberAdd', member  =>{
   if(!welcome) return;
   welcome.send('Hey '+`${member}`+`, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`)
 })
+bot.on('guildMemberRemove', member =>{
+  let goodbye = member.guild.channels.cache.find(channel => channel.name === "welcome-and-goodbye");
+  if(!goodbye) return;
+  goodbye.send(`${member.username}` + ' just left the server 🙁')
+})
 
 bot.login(process.env.TOKEN)
