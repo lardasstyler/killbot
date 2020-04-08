@@ -755,6 +755,7 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   }
+
 });
 bot.on("guildMemberAdd", member => {
   let welcome = member.guild.channels.cache.find(
