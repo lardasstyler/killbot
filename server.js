@@ -691,21 +691,27 @@ bot.on("message", async message => {
   }
   if (message.content.startsWith(prefix + "gamermeter")) {
     var choices = [
-      "🟥🟩🟩🟩🟩🟩🟩🟩🟩🟩",
-      "🟥🟥🟩🟩🟩🟩🟩🟩🟩🟩",
-      "🟥🟥🟥🟩🟩🟩🟩🟩🟩🟩",
-      "🟥🟥🟥🟥🟩🟩🟩🟩🟩🟩",
-      "🟥🟥🟥🟥🟥🟩🟩🟩🟩🟩",
-      "🟥🟥🟥🟥🟥🟥🟩🟩🟩🟩",
-      "🟥🟥🟥🟥🟥🟥🟥🟩🟩🟩",
-      "🟥🟥🟥🟥🟥🟥🟥🟥🟩🟩",
-      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟩",
+      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
+      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥",
+      "🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥",
+      "🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥",
+      "🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥",
+      "🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥",
+      "🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥",
+      "🟩🟩🟩🟥🟥🟥🟥🟥🟥🟥",
+      "🟩🟩🟥🟥🟥🟥🟥🟥🟥🟥",
+      "🟩🟥🟥🟥🟥🟥🟥🟥🟥🟥",
       "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
     ];
     var output = choices[Math.floor(Math.random() * choices.length)];
     const embed = new Discord.MessageEmbed()
+    
     .setDescription(`**Lame** | ${output} | **Gamer**`)
+    .setColor('WHITE')
     message.channel.send(embed)
+  }
+  if (message.content === prefix + 'help') {
+    message.channel.
   }
 });
 bot.on("guildMemberAdd", member => {
