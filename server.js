@@ -629,6 +629,15 @@ bot.on('message', async message =>{
       .setTimestamp()
     logs.send(embed);
   }
+  if (message.content.startsWith(prefix + "membercount")) {
+    let embed = new Discord.MessageEmbed()
+    .setColor('#3E70CE')
+    .setTitle("Server Member Count")
+    .setDescription(`This server has a total of **${bot.users.cache.size}** members!`)
+    .setFooter(`Requested by ${message.author.tag}`)
+    .setTimestamp()
+    message.channel.send(embed)
+  }
 
 
 
