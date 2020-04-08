@@ -645,7 +645,7 @@ if (message.guild.id === '290987848302067712') {
 bot.on('guildMemberAdd', member  =>{
   let welcome = member.guild.channels.cache.find(channel => channel.name === "welcome-and-goodbye");
   if(!welcome) return;
-  welcome.send('Hey {member}, welcome to **PigPig and Raging’s Discord Server** :PigHug: ! Head over to #rules and #role-info for more information about the server!')
+  welcome.send('Hey '+`${member}`+`, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`)
 })
 
 bot.login(process.env.TOKEN)
