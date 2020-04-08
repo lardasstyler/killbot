@@ -641,7 +641,8 @@ bot.on('message', async message =>{
   if (message.content.startsWith(prefix + "marry")) {
     const user = message.mentions.members.first()
     if (!user) return message.channel.send("Please state a person you would like to marry!");
-    ifd 
+    if (user) return message.channel.send(`⛪ <@${message.author.id}> ** has proposed to**` + ` ${user} 💍\n💍 ${user.user.username}` + ", Do you accept? 🔔\n**Type `yes` to accept or `no` to decline.**")
+    if (messa)
   }
   if (message.content.toLowerCase().includes('poll')) {
       if (message.channel.id !== '607042156368101437') return
