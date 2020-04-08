@@ -676,12 +676,31 @@ bot.on("message", async message => {
       message.channel.send(
         `Congratulations to <@${message.author.id}> & <@${user}> on their marriage!`
       );
-    }
+    } 
+  }
+  if (message.content.startsWith(prefix + "yesno")) {
+    var choices = ["Yes", "No"];
+
+    var output = choices[Math.floor(Math.random() * choices.length)];
+    message.channel.send(`<@${message.author.id}> => ${output}`);
   }
   if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
     message.react("👎");
+  }
+  if (message.content.startsWith(prefix + "coolmeter")) {
+    var choices = [
+      "🟥🟩🟩🟩🟩🟩🟩🟩🟩🟩",
+      "🟥🟥🟩🟩🟩🟩🟩🟩🟩🟩",
+      "🟥🟥🟥🟩🟩🟩🟩🟩🟩🟩",
+      "🟥🟥🟥🟥🟩🟩🟩🟩🟩🟩",
+      "🟥🟥🟥🟥🟥🟩🟩🟩🟩🟩",
+      "🟥🟥🟥🟥🟥🟥🟩🟩🟩🟩",
+      "🟥🟥🟥🟥🟥🟥🟥🟩🟩🟩",
+      "🟥🟥🟥🟥🟥🟥🟥🟥🟩🟩",
+      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟩"
+    ]
   }
 });
 bot.on("guildMemberAdd", member => {
