@@ -15,6 +15,7 @@ const stats = require("covid19-stats");
 var userTickets = new Map();
 
 bot.on("ready", message => {
+  console.log('women')
   bot.user.setActivity(`${bot.users.cache.size} members`, { type: "WATCHING" });
 });
 
