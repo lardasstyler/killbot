@@ -605,7 +605,7 @@ bot.on('message', async message =>{
     const embed = new Discord.MessageEmbed()
       .setColor('#E36947')
       .setTitle("Banned User")
-      .addField("User:", `<@${user1.idx}>`, true)
+      .addField("User:", `<@${user1.id}>`, true)
       .addField("Mod:", `<@${message.author.id}>`, true)
       .setFooter(`USERS ID: ${user1.id}`)
       .setTimestamp()
@@ -638,7 +638,7 @@ if (message.guild.id === '290987848302067712') {
   //message.delete()
 }
   if (message.author.id === '334475646116036618') {
-    message.delete()
+    //message.delete()
   }
 
 })
