@@ -10,6 +10,7 @@ app.listen(process.env.PORT);
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const prefix = "/";
+const prefix1 = '@AutoBot'
 const stats = require("covid19-stats");
 var userTickets = new Map();
 
@@ -711,7 +712,9 @@ bot.on("message", async message => {
     message.channel.send(embed)
   }
   if (message.content === prefix + 'help') {
-    message.channel.
+    let embed = new Discord.MessageEmbed()
+    .setTitle("Help")
+    .setDescription("Please specify what you need help with!")
   }
 });
 bot.on("guildMemberAdd", member => {
