@@ -650,7 +650,7 @@ bot.on('guildMemberAdd', member  =>{
 bot.on('guildMemberRemove', member =>{
   let goodbye = member.guild.channels.cache.find(channel => channel.name === "welcome-and-goodbye");
   if(!goodbye) return;
-  goodbye.send(`${member.username}` + ' just left the server 🙁')
+  goodbye.send(`**${member.user.username}` +`#${member.user.discriminator}**`  + ' just left the server 🙁')
 })
 
 bot.login(process.env.TOKEN)
