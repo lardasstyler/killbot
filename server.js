@@ -634,6 +634,9 @@ bot.on('message', async message =>{
       return message.channel.send("shhhhhh ur not allowed to use this");
     const voidee = message.mentions.members.first();
     if (!voidee) return message.channel.send("Please state a user you are going to void...");
+    if (message.author === voidee) {
+      message.delete()
+    }
   }
   if (message.content.startsWith(prefix + "membercount")) {
     let embed = new Discord.MessageEmbed()
