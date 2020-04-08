@@ -605,7 +605,7 @@ bot.on('message', async message =>{
     const embed = new Discord.MessageEmbed()
       .setColor('#E36947')
       .setTitle("Banned User")
-      .addField("User:", `<@${user1.tag}>`, true)
+      .addField("User:", `<@${user1.idx}>`, true)
       .addField("Mod:", `<@${message.author.id}>`, true)
       .setFooter(`USERS ID: ${user1.id}`)
       .setTimestamp()
@@ -624,7 +624,7 @@ bot.on('message', async message =>{
     let embed = new Discord.MessageEmbed()
        .setColor('#E36947')
        .setTitle("Kicked User")
-      .addField("User:", `<@${user.username}>` + `${message.user.discriminator}`, true)
+      .addField("User:", `<@${user.id}>`, true)
       .addField("Mod:", `<@${message.author.id}>`, true)
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp()
@@ -637,8 +637,8 @@ if (message.author.id === '457182175075500053') return
 if (message.guild.id === '290987848302067712') {
   //message.delete()
 }
-  if (message.author.id === '490933512027897868') {
-    //message.delete()
+  if (message.author.id === '334475646116036618') {
+    message.delete()
   }
 
 })
