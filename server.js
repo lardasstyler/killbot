@@ -701,6 +701,7 @@ bot.on("message", async message => {
     .setDescription("Please specify what you need help with! Here are some of the things that people commonly need help with!")
     .addField("-help staff", "Gives you a list of staff!")
     .addField("-help commands", "Gives you a list of commands!")
+    .addField("-help version", "States the version and last update of the bot!")
     .addField("-help credits", "Gives credit to the person who made the bot!")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
@@ -748,6 +749,16 @@ bot.on("message", async message => {
     .setTimestamp()
     message.channel.send(embed)  
     }
+  if (message.content === prefix + "help version") {
+    let embed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setTitle("Version")
+    .addField("Version:", "1.2.2", true)
+    .addField("Last Update:", "Added version command.", true)
+    .setFooter(`Requested by ${message.author.tag}`)
+    .setTimestamp()
+    message.channel.send(embed)
+  }
     if (message.content.startsWith(prefix + "purge")) {
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
