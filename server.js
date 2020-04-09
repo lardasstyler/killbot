@@ -794,6 +794,7 @@ bot.on("message", async message => {
   }
   });
 bot.on("guildMemberAdd", member => {
+  let logs = member.guild.channels.cache.get("688867784947531857")
   let welcome = member.guild.channels.cache.find(
     channel => channel.name === "welcome-and-goodbye"
   );
@@ -802,7 +803,12 @@ bot.on("guildMemberAdd", member => {
     "Hey " +
       `${member}` +
       `, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`
-  );
+  )
+  let embed = new Discord.MessageEmbed()
+.setTitle("Member Added to Guild")
+.addField("User", member)
+.addField("Created At:", member.createdAt)
+logs.send(embed)
 });
 bot.on("guildMemberRemove", member => {
   let goodbye = member.guild.channels.cache.find(
@@ -841,16 +847,6 @@ bot.on('messageUpdate', async message =>{
   let logs = message.guild.channels.cache.get("688867784947531857")
   logs.send(embed)
 })
-bot.on("guildMemberAdd", member => {
-  let welcome = member.guild.channels.cache.find(
-    channel => channel.name === "welcome-and-goodbye"
-  );
-  if (!welcome) return;
-  welcome.send(
-    "Hey " +
-      `${member}` +
-      `, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`
-  );
-});
+
 
 bot.login(process.env.TOKEN);
