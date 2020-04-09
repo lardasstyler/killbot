@@ -640,7 +640,13 @@ bot.on("message", async message => {
     message.channel.send(embed);
   }
   if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send(":ping_pong: Pong! " + Math.round(bot.ping) + "ms!")
+    let embed = new Discord.MessageEmbed()
+    .setTitle("Bot Ping")
+    .setColor("RANDOM")
+    .setDescription(":ping_pong: Pong! " + Math.round(bot.ws.ping) + "ms!")
+    .setFooter(`Requested by ${message.author.tag}`)
+    .setTimestamp()
+    message.channel.send(embed)
   }
   if (message.content.startsWith(prefix + "marry")) {
     const user = message.mentions.members.first();
@@ -716,6 +722,7 @@ bot.on("message", async message => {
     .addField("ban", "This command removes a member from the guild. Only for staff members.")
     .addField("kick", "This command temporarily removes a member from the guild. Only for staff members.")
     .addField("membercount", "States the guilds member count!")
+    .addField("ping", "Shows the bots ping!")
     .addField("yesno", "Executing this command will make the bot state yes or no.")
     .addField("gamermeter", "Shows you how epic you are at gaming.")
     .addField("purge", "Bulk deletes chats! Only for staff.")
