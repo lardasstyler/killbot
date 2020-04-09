@@ -20,10 +20,7 @@ bot.on("ready", message => {
 });
 
 bot.on("message", async message => {
-  const args = message.content
-    .slice(prefix.length)
-    .trim()
-    .split(/ +/g);
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
 
   if (message.content.startsWith(prefix + "createticket")) {
@@ -761,9 +758,25 @@ bot.on("message", async message => {
     message.channel.bulkDelete(fetched);
   }
   if (message.content.startsWith(prefix + "warn")) {
-    if (message.mentions.users < 1) return message.channel.send("Please state a user to warn!").catch(console.error);
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("You do not have permission to use that command!"); // Checks if the user has the permission
+    let user = message.mentions.users.first(); // Gets the user mentioned!
+    if(!user) return message.channel.send("Please state a user to warn!"); // Triggers if the user donsn't tag a user in the message
+    let reason = args.slice(1).join(' ') // .slice(1) removes the user mention, .join(' ') joins all the words in the message, instead of just sending 1 word
+    if(!reason) return message.channel.send("Please state a reason to warn this user!"); // Triggers if the user dosn't provide a reason for the warning
+    user.send(`You were warned in PigPig and Raging’s Discord Server for: ${reason}`)
+    message.delete(); // Deletes the command
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    let embed = new Discord.MessageEmbed()
+      .setColor("#E36947")
+      .setTitle("Warned User")
+      .addField("User:", `<@${user.id}>`, true)
+      .addField("Mod:", `<@${message.author.id}>`, true)
+      .setFooter(`USERS ID: ${user.id}`)
+      .setTimestamp();
+    logs.send(embed);
     
-  }
+}
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
