@@ -815,5 +815,18 @@ bot.on("guildMemberRemove", member => {
       " just left the server 🙁"
   );
 });
+bot.on('messageDelete', async message =>{
+  let embed = new Discord.MessageEmbed()
+  .setColor("RED")
+  .setTitle("Deleted Message")
+  .setThumbnail(user.displayAvatarURL())
+  .addField("User:", `<@${message.author.id}>`, true)
+  .addField("Channel:", message.channel, true)
+  .addField("Message:", message.content, true)
+  .setFooter(`Author: ${message.author.id} | Message ID: ${message.id}`)
+  .setTimestamp()
+  let logs = message.guild.channels.cache.get("688867784947531857")
+  logs.send(embed)
+})
 
 bot.login(process.env.TOKEN);
