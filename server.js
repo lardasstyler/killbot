@@ -836,11 +836,21 @@ bot.on('messageUpdate', async message =>{
   .addField("User:", `<@${message.author.id}>`, true)
   .addField("Channel:", message.channel, true)
   .addField("Old Message:", message.content, true)
-  .addField("New Message:", message.content, true)
   .setFooter(`Author: ${message.author.id} | Message ID: ${message.id}`)
   .setTimestamp()
   let logs = message.guild.channels.cache.get("688867784947531857")
   logs.send(embed)
 })
+bot.on("guildMemberAdd", member => {
+  let welcome = member.guild.channels.cache.find(
+    channel => channel.name === "welcome-and-goodbye"
+  );
+  if (!welcome) return;
+  welcome.send(
+    "Hey " +
+      `${member}` +
+      `, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`
+  );
+});
 
 bot.login(process.env.TOKEN);
