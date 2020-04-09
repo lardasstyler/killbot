@@ -690,9 +690,9 @@ bot.on("message", async message => {
     .setTitle("Help Menu")
     .setColor("BLUE")
     .setDescription("Please specify what you need help with! Here are some of the things that people commonly need help with!")
-    .addField("/help staff", "Gives you a list of staff!")
-    .addField("/help commands", "Gives you a list of commands!")
-    .addField("/help credits", "Gives credit to the person who made the bot!")
+    .addField("-help staff", "Gives you a list of staff!")
+    .addField("-help commands", "Gives you a list of commands!")
+    .addField("-help credits", "Gives credit to the person who made the bot!")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
@@ -716,6 +716,7 @@ bot.on("message", async message => {
     .addField("yesno", "Executing this command will make the bot state yes or no.")
     .addField("gamermeter", "Shows you how epic you are at gaming.")
     .addField("purge", "Bulk deletes chats! Only for staff.")
+    .addField("warn", "Warns a user! Only for staff.")
     .addField("createticket", "Support command. If you need any help from a staff member just execute this command and ping a staff member in the ticket.")
     .addField("closeticket", "Support Command. Closes the ticket once you create it.")
     .setFooter(`Requested by ${message.author.tag}`)
@@ -772,7 +773,7 @@ bot.on("message", async message => {
     .addField("Reason:", `${reason}`, true)
     .setTimestamp()
     user.send(warnEmbed)
-    message.delete(); // Deletes the command
+    message.delete(); 
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
       .setColor("#E36947")
