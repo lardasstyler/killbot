@@ -403,25 +403,6 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.content.toLowerCase().includes("dag")) {
-    if (message.author.bot) return;
-    message.delete();
-    message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (d word)."
-    );
-    let logs = message.guild.channels.cache.get("456272126756782101");
-    if (!logs) {
-      return console.log("Logs channel not found!");
-    }
-    let embed = new Discord.MessageEmbed()
-      .setColor("#E36947")
-      .setTitle("Auto Warn")
-      .addField("User", `<@${message.author.id}>`, true)
-      .addField("Reason:", "saying non gamer word (d word)", true)
-      .setFooter(`ID: ${message.author.id}`)
-      .setTimestamp();
-    logs.send(embed);
-  }
   if (message.content.toLowerCase().includes("dyke")) {
     if (message.author.bot) return;
     message.delete();
@@ -737,6 +718,7 @@ bot.on("message", async message => {
     .addField("membercount", "States the guilds member count!")
     .addField("yesno", "Executing this command will make the bot state yes or no.")
     .addField("gamermeter", "Shows you how epic you are at gaming.")
+    .addField("purge", "Bulk Deletes C")
     .addField("createticket", "Support command. If you need any help from a staff member just execute this command and ping a staff member in the ticket.")
     .addField("closeticket", "Support Command. Closes the ticket once you create it.")
     .setFooter(`Requested by ${message.author.tag}`)
@@ -758,6 +740,23 @@ bot.on("message", async message => {
     .setTimestamp()
     message.channel.send(embed)  
     }
+  if (message.content.startsWith(prefix + "purge")) {
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.channel.send(
+        "You do not have the permission to use that command!"
+      );
+    const args = message.content
+      .slice(prefix.length)
+      .trim()
+      .split(/ +/g);
+    const deleteCount = parseInt(args[1], 10);
+    if (!deleteCount || deleteCount < 2 || deleteCount > 100)
+      return message.reply(
+        "Please provide a number between 2 and 100 for messages to purge"
+      );
+    const fetched = await message.channel.messages.fetch({
+      limit: deleteCount
+    });
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
