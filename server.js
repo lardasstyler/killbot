@@ -639,6 +639,9 @@ bot.on("message", async message => {
       .setTimestamp();
     message.channel.send(embed);
   }
+  if (message.content.startsWith(prefix + "ping")) {
+    message.channel.send(":ping_pong: Pong! " + Math.round(bot.ping) + "ms!")
+  }
   if (message.content.startsWith(prefix + "marry")) {
     const user = message.mentions.members.first();
     if (!user)
@@ -838,17 +841,18 @@ bot.on('messageDelete', async message =>{
   let logs = message.guild.channels.cache.get("688867784947531857")
   logs.send(embed)
 })
-bot.on('messageUpdate', async message =>{
+bot.on('messageUpdate', async (oldMessage, newMessage) =>{
   let embed = new Discord.MessageEmbed()
   .setColor("RED")
   .setTitle("Edited Message")
-  .setThumbnail(message.author.displayAvatarURL())
-  .addField("User:", `<@${message.author.id}>`, true)
-  .addField("Channel:", message.channel, true)
-  .addField("Old Message:", message.content, true)
-  .setFooter(`Author: ${message.author.id} | Message ID: ${message.id}`)
+  .setThumbnail(oldMessage.author.displayAvatarURL())
+  .addField("User:", `<@${oldMessage.author.id}>`, true)
+  .addField("Channel:", oldMessage.channel, true)
+  .addField("Old Message:", oldMessage.content, true)
+  .addField("New Message:", newMessage.content, true)
+  .setFooter(`Author: ${oldMessage.author.id} | Message ID: ${oldMessage.id}`)
   .setTimestamp()
-  let logs = message.guild.channels.cache.get("688867784947531857")
+  let logs = oldMessage.guild.channels.cache.get("688867784947531857")
   logs.send(embed)
 })
 
