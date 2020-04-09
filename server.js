@@ -870,8 +870,9 @@ bot.on('guildMemberUpdate', async (oldMember, newMember) =>{
   let logs = oldMember.guild.channels.cache.get("688867784947531857")
   let embed = new Discord.MessageEmbed()
   .setTitle("Member Updated")
-  .addField()
-  logs.send(newMember)
+  .addField("Who was it?", oldMember, true)
+  .addField("Test", newMember, true)
+  logs.send(embed)
 })
 
 
