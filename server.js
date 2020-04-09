@@ -9,7 +9,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const prefix = "=";
+const prefix = "-";
 const prefix1 = '@AutoBot'
 const stats = require("covid19-stats");
 var userTickets = new Map();
@@ -762,16 +762,18 @@ bot.on("message", async message => {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("You do not have permission to use that command!"); // Checks if the user has the permission
     let user = message.mentions.users.first(); // Gets the user mentioned!
     if(!user) return message.channel.send("Please state a user to warn!"); // Triggers if the user donsn't tag a user in the message
-    let reason = args.slice(1).join(' ') // .slice(1) removes the user mention, .join(' ') joins all the words in the message, instead of just sending 1 word
-    if(!reason) return message.channel.send("Please state a reason to warn this user!"); // Triggers if the user dosn't provide a reason for the warning
+    let reason = args.slice(2).join(' ') // .slice(1) removes the user mention, .join(' ') joins all the words in the message, instead of just sending 1 word
+    if(!reason) return message.channel.send("Please state a reason to warn this user!");
     user.send(`You were warned in PigPig and Raging’s Discord Server for: ${reason}`)
     message.delete(); // Deletes the command
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
       .setColor("#E36947")
       .setTitle("Warned User")
+      .setThumbnail(user.displayAvatarURL())
       .addField("User:", `<@${user.id}>`, true)
-      .addField("Mod:", `<@${message.author.id}>`, true)
+      .addField("Moderator:", `<@${message.author.id}>`, true)
+      .addField("Reason:", `${reason}`, true)
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
     logs.send(embed);
