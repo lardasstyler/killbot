@@ -764,8 +764,8 @@ bot.on("message", async message => {
     let user = message.mentions.users.first();
         let warnEmbed1 = new Discord.MessageEmbed()
     .setColor("BLUE")
-    .setTitle("Warn")
-    .setDescription("Warns a user! Only for staff.")
+    .setTitle("Command: -warn")
+    .setDescription("**Description:** Warns a user! Only for staff.\n**Example:** -warn {user} {reason}")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     if(!user) return message.channel.send(warnEmbed1)
