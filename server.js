@@ -821,7 +821,7 @@ bot.on("message", async message => {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
     message.react("👎");
-  }
+  } 
   });
 bot.on("guildMemberAdd", member => {
   let logs = member.guild.channels.cache.get("688867784947531857")
