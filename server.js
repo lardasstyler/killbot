@@ -761,7 +761,8 @@ bot.on("message", async message => {
     message.channel.bulkDelete(fetched);
   }
   if (message.content.startsWith(prefix + "warn")) {
-    if (message.mentions.users < 1) return message.channel.send("")
+    if (message.mentions.users < 1) return message.channel.send("Please state a user to warn!").catch(console.error);
+    
   }
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
