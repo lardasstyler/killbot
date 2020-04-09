@@ -718,7 +718,7 @@ bot.on("message", async message => {
     .addField("membercount", "States the guilds member count!")
     .addField("yesno", "Executing this command will make the bot state yes or no.")
     .addField("gamermeter", "Shows you how epic you are at gaming.")
-    .addField("purge", "Bulk Deletes C")
+    .addField("purge", "Bulk deletes chats! Only for staff.")
     .addField("createticket", "Support command. If you need any help from a staff member just execute this command and ping a staff member in the ticket.")
     .addField("closeticket", "Support Command. Closes the ticket once you create it.")
     .setFooter(`Requested by ${message.author.tag}`)
@@ -740,7 +740,7 @@ bot.on("message", async message => {
     .setTimestamp()
     message.channel.send(embed)  
     }
-  if (message.content.startsWith(prefix + "purge")) {
+    if (message.content.startsWith(prefix + "purge")) {
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(
         "You do not have the permission to use that command!"
@@ -757,16 +757,14 @@ bot.on("message", async message => {
     const fetched = await message.channel.messages.fetch({
       limit: deleteCount
     });
+    message.channel.bulkDelete(fetched);
+  }
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
     message.react("👎");
   }
-  if (message.author.id === '625500466335186967') {
-    //message.delete()
-  }
-
-});
+  });
 bot.on("guildMemberAdd", member => {
   let welcome = member.guild.channels.cache.find(
     channel => channel.name === "welcome-and-goodbye"
