@@ -702,7 +702,6 @@ bot.on("message", async message => {
     .addField("-help staff", "Gives you a list of staff!")
     .addField("-help commands", "Gives you a list of commands!")
     .addField("-help version", "States the version and last update of the bot!")
-    .addField("-help credits", "Gives credit to the person who made the bot!")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
@@ -724,6 +723,7 @@ bot.on("message", async message => {
     .addField("kick", "This command temporarily removes a member from the guild. Only for staff members.")
     .addField("membercount", "States the guilds member count!")
     .addField("ping", "Shows the bots ping!")
+    .addField("coronavirus/covid19", "Shows the stats of the current sickness going around. Use -coronavirus {country}")
     .addField("yesno", "Executing this command will make the bot state yes or no.")
     .addField("gamermeter", "Shows you how epic you are at gaming.")
     .addField("purge", "Bulk deletes chats! Only for staff.")
@@ -741,14 +741,6 @@ bot.on("message", async message => {
    .setDescription("From my calculations, apparently 'Joe' is JOE MAMA! HA, GOTTEM!")
    message.channel.send(embed)
   }
-  if (message.content === prefix + "help credits") {
-    let embed = new Discord.MessageEmbed()
-    .setColor("YELLOW")
-    .setDescription("This bot and its entirety was made by the Discord.js Beginners Support community. Join our server for your JavaScript worries. https://discord.gg/htuxXBm (Non gamer words allowed)")
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
-    message.channel.send(embed)  
-    }
   if (message.content === prefix + "help version") {
     let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
