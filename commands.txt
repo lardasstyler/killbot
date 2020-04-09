@@ -4,5 +4,6 @@ membercount
 marry
 yesno
 gamermeter
+purge
 createticket
 closeticket

@@ -751,6 +751,7 @@ bot.on("message", async message => {
       .split(/ +/g);
     const deleteCount = parseInt(args[1], 10);
     if (!deleteCount || deleteCount < 2 || deleteCount > 100)
+      
       return message.reply(
         "Please provide a number between 2 and 100 for messages to purge"
       );
