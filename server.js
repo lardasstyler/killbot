@@ -762,7 +762,8 @@ bot.on("message", async message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("You do not have permission to use that command!");
     let user = message.mentions.users.first();
-    if(!user) return message.channel.send("Please state a user to warn!"); 
+    if(!user) return 
+    let em
     let reason = args.slice(2).join(' ') 
     if(!reason) return message.channel.send("Please state a reason to warn this user!");
     let warnEmbed = new Discord.MessageEmbed()
