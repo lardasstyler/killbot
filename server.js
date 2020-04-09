@@ -804,11 +804,6 @@ bot.on("guildMemberAdd", member => {
       `${member}` +
       `, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`
   )
-  let embed = new Discord.MessageEmbed()
-.setTitle("Member Added to Guild")
-.addField("User", member)
-.addField("Created At:", member.createdAt)
-logs.send(embed)
 });
 bot.on("guildMemberRemove", member => {
   let goodbye = member.guild.channels.cache.find(
