@@ -793,6 +793,9 @@ bot.on("message", async message => {
     logs.send(embed);
     
 }
+  if (message.content.startsWith(prefix + "qwertyuiopasdfghjklzxcvbnm")) {
+    message.channel.send("You found the secret command!")
+  }
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
