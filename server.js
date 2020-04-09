@@ -874,6 +874,10 @@ bot.on('messageUpdate', async (oldMessage, newMessage) =>{
   let logs = oldMessage.guild.channels.cache.get("688867784947531857")
   logs.send(embed)
 })
+bot.on('guildMemberUpdate', async (oldMember, newMember) =>{
+  let logs = oldMember.guild.channels.cache.get("688867784947531857")
+  logs.send(newMember)
+})
 
 
 bot.login(process.env.TOKEN);
