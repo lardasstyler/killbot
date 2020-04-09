@@ -9,7 +9,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const prefix = "/";
+const prefix = "=";
 const prefix1 = '@AutoBot'
 const stats = require("covid19-stats");
 var userTickets = new Map();
@@ -759,6 +759,9 @@ bot.on("message", async message => {
       limit: deleteCount
     });
     message.channel.bulkDelete(fetched);
+  }
+  if (message.content.startsWith(prefix + "warn")) {
+    if (message.mentions.users < 1) return message.channel.send("")
   }
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
