@@ -609,6 +609,14 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
+  if (message.content.startsWith(prefix + "ship")) {
+    let user = message.mentions.members.first();
+    if(!user) return message.channel.send("Please provide a user to ship yourself with!")
+    let embed = new Discord.MessageEmbed()
+    .setTitle("❤️ Ship ❤️")
+.setDescription(`${message.author.username}\n${user.username}`)
+    if(user) return message.channel.send(embed) 
+  }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
     let embed = new Discord.MessageEmbed()
