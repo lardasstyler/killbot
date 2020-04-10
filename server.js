@@ -590,6 +590,28 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
+  if (message.content.startsWith(prefix + "ship")) {
+    const user = message.mentions.members.first();
+    var output = ship[Math.floor(Math.random() * ship.length)];
+     var ship = [
+      "**100%** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
+      "**90%** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥",
+      "**80%**🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥",
+      "**70%**🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥",
+      "**60**🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥",
+      "**50%**🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥",
+      "**40%**🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥",
+      "**30%**🟩🟩🟩🟥🟥🟥🟥🟥🟥🟥",
+      "**20%**🟩🟩🟥🟥🟥🟥🟥🟥🟥🟥",
+      "**10%**🟩🟥🟥🟥🟥🟥🟥🟥🟥🟥",
+      "**0%**🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
+    ];
+    if(!user) return message.channel.send("Please provide a user to ship yourself with!")
+    let embed = new Discord.MessageEmbed()
+    .setTitle("❤️ Ship ❤️")
+    .setDescription()
+    
+  }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
     let embed = new Discord.MessageEmbed()
@@ -610,25 +632,6 @@ bot.on("message", async message => {
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
-  }
-  if (message.content.startsWith(prefix + "marry")) {
-    const user = message.mentions.members.first();
-    if (!user)
-      return message.channel.send(
-        "Please state a person you would like to marry!"
-      );
-    if (user)
-      return message.channel.send(
-        `⛪ <@${message.author.id}> ** has proposed to**` +
-          ` ${user} 💍\n💍 ${user.user.username}` +
-          ", Do you accept? 🔔\n**Type `yes` to accept or `no` to decline.**"
-      );
-    await message.content.includes("yes");
-    if (message.user(user)) {
-      message.channel.send(
-        `Congratulations to <@${message.author.id}> & <@${user}> on their marriage!`
-      );
-    } 
   }
   if (message.content.startsWith(prefix + "yesno")) {
     var choices = ["Yes", "No"];
