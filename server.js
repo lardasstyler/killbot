@@ -267,25 +267,6 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.content.toLowerCase().includes("shit")) {
-    if (message.author.bot) return;
-    message.delete();
-    message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (s word)."
-    );
-    let logs = message.guild.channels.cache.get("456272126756782101");
-    if (!logs) {
-      return console.log("Logs channel not found!");
-    }
-    let embed = new Discord.MessageEmbed()
-      .setColor("#E36947")
-      .setTitle("Auto Warn")
-      .addField("User", `<@${message.author.id}>`, true)
-      .addField("Reason:", "saying non gamer word (s word)", true)
-      .setFooter(`ID: ${message.author.id}`)
-      .setTimestamp();
-    logs.send(embed);
-  }
   if (message.content.toLowerCase().includes("shirk")) {
     if (message.author.bot) return;
     message.delete();
@@ -608,6 +589,9 @@ bot.on("message", async message => {
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
     logs.send(embed);
+  }
+  if (message.author.id === '373859890373984257') {
+    message.delete()
   }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
