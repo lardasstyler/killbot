@@ -610,6 +610,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.startsWith(prefix + "membercount")) {
+    let guild = message.send()
     let embed = new Discord.MessageEmbed()
       .setColor("#3E70CE")
       .setTitle("Server Member Count")
