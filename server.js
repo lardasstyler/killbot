@@ -747,11 +747,8 @@ bot.on("message", async message => {
       .addField("Reason:", `${reason}`, true)
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
-    logs.send(embed);
-
-    
+    logs.send(embed);    
 }
-
   if (message.content.startsWith(prefix + "qwertyuiopasdfghjklzxcvbnm")) {
     message.channel.send("You found the secret command!")
   }
