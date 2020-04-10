@@ -590,6 +590,9 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
+  if (message.guild.id === '290987848302067712') {
+    mess
+  }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
     let embed = new Discord.MessageEmbed()
