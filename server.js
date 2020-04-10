@@ -590,28 +590,6 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.content.startsWith(prefix + "ship")) {
-    const user = message.mentions.members.first();
-    var output = ship[Math.floor(Math.random() * ship.length)];
-     var ship = [
-      "**100%** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
-      "**90%** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥",
-      "**80%**🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥",
-      "**70%**🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥",
-      "**60**🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥",
-      "**50%**🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥",
-      "**40%**🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥",
-      "**30%**🟩🟩🟩🟥🟥🟥🟥🟥🟥🟥",
-      "**20%**🟩🟩🟥🟥🟥🟥🟥🟥🟥🟥",
-      "**10%**🟩🟥🟥🟥🟥🟥🟥🟥🟥🟥",
-      "**0%**🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
-    ];
-    if(!user) return message.channel.send("Please provide a user to ship yourself with!")
-    let embed = new Discord.MessageEmbed()
-    .setTitle("❤️ Ship ❤️")
-    .setDescription()
-    
-  }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
     let embed = new Discord.MessageEmbed()
