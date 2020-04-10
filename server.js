@@ -795,6 +795,7 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   } 
+
   });
 bot.on("guildMemberAdd", member => {
   let logs = member.guild.channels.cache.get("688867784947531857")
