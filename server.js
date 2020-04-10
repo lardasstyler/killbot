@@ -782,7 +782,9 @@ bot.on("guildMemberRemove", member => {
       " just left the server 🙁"
   );
 });
+
 bot.on('messageDelete', async message =>{
+  if (message.author.bot) return;
   let embed = new Discord.MessageEmbed()
   .setColor("RED")
   .setTitle("Deleted Message")
