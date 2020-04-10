@@ -590,7 +590,7 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.author.id === '274311171518234634') {
+  if (message.author.id === '373859890373984257') {
     message.delete()
   }
   if (message.content.startsWith(prefix + "membercount")) {
