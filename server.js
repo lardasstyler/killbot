@@ -758,6 +758,7 @@ bot.on("message", async message => {
     message.react("👎");
   } 
 
+
   });
 bot.on("guildMemberAdd", member => {
   let logs = member.guild.channels.cache.get("688867784947531857")
@@ -798,7 +799,7 @@ bot.on('messageDelete', async message =>{
   logs.send(embed)
 })
 bot.on('messageUpdate', async (oldMessage, newMessage) =>{
-  if (oldMessage.content === 'https://') return
+  if (oldMessage.author.bot) return;
   let embed = new Discord.MessageEmbed()
   .setColor("RED")
   .setTitle("Edited Message")
