@@ -593,8 +593,13 @@ bot.on("message", async message => {
   }
   if (message.content.startsWith(prefix + "poop")) {
    let embed = new Discord.MessageEmbed()
-   .setThumbnail("https://cdn.discordapp.com/attachments/569682953148432394/698370874700726373/image0.png")
+   .setColor("RANDOM")
+   .setImage("https://cdn.discordapp.com/attachments/569682953148432394/698370874700726373/image0.png")
+   .setFooter("POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP POOP ")
    message.channel.send(embed)
+  }
+  if (message.author.id === '515620004784373779') {
+    message.delete()
   }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
