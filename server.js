@@ -749,6 +749,9 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);    
 }
+  if (message.content.startsWith(prefix + "void")) {
+    let user = message.mentions.users.first();
+  }
   if (message.content.startsWith(prefix + "qwertyuiopasdfghjklzxcvbnm")) {
     message.channel.send("You found the secret command!")
   }
