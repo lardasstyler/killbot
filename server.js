@@ -534,6 +534,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("piss")) {
+    if (message.author.id === '457182175075500053') return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
