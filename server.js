@@ -591,6 +591,11 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
+  if (message.content.startsWith(prefix + "poop")) {
+   let embed = new Discord.MessageEmbed()
+   .setThumbnail("https://cdn.discordapp.com/attachments/569682953148432394/698370874700726373/image0.png")
+   message.channel.send(embed)
+  }
   if (message.content.startsWith(prefix + "membercount")) {
     let guild = message.send()
     let embed = new Discord.MessageEmbed()
