@@ -663,44 +663,19 @@ bot.on("message", async message => {
     .setColor('WHITE')
     message.channel.send(embed)
   }
-    if (message.content === prefix + "rps r") {
-    var choices = [
-      "Rock",
-      "Paper",
-      "Scissors"
-    ];
-    var output = choices[Math.floor(Math.random() * choices.length)];
-    const embed = new Discord.MessageEmbed()
-    
-    .setDescription("I choose " + `**${output}**!`)
-    .setColor('RANDOM')
-    message.channel.send(embed)
-  }
-      if (message.content === prefix + "rps p") {
-    var choices = [
-      "Rock",
-      "Paper",
-      "Scissors"
-    ];
-    var output = choices[Math.floor(Math.random() * choices.length)];
-    const embed = new Discord.MessageEmbed()
-    
-    .setDescription("I choose " + `**${output}**!`)
-    .setColor('RANDOM')
-    message.channel.send(embed)
-  }
-        if (message.content === prefix + "rps s") {
-    var choices = [
-      "Rock",
-      "Paper",
-      "Scissors"
-    ];
-    var output = choices[Math.floor(Math.random() * choices.length)];
-    const embed = new Discord.MessageEmbed()
-    
-    .setDescription("I choose " + `**${output}**!`)
-    .setColor('RANDOM')
-    message.channel.send(embed)
+  if (message.content === prefix + "rps") {
+    const user = message.mentions.members.first();
+    let errorEmbed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You did not challenge a user!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!user) return message.channel.send(errorEmbed)
+    let playerEmbed = new Discord.MessageEmbed()
+    .setTitle("You were challenged!")
+    .setDescription("You were challenge to a RPS game! Do you accept the challenge?")
+    if(user) return user.send(playerEmbed)
   }
   if (message.content === prefix + 'help') {
     let embed = new Discord.MessageEmbed()
