@@ -561,6 +561,10 @@ bot.on("message", async message => {
     message.delete();
     const user1 = message.mentions.members.first();
     let logs = message.guild.channels.cache.get("456272126756782101");
+    let errorEmbed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    
     if (!user1) return message.channel.send("Please state a user to ban!");
     await user1.ban(), message.channel.send(`${user1} was banned!`);
     const embed = new Discord.MessageEmbed()
