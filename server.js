@@ -646,6 +646,27 @@ bot.on("message", async message => {
     .setColor('WHITE')
     message.channel.send(embed)
   }
+    if (message) {
+    var choices = [
+      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
+      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥",
+      "🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥",
+      "🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥",
+      "🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥",
+      "🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥",
+      "🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥",
+      "🟩🟩🟩🟥🟥🟥🟥🟥🟥🟥",
+      "🟩🟩🟥🟥🟥🟥🟥🟥🟥🟥",
+      "🟩🟥🟥🟥🟥🟥🟥🟥🟥🟥",
+      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
+    ];
+    var output = choices[Math.floor(Math.random() * choices.length)];
+    const embed = new Discord.MessageEmbed()
+    
+    .setDescription(`**Lame** | ${output} | **Gamer**`)
+    .setColor('WHITE')
+    message.channel.send(embed)
+  }
   if (message.content === prefix + 'help') {
     let embed = new Discord.MessageEmbed()
     .setTitle("Help Menu")
