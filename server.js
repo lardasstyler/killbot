@@ -23,7 +23,7 @@ bot.on("message", async message => {
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
   if (!message.guild) {
-  let logs = bot.channels.cache.get("688867784947531857");
+  let logs = bot.channels.cache.get("699758960885891092");
     let embed = new Discord.MessageEmbed()
     .setTitle("The Bot got a DM!")
     .setColor('RANDOM')
@@ -32,8 +32,6 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     .setFooter(`ID: ${message.author.id}`)
     .setTimestamp()
     logs.send(embed)
-    //didnt work
-    //hmmm
   }
   if (message.content === 'brb') {
    message.channel.send("don't come back")
