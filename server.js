@@ -23,9 +23,8 @@ bot.on("message", async message => {
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
   
-  if (message.channel.type === 'dm') {
-    let logs = message.guild.channels.cache.get("688867784947531857");
-    logs.send(message.content)
+  if (message.content === 'brb') {
+   message.channel.send("don't come back")
   }
 
   if (message.content.startsWith(prefix + "createticket")) {
