@@ -34,8 +34,22 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     logs.send(embed)
   }
   if (message.content.startsWith(prefix + "dm")) {
+    let noEmbed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You do not have the permission to use this command!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(noEmbed)
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     let user = message.mentions.members.first();
+    let nouserEmbed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You did not state a user to DM therefore, no one was DM'd!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!user) return message.channel.send(nouserEmbed)
     let dm = args.slice(2).join(' ')
     user.send(dm)
     
