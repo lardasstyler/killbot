@@ -22,7 +22,20 @@ bot.on("ready", message => {
 bot.on("message", async message => {
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
-  
+  if (!message.guild) {
+    console.log(message.content)
+    // you cant do message.guild.channels if there isnt a guild
+    //oh
+    
+  let logs = guild.channels.cache.get("456272126756782101");
+    let embed = new Discord.MessageEmbed()
+    .setTitle("temp title")
+    .addField("User", message.author.tag, true)
+    .addField("Content", message.content, true)
+    logs.send(embed)
+    //didnt work
+    //hmmm
+  }
   if (message.content === 'brb') {
    message.channel.send("don't come back")
   }
