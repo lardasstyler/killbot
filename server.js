@@ -646,25 +646,43 @@ bot.on("message", async message => {
     .setColor('WHITE')
     message.channel.send(embed)
   }
-    if (message) {
+    if (message.content === prefix + "rps r") {
     var choices = [
-      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
-      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥",
-      "🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥",
-      "🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥",
-      "🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥",
-      "🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥",
-      "🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥",
-      "🟩🟩🟩🟥🟥🟥🟥🟥🟥🟥",
-      "🟩🟩🟥🟥🟥🟥🟥🟥🟥🟥",
-      "🟩🟥🟥🟥🟥🟥🟥🟥🟥🟥",
-      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
+      "Rock",
+      "Paper",
+      "Scissors"
     ];
     var output = choices[Math.floor(Math.random() * choices.length)];
     const embed = new Discord.MessageEmbed()
     
-    .setDescription(`**Lame** | ${output} | **Gamer**`)
-    .setColor('WHITE')
+    .setDescription("I choose " + `**${output}**!`)
+    .setColor('RANDOM')
+    message.channel.send(embed)
+  }
+      if (message.content === prefix + "rps p") {
+    var choices = [
+      "Rock",
+      "Paper",
+      "Scissors"
+    ];
+    var output = choices[Math.floor(Math.random() * choices.length)];
+    const embed = new Discord.MessageEmbed()
+    
+    .setDescription("I choose " + `**${output}**!`)
+    .setColor('RANDOM')
+    message.channel.send(embed)
+  }
+        if (message.content === prefix + "rps s") {
+    var choices = [
+      "Rock",
+      "Paper",
+      "Scissors"
+    ];
+    var output = choices[Math.floor(Math.random() * choices.length)];
+    const embed = new Discord.MessageEmbed()
+    
+    .setDescription("I choose " + `**${output}**!`)
+    .setColor('RANDOM')
     message.channel.send(embed)
   }
   if (message.content === prefix + 'help') {
@@ -696,6 +714,7 @@ bot.on("message", async message => {
     .addField("kick", "This command temporarily removes a member from the guild. Only for staff members.")
     .addField("membercount", "States the guilds member count!")
     .addField("ping", "Shows the bots ping!")
+    .addField("rps (r,p,s)", "Usage: rps r, rps p, rps s. Fun tiny command!")
     .addField("coronavirus/covid19", "Shows the stats of the current sickness going around. Use -coronavirus {country}")
     .addField("yesno", "Executing this command will make the bot state yes or no.")
     .addField("gamermeter", "Shows you how epic you are at gaming.")
@@ -718,8 +737,8 @@ bot.on("message", async message => {
     let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTitle("Version")
-    .addField("Version:", "1.2.2", true)
-    .addField("Last Update:", "Added version command.", true)
+    .addField("Version:", "1.2.3", true)
+    .addField("Last Update:", "Added a rock paper scissors command!", true)
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
