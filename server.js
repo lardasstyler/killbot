@@ -23,15 +23,14 @@ bot.on("message", async message => {
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
   if (!message.guild) {
-    console.log(message.content)
-    // you cant do message.guild.channels if there isnt a guild
-    //oh
-    
-  let logs = guild.channels.cache.get("456272126756782101");
+  let logs = bot.channels.cache.get("688867784947531857");
     let embed = new Discord.MessageEmbed()
-    .setTitle("temp title")
+    .setTitle("The Bot got a DM!")
+    .setColor('RANDOM')
     .addField("User", message.author.tag, true)
     .addField("Content", message.content, true)
+    .setFooter(`ID: ${message.author.id}`)
+    .setTimestamp()
     logs.send(embed)
     //didnt work
     //hmmm
@@ -189,6 +188,7 @@ bot.on("message", async message => {
 });
 
 bot.on("message", async message => {
+  if(!message.guild) return;
   if (message.content.toLowerCase().includes("nigger")) {
     if (message.author.bot) return;
     message.delete();
@@ -209,6 +209,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("nigga")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -228,6 +229,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("fuck")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -247,6 +249,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("fag")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -266,6 +269,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("shit")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -285,25 +289,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("shirk")) {
-    if (message.author.bot) return;
-    message.delete();
-    message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (s word)."
-    );
-    let logs = message.guild.channels.cache.get("456272126756782101");
-    if (!logs) {
-      return console.log("Logs channel not found!");
-    }
-    let embed = new Discord.MessageEmbed()
-      .setColor("#E36947")
-      .setTitle("Auto Warn")
-      .addField("User", `<@${message.author.id}>`, true)
-      .addField("Reason:", "saying non gamer word (s word)", true)
-      .setFooter(`ID: ${message.author.id}`)
-      .setTimestamp();
-    logs.send(embed);
-  }
-  if (message.content.toLowerCase().includes("shirk")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -323,6 +309,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("asshole")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -342,6 +329,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("anus")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -361,6 +349,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("arse")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -380,6 +369,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("dick")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -399,6 +389,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("dyke")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -418,6 +409,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("cock")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -437,6 +429,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("cunt")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -456,6 +449,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("clot")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -475,6 +469,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("clit")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -494,6 +489,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("jerkoff")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -513,6 +509,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("bitch")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -532,6 +529,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("bastard")) {
+    if(!message.guild) return;
     if (message.author.bot) return;
     message.delete();
     message.author.send(
@@ -551,6 +549,7 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.toLowerCase().includes("piss")) {
+    if(!message.guild) return;
     if (message.author.id === '457182175075500053') return;
     if (message.author.bot) return;
     message.delete();
