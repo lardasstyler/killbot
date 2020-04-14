@@ -33,6 +33,13 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     .setTimestamp()
     logs.send(embed)
   }
+  if (message.content.startsWith(prefix + "dm")) {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let user = message.mentions.members.first();
+    let dm = args.slice(2).join(' ')
+    user.send(dm)
+    
+  }
   if (message.content === 'brb') {
    message.channel.send("don't come back")
   }
