@@ -675,7 +675,7 @@ bot.on("message", async message => {
     let playerEmbed = new Discord.MessageEmbed()
     .setTitle("You were challenged!")
     .setDescription("You were challenge to a RPS game! Do you accept the challenge?")
-    if(user) return user.send(playerEmbed)
+    if(user) return message.channel.send(`||${user}||` + playerEmbed)
   }
   if (message.content === prefix + 'help') {
     let embed = new Discord.MessageEmbed()
