@@ -564,8 +564,10 @@ bot.on("message", async message => {
     let errorEmbed = new Discord.MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Error!")
-    
-    if (!user1) return message.channel.send("Please state a user to ban!");
+    .setDescription("You did not state a user to ban therefore, nobody was banned!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if (!user1) return message.channel.send(errorEmbed);
     await user1.ban(), message.channel.send(`${user1} was banned!`);
     const embed = new Discord.MessageEmbed()
       .setColor("#E36947")
@@ -584,7 +586,13 @@ bot.on("message", async message => {
     message.delete();
     const user = message.mentions.members.first();
     let logs = message.guild.channels.cache.get("456272126756782101");
-    if (!user) return message.channel.send("Please state a user to kick!");
+        let errorEmbed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You did not state a user to kick therefore, nobody was kicked!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if (!user) return message.channel.send(errorEmbed);
     await user.kick(), message.channel.send(`${user} was kicked!`);
     let embed = new Discord.MessageEmbed()
       .setColor("#E36947")
@@ -741,8 +749,8 @@ bot.on("message", async message => {
     let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTitle("Version")
-    .addField("Version:", "1.2.3", true)
-    .addField("Last Update:", "Added a rock paper scissors command!", true)
+    .addField("Version:", "1.2.4", true)
+    .addField("Last Update:", "Brand new error embeds!", true)
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
@@ -771,13 +779,13 @@ bot.on("message", async message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("You do not have permission to use that command!");
     let user = message.mentions.users.first();
-        let warnEmbed1 = new Discord.MessageEmbed()
-    .setColor("BLUE")
-    .setTitle("Command: -warn")
-    .setDescription("**Description:** Warns a user! Only for staff.\n**Example:** -warn {user} {reason}")
-    .setFooter(`Requested by ${message.author.tag}`)
+        let errorEmbed = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You did not state a user to warn therefore, nobody was warned!")
+    .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
-    if(!user) return message.channel.send(warnEmbed1)
+    if(!user) return message.channel.send(errorEmbed)
     let reason = args.slice(2).join(' ') 
     if(!reason) return message.channel.send("Please state a reason to warn this user!");
     let warnEmbed = new Discord.MessageEmbed()
