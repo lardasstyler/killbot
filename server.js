@@ -554,9 +554,15 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.startsWith(prefix + "ban")) {
+  let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You do not have the permission to use this command!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
     if (!message.member.hasPermission("BAN_MEMBERS"))
       return message.channel.send(
-        "You do not have permission to use that command!"
+        errorEmbed1
       );
     message.delete();
     const user1 = message.mentions.members.first();
@@ -579,9 +585,15 @@ bot.on("message", async message => {
     logs.send(embed);
   }
   if (message.content.startsWith(prefix + "kick")) {
+        let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You do not have the permission to use this command!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
     if (!message.member.hasPermission("KICK_MEMBERS"))
       return message.channel.send(
-        "You do not have the permission to use that command!"
+        errorEmbed1
       );
     message.delete();
     const user = message.mentions.members.first();
@@ -777,7 +789,13 @@ bot.on("message", async message => {
   }
   if (message.content.startsWith(prefix + "warn")) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("You do not have permission to use that command!");
+            let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You do not have the permission to use this command!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1);
     let user = message.mentions.users.first();
         let errorEmbed = new Discord.MessageEmbed()
     .setColor("#FF0000")
