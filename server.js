@@ -729,6 +729,7 @@ bot.on("message", async message => {
     .setDescription("Please specify what you need help with! Here are some of the things that people commonly need help with!")
     .addField("-help staff", "Gives you a list of staff!")
     .addField("-help commands", "Gives you a list of commands!")
+    .addField("-help support", "Shows you how to get support from a staff member!")
     .addField("-help version", "States the version and last update of the bot!")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
@@ -776,6 +777,15 @@ bot.on("message", async message => {
     .setTitle("Version")
     .addField("Version:", "1.2.5", true)
     .addField("Last Update:", "More stuff is logged and you won't get warned when you cuss in the bots DM's now.", true)
+    .setFooter(`Requested by ${message.author.tag}`)
+    .setTimestamp()
+    message.channel.send(embed)
+  }
+  if (message.content === prefix + "help support") {
+    let embed = new Discord.MessageEmbed()
+    .setColor("RANDDOM")
+    .setTitle("Support")
+    .setDescription("Need help? Want to suggest something? Do -createticket or DM me for help! A staff member will get back to you ASAP! I would recommend DM'ing me other than creating a ticket!")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
