@@ -16,7 +16,14 @@ var userTickets = new Map();
 
 bot.on("ready", message => {
   console.log('women')
-  bot.user.setActivity(`${bot.users.cache.size} members`, { type: "WATCHING" });
+  setInterval(() => {
+let activities = ["status msg 1" , "status msg 2" , "status msg 3"]
+let game = activities[Math.floor(Math.random() * activities.length)];
+bot.user.setActivity(game,{
+      type: "STREAMING",
+      url: "https://www.twitch.tv/ninja"
+  });
+}, 180000)
 });
 
 bot.on("message", async message => {
