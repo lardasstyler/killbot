@@ -52,6 +52,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     if(!user) return message.channel.send(nouserEmbed)
     let dm = args.slice(2).join(' ')
     user.send(dm)
+    message.delete()
     let logs = bot.channels.cache.get("699758960885891092");
     let logEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
