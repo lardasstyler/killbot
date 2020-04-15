@@ -52,7 +52,16 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     if(!user) return message.channel.send(nouserEmbed)
     let dm = args.slice(2).join(' ')
     user.send(dm)
-    
+    let logs = bot.channels.cache.get("699758960885891092");
+    let logEmbed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setTitle("A Staff Member Sent a DM!")
+    .addField("Staff Member:", `<@${message.author.id}>`, true)
+    .addField("User:", user.user.tag, true)
+    .addField("Content:", dm, true)
+    .setFooter(`ID: ${user.user.id}`)
+    .setTimestamp()
+    logs.send(logEmbed)
   }
   if (message.content === 'brb') {
    message.channel.send("don't come back")
