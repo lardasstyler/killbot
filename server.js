@@ -893,6 +893,7 @@ bot.on("guildMemberRemove", member => {
 });
 
 bot.on('messageDelete', async message =>{
+  if (message.author.id === '457182175075500053') return
   if (message.author.bot) return;
   let embed = new Discord.MessageEmbed()
   .setColor("RED")
