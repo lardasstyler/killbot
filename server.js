@@ -836,6 +836,10 @@ bot.on("message", async message => {
     if(!user) return message.channel.send(errorEmbed)
     let reason = args.slice(2).join(' ') 
     if(!reason) return message.channel.send("Please state a reason to warn this user!");
+    let chatEmbed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setDescription(`***${user.tag} was warned., ${reason}***`)
+    message.channel.send(chatEmbed)
     let warnEmbed = new Discord.MessageEmbed()
     .setTitle("⚠️ You were warned! ⚠️")
     .setColor("BLUE")
@@ -855,7 +859,9 @@ bot.on("message", async message => {
       .addField("Reason:", `${reason}`, true)
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
-    logs.send(embed);    
+    logs.send(embed)
+
+
 }
   if (message.content.startsWith(prefix + "qwertyuiopasdfghjklzxcvbnm")) {
     message.channel.send("You found the secret command!")
