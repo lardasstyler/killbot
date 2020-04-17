@@ -29,7 +29,7 @@ module.exports = {
     let warnEmbed = new Discord.MessageEmbed()
     .setTitle("⚠️ You were warned! ⚠️")
     .setColor("BLUE")
-    .addField("Server:", "PigPig and Raging’s Discord Server", true)
+    .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
     .addField("Reason:", `${reason}`, true)
     .setTimestamp()
