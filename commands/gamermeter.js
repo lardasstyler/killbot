@@ -20,7 +20,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     
     .setDescription(`**Lame** | ${output} | **Gamer**`)
-    .setColor('WHITE')
+    .setColor('RANDOM')
     message.channel.send(embed)
   }
 }

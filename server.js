@@ -456,129 +456,6 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.content.startsWith(prefix + "gamermeter")) {
-    var choices = [
-      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩",
-      "🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥",
-      "🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥",
-      "🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥",
-      "🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥",
-      "🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥",
-      "🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥",
-      "🟩🟩🟩🟥🟥🟥🟥🟥🟥🟥",
-      "🟩🟩🟥🟥🟥🟥🟥🟥🟥🟥",
-      "🟩🟥🟥🟥🟥🟥🟥🟥🟥🟥",
-      "🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
-    ];
-    var output = choices[Math.floor(Math.random() * choices.length)];
-    const embed = new Discord.MessageEmbed()
-    
-    .setDescription(`**Lame** | ${output} | **Gamer**`)
-    .setColor('WHITE')
-    message.channel.send(embed)
-  }
-  if (message.content === prefix + "rps") {
-    const user = message.mentions.members.first();
-    let errorEmbed = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not challenge a user!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!user) return message.channel.send(errorEmbed)
-    let playerEmbed = new Discord.MessageEmbed()
-    .setTitle("You were challenged!")
-    .setDescription("You were challenge to a RPS game! Do you accept the challenge?")
-    if(user) return message.channel.send(`||${user}||` + playerEmbed)
-  }
-  if (message.content === prefix + 'help') {
-    let embed = new Discord.MessageEmbed()
-    .setTitle("Help Menu")
-    .setColor("BLUE")
-    .setDescription("Please specify what you need help with! Here are some of the things that people commonly need help with!")
-    .addField("-help staff", "Gives you a list of staff!")
-    .addField("-help commands", "Gives you a list of commands!")
-    .addField("-help support", "Shows you how to get support from a staff member!")
-    .addField("-help version", "States the version and last update of the bot!")
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
-    message.channel.send(embed)
-  }
-  if (message.content === prefix + "help staff") {
-    let embed = new Discord.MessageEmbed()
-    .setColor("GREEN")
-    .setTitle("Staff Members")
-    .setDescription("<@265533494090924034>\n<@324686137308479488>\n<@389179805368582154>\n<@412782358358523905>\n<@274311171518234634>\n<@530328255312560128>\n<@498495003769700352>\n<@457182175075500053>\n<@625500466335186967>\n<@515620004784373779>\n<@532370329662914561>\n<@501143839122391060>\n<@490933512027897868>\n<@649003865676709924>\n<@456641711486009355>")
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
-    message.channel.send(embed) 
-    }
-  if (message.content === prefix + "help commands") {
-    let embed = new Discord.MessageEmbed()
-    .setColor("#770D19")
-    .setTitle("Commands")
-    .addField("ban", "This command removes a member from the guild. Only for staff members.")
-    .addField("kick", "This command temporarily removes a member from the guild. Only for staff members.")
-    .addField("membercount", "States the guilds member count!")
-    .addField("ping", "Shows the bots ping!")
-    .addField("rps (r,p,s)", "Usage: rps r, rps p, rps s. Fun tiny command!")
-    .addField("coronavirus/covid19", "Shows the stats of the current sickness going around. Use -coronavirus {country}")
-    .addField("yesno", "Executing this command will make the bot state yes or no.")
-    .addField("gamermeter", "Shows you how epic you are at gaming.")
-    .addField("purge", "Bulk deletes chats! Only for staff.")
-    .addField("warn", "Warns a user! Only for staff.")
-    .addField("createticket", "Support command. If you need any help from a staff member just execute this command and ping a staff member in the ticket.")
-    .addField("closeticket", "Support Command. Closes the ticket once you create it.")
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
-    message.channel.send(embed)
-  }
-  if (message.content === prefix + "help whos joe") {
-   let embed = new Discord.MessageEmbed()
-   .setColor("BLUE")
-   .setTitle("Who's Joe?")
-   .setDescription("From my calculations, apparently 'Joe' is JOE MAMA! HA, GOTTEM!")
-   message.channel.send(embed)
-  }
-  if (message.content === prefix + "help version") {
-    let embed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setTitle("Version")
-    .addField("Version:", "1.3", true)
-    .addField("Last Update:", "Now confirms a person was warned!", true)
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
-    message.channel.send(embed)
-  }
-  if (message.content === prefix + "help support") {
-    let embed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setTitle("Support")
-    .setDescription("Need help? Want to suggest something? Do -createticket or DM me for help! A staff member will get back to you ASAP! I would recommend DM'ing me other than creating a ticket!")
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
-    message.channel.send(embed)
-  }
-    if (message.content.startsWith(prefix + "purge")) {
-    if (!message.member.hasPermission("MANAGE_MESSAGES"))
-      return message.channel.send(
-        "You do not have the permission to use that command!"
-      );
-    const args = message.content
-      .slice(prefix.length)
-      .trim()
-      .split(/ +/g);
-    const deleteCount = parseInt(args[1], 10);
-    if (!deleteCount || deleteCount < 2 || deleteCount > 100)
-      
-      return message.reply(
-        "Please provide a number between 2 and 100 for messages to purge"
-      );
-    const fetched = await message.channel.messages.fetch({
-      limit: deleteCount
-    });
-    message.channel.bulkDelete(fetched);
-  }
   if (message.content.startsWith(prefix + "warn")) {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
             let errorEmbed1 = new Discord.MessageEmbed()
@@ -625,9 +502,6 @@ bot.on("message", async message => {
 
 
 }
-  if (message.content.startsWith(prefix + "qwertyuiopasdfghjklzxcvbnm")) {
-    message.channel.send("You found the secret command!")
-  }
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
