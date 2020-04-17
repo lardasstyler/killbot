@@ -37,10 +37,9 @@ module.exports = {
     message.delete(); 
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
-      .setColor("#E36947")
-      .setTitle("Warned User")
-      .setThumbnail(user.displayAvatarURL())
-      .addField("User:", `<@${user.id}>`, true)
+      .setColor("RANDOM")
+      .setAuthor(`Warn | ${user.tag}`, user.displayAvatarURL())
+      .addField("User:", `${user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Reason:", `${reason}`, true)
       .setFooter(`USERS ID: ${user.id}`)
