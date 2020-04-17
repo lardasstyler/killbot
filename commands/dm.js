@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const prefix = '-';
 module.exports = {
   name: "dm",
   aliases: "pm",
@@ -18,7 +19,8 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if(!user) return message.channel.send(nouserEmbed)
-    let dm = args.slice(2).join(' ')
+    const women = message.content.slice(prefix.length).trim().split(/ +/g);
+    let dm = women.slice(2).join(' ')
     user.send(dm)
     message.delete()
     let logs = bot.channels.cache.get("699758960885891092");

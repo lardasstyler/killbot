@@ -7,7 +7,7 @@ module.exports = {
       return message.channel.send(
         "You do not have the permission to use that command!"
       );
-
+    
     const deleteCount = parseInt(args[1], 10);
     if (!deleteCount || deleteCount < 2 || deleteCount > 100)
       

@@ -8,7 +8,6 @@ module.exports = {
     .setTitle("Commands")
     .addField("ban", "This command removes a member from the guild. Only for staff members.")
     .addField("kick", "This command temporarily removes a member from the guild. Only for staff members.")
-    .addField("membercount", "States the guilds member count!")
     .addField("ping", "Shows the bots ping!")
     .addField("rps (r,p,s)", "Usage: rps r, rps p, rps s. Fun tiny command!")
     .addField("coronavirus/covid19", "Shows the stats of the current sickness going around. Use -coronavirus {country}")

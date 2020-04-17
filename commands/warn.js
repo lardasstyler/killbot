@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const prefix = '-';
 module.exports = {
   name: "warn",
   aliases: "alert",
@@ -18,7 +19,8 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if(!user) return message.channel.send(errorEmbed)
-    let reason = args.slice(2).join(' ') 
+    const women = message.content.slice(prefix.length).trim().split(/ +/g);
+    let reason = women.slice(2).join(' ') 
     if(!reason) return message.channel.send("Please state a reason to warn this user!");
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
