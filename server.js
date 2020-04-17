@@ -7,24 +7,38 @@ app.get("/", (request, response) => {
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const bot = new Discord.Client();
-const prefix = "-";
-const prefix1 = '@AutoBot'
-const stats = require("covid19-stats");
-var userTickets = new Map();
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
+const fs = require('fs');
+const prefix = '-';
 
 bot.on("ready", message => {
-  console.log('women')
-  setInterval(() => {
-let activities = [`${bot.users.cache.size} members` , "people use -help" , "some servers"]
-let game = activities[Math.floor(Math.random() * activities.length)];
-bot.user.setActivity(game,{
-      type: "WATCHING",
-      url: "https://www.twitch.tv/ninja"
-  });
-}, 10000)
-});
+
+})
+const init = async message =>{
+  fs.readdir(`./commands`, (err, files) =>{
+    if(err) return console.log(err);
+    files.forEach(file =>{
+      const props = require(`./commands/${file}`);
+      bot.commands.set(props.name, props);
+      bot.aliases.forEach(alias => bot.aliases.set(alias, props.name));
+      console.log(`${file} was loaded!`)
+    })
+  })
+}
+init();
+
+bot.on('message', (message) => {
+  if (message.author.bot) return;
+  if (message.content.indexOf(prefix) !== 0) return;
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  const cmd = bot.commands.get(command) || bot.aliases.get(bot.aliases.get(command));
+  if(cmd) cmd.run(bot, message, args)
+})
+
 bot.on("message", async message => {
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
@@ -456,52 +470,7 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.content.startsWith(prefix + "warn")) {
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-            let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You do not have the permission to use this command!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1);
-    let user = message.mentions.users.first();
-        let errorEmbed = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not state a user to warn therefore, nobody was warned!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!user) return message.channel.send(errorEmbed)
-    let reason = args.slice(2).join(' ') 
-    if(!reason) return message.channel.send("Please state a reason to warn this user!");
-    let chatEmbed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setDescription(`***${user.tag} was warned., ${reason}***`)
-    message.channel.send(chatEmbed)
-    let warnEmbed = new Discord.MessageEmbed()
-    .setTitle("⚠️ You were warned! ⚠️")
-    .setColor("BLUE")
-    .addField("Server:", "PigPig and Raging’s Discord Server", true)
-    .addField("Moderator:", `${message.author.tag}`, true)
-    .addField("Reason:", `${reason}`, true)
-    .setTimestamp()
-    user.send(warnEmbed)
-    message.delete(); 
-    let logs = message.guild.channels.cache.get("456272126756782101");
-    let embed = new Discord.MessageEmbed()
-      .setColor("#E36947")
-      .setTitle("Warned User")
-      .setThumbnail(user.displayAvatarURL())
-      .addField("User:", `<@${user.id}>`, true)
-      .addField("Moderator:", `<@${message.author.id}>`, true)
-      .addField("Reason:", `${reason}`, true)
-      .setFooter(`USERS ID: ${user.id}`)
-      .setTimestamp();
-    logs.send(embed)
 
-
-}
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
