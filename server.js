@@ -24,7 +24,7 @@ const init = async message =>{
       const props = require(`./commands/${file}`);
       bot.commands.set(props.name, props);
       bot.aliases.forEach(alias => bot.aliases.set(alias, props.name));
-      console.log(`${file} was loaded!`)
+      console.log(`bruh ${file} moment`)
     })
   })
 }
