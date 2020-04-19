@@ -9,6 +9,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+var servers = {};
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 const fs = require('fs');
