@@ -5,7 +5,8 @@ module.exports = {
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
       let embed = new Discord.MessageEmbed()
-    .setAuthor(`{bot.user.displayAvatarURL`,"Commands List")     
+    .setAuthor("Commands List", bot.user.displayAvatarURL()) 
+    .setDescription("**〉 ** Helpful: `coronavirus`, `createticket`, `help`")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
