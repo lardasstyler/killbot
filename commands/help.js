@@ -38,9 +38,9 @@ module.exports = {
    else if (args[0] === 'staff') {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setTitle("Staff Members")
-    .setDescription("<@265533494090924034>\n<@324686137308479488>\n<@389179805368582154>\n<@412782358358523905>\n<@274311171518234634>\n<@530328255312560128>\n<@498495003769700352>\n<@457182175075500053>\n<@625500466335186967>\n<@515620004784373779>\n<@532370329662914561>\n<@501143839122391060>\n<@490933512027897868>\n<@649003865676709924>\n<@334475646116036618>\n")
-    .setFooter(`Requested by ${message.author.tag}`)
+    .setAuthor("Staff Team", message.guild.iconURL())
+    .setDescription("To view the list of our staff team go to this [link!](https://staff-team.glitch.me/)")
+    .setFooter(`Help from ${message.guild.me.displayName} `, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed) 
     } else {
