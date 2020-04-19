@@ -4,10 +4,11 @@ module.exports = {
   aliases: "info",
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
+      let commandsCount = '12'
       let embed = new Discord.MessageEmbed()
     .setAuthor("Commands List", bot.user.displayAvatarURL()) 
-    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`\n \n **✨ Misc**: `ping`\n \n [Want to start coding? Join our server!](https://discord.gg/htuxXBm)")
-    .setFooter(`Requested by ${message.author.tag}`)
+    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`\n \n **✨ Misc**: `ping`\n \n [**Rules!**](https://discordapp.com/channels/290987848302067712/561008923453423657/) (last updated 4/4/2020)")
+    .setFooter(`${commandsCount} commands! ${message.guild.me.displayName}`)
     .setTimestamp()
     message.channel.send(embed)
     }
