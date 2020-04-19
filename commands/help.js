@@ -1,7 +1,4 @@
 const Discord = require('discord.js');
-//tyler
-//you idiot
-// look at line 6
 module.exports = {
   name: "help",
   aliases: "info",
