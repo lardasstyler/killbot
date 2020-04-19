@@ -447,7 +447,7 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   } 
-  if (message.content.toLowerCase().includes("im")) {
+  if (message.content.toLowerCase().startsWith("im")) {
     if (message.content.includes('@everyone')) return;
 if (message.content.includes('@here')) return;
     if (message.author.bot) return;
