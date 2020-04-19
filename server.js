@@ -448,22 +448,6 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   } 
-  if (message.content.toLowerCase().startsWith("im")) {
-    if (message.content.includes('@everyone')) return;
-if (message.content.includes('@here')) return;
-    if (message.author.bot) return;
-    const women = message.content.slice(prefix.length).trim().split(/ +/g);
-     let bruh = women.slice(1).join(' ') 
-     message.channel.send(`Hi ${bruh}, I'm Dad!`)
-  }
-    if (message.content.toLowerCase().startsWith("i'm")) {
-    if (message.content.includes('@everyone')) return;
-    if (message.content.includes('@here')) return;
-    if (message.author.bot) return;
-    const women = message.content.slice(prefix.length).trim().split(/ +/g);
-     let bruh = women.slice(1).join(' ') 
-     message.channel.send(`Hi ${bruh}, I'm Dad!`)
-  }
   if (message.content.toLowerCase().includes("why is he spinning")) {
     message.channel.send("oh i dont know, ask yourself that! or just ask <@412782358358523905>")
   }
