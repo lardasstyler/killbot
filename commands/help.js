@@ -8,7 +8,7 @@ module.exports = {
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
-    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`\n \n **✨ Misc**: `ping`\n \n [**Rules!**](https://discordapp.com/channels/290987848302067712/561008923453423657/) (last updated 4/4/2020)")
+    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`\n \n **✨ Misc**: `ping`")
     .setFooter(`${message.guild.me.displayName} | Total Commands: ${commandsCount}`, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed)
@@ -17,10 +17,9 @@ module.exports = {
     else if (args[0] === 'version') {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setTitle("Version")
-    .addField("Version:", "1.5", true)
-    .addField("Last Update:", "Less messier code!", true)
-    .setFooter(`Requested by ${message.author.tag}`)
+    .setAuthor("AutoBots Version", bot.user.displayAvatarURL()) 
+    .setDescription("**✅ Version**: 1.9\n \n**⬆️ Last Update**: Oh man! We have a new layout for the help command, new -report command AND a staff website!")
+    .setFooter(`${message.guild.me.displayName}'s Version | v1.9`)
     .setTimestamp()
     message.channel.send(embed)
     }
