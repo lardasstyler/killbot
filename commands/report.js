@@ -27,7 +27,7 @@ module.exports = {
     .setColor("RANDOM")
     .setAuthor(`Report | ${user.tag}`, user.displayAvatarURL())
     .addField("User:", `${user.tag}`, true)
-      .addField("Reorter:", `<@${message.author.id}>`, true)
+      .addField("Reporter:", `<@${message.author.id}>`, true)
       .addField("Reason:", `${report}`, true)
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
