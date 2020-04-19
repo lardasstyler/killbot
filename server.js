@@ -447,8 +447,18 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   } 
-
-
+  if (message.content.toLowerCase().includes("im")) {
+    if (message.author.bot) return;
+    const women = message.content.slice(prefix.length).trim().split(/ +/g);
+     let bruh = women.slice(1).join(' ') 
+     message.channel.send(`Hi ${bruh}, I'm Dad!`)
+  }
+    if (message.content.toLowerCase().includes("i'm")) {
+    if (message.author.bot) return;
+    const women = message.content.slice(prefix.length).trim().split(/ +/g);
+     let bruh = women.slice(1).join(' ') 
+     message.channel.send(`Hi ${bruh}, I'm Dad!`)
+  }
   });
 bot.on("guildMemberAdd", member => {
   let logs = member.guild.channels.cache.get("688867784947531857")
