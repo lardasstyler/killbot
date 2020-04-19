@@ -6,9 +6,10 @@ module.exports = {
     if (args[0] === 'commands') {
       let commandsCount = '12'
       let embed = new Discord.MessageEmbed()
-    .setAuthor("Commands List", bot.user.displayAvatarURL()) 
+    .setColor("RANDOM")
+    .setAuthor("Commands List", message.guild.iconURL()) 
     .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`\n \n **✨ Misc**: `ping`\n \n [**Rules!**](https://discordapp.com/channels/290987848302067712/561008923453423657/) (last updated 4/4/2020)")
-    .setFooter(`${commandsCount} commands! ${message.guild.me.displayName}`)
+    .setFooter(`${message.guild.me.displayName} | Total Commands: ${commandsCount}`, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed)
     }
@@ -44,15 +45,9 @@ module.exports = {
     message.channel.send(embed) 
     } else {
       let embed = new Discord.MessageEmbed()
-    .setTitle("Help Menu")
-    .setColor("RANDOM")
-    .setDescription("Please specify what you need help with! Here are some of the things that people commonly need help with!")
-    .addField("-help staff", "Gives you a list of staff!")
-    .addField("-help commands", "Gives you a list of commands!")
-    .addField("-help support", "Shows you how to get support from a staff member!")
-    .addField("-help version", "States the version and last update of the bot!")
-    .setFooter(`Requested by ${message.author.tag}`)
-    .setTimestamp()
+     .setColor("RANDOM")
+     .setAuthor("Help Menu", message.guild.iconURL())
+     .setDescription("**🤖 Commands**: Shows you the list of commands!\n \n**❓ Support**: Tells you how to get support from a staff member!\n \n**👮 Staff**: Shows you a list of the staff members!\n \n**✅ Version**: Shows you the version of the bot and the newest update!\n \n *Commands Usages:* `-help {commands, support, staff, version}`\n \n [**Rules!**](https://discordapp.com/channels/290987848302067712/561008923453423657/) (last updated 4/4/2020)\n[**Apply!**]()")
     message.channel.send(embed)
     }
   }
