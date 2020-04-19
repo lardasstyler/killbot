@@ -47,7 +47,9 @@ module.exports = {
       let embed = new Discord.MessageEmbed()
      .setColor("RANDOM")
      .setAuthor("Help Menu", message.guild.iconURL())
-     .setDescription("**🤖 Commands**: Shows you the list of commands!\n \n**❓ Support**: Tells you how to get support from a staff member!\n \n**👮 Staff**: Shows you a list of the staff members!\n \n**✅ Version**: Shows you the version of the bot and the newest update!\n \n *Commands Usages:* `-help {commands, support, staff, version}`\n \n [**Rules!**](https://discordapp.com/channels/290987848302067712/561008923453423657/) (last updated 4/4/2020)\n[**Apply!**]()")
+     .setDescription("**🤖 Commands**: Shows you the list of commands!\n \n**❓ Support**: Shows you how to get support from a staff member!\n \n**👮 Staff**: Shows you a list of the staff members!\n \n**✅ Version**: Shows you the version of the bot and the newest update!\n \n *Commands Usages:* `-help {commands, support, staff, version}`\n \n [**Rules!**](https://discordapp.com/channels/290987848302067712/561008923453423657/) (last updated 4/4/2020)\n[**Apply!**](https://docs.google.com/forms/d/e/1FAIpQLSf1o3Mv-YYWCloHKatzEthl2mzLcnFDriuuwIoUHilQKXLbZA/viewform) (read <#605875748724670479> for more info)")
+     .setFooter(`Help from ${message.guild.me.displayName} `, bot.user.displayAvatarURL())
+     .setTimestamp()
     message.channel.send(embed)
     }
   }
