@@ -23,7 +23,7 @@ module.exports = {
     let dm = women.slice(2).join(' ')
     user.send(dm)
     message.delete()
-    let logs = bot.channels.cache.get("699758960885891092");
+    let logs = bot.channels.cache.get("688867784947531857");
     let logEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTitle("A Staff Member Sent a DM!")
