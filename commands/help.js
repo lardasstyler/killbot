@@ -6,7 +6,7 @@ module.exports = {
     if (args[0] === 'commands') {
       let embed = new Discord.MessageEmbed()
     .setAuthor("Commands List", bot.user.displayAvatarURL()) 
-    .setDescription("**〉 ** Helpful: `coronavirus`, `createticket`, `help`")
+    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`\n \n **✨ Misc**: `ping`\n \n [Want to start coding? Join our server!](https://discord.gg/htuxXBm)")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)
