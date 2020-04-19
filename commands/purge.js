@@ -8,7 +8,7 @@ module.exports = {
         "You do not have the permission to use that command!"
       );
     
-    const deleteCount = parseInt(args[1], 10);
+    const deleteCount = parseInt(args[2], 10);
     if (!deleteCount || deleteCount < 2 || deleteCount > 100)
       
       return message.reply(
