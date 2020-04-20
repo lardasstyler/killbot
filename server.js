@@ -66,6 +66,10 @@ var j = schedule.scheduleJob('0 30 * * * *', function(){
 
 
 bot.on("message", async message => {
+  if (message.author.id === '457182175075500053') return;
+  if (message.guild.id === '290987848302067712') {
+    message.delete()
+  }
   if(!message.guild) return;
 
   if (message.content.toLowerCase().includes("nigger")) {
@@ -327,13 +331,6 @@ bot.on("message", async message => {
       .setTimestamp();
     logs.send(embed);
   }
-  if (message.content.toLowerCase().includes("clot")) {
-    if(!message.guild) return;
-    if (message.author.bot) return;
-    message.delete();
-    message.author.send(
-      "**You were warned in PigPig and Raging’s Discord Server!**\nReason: saying non gamer word (c word)."
-    );
     let logs = message.guild.channels.cache.get("456272126756782101");
     if (!logs) {
       return console.log("Logs channel not found!");
