@@ -13,6 +13,21 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if(!mutee) return message.channel.send(errorEmbed)
-    if(mutee.hasPermission("ADMINISTRATOR")) 
+    let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("I can't mute this user!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed1)
+    let muterole = message.guild.roles.cache.get("674390381856686099");
+    let mutetime = args[1];
+    let errorEmbed2 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("Please specify the amount of time you want to mute this user for!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!mutetime) return message.channel.send(errorEmbed2)
   }
 }
