@@ -1,7 +1,7 @@
 [
   {
     "category": "animals",
-    "type": "boolean",
+    "type": "multiple",
     "difficulty": "easy",
     "question": "What is the number one dog breed?",
     "correct_answer": "Labrador Retriever",
@@ -17,25 +17,25 @@
   },
   {
     "category": "Animals",
-    "type": "multiple",
+    "type": "boolean",
     "difficulty": "easy",
-    "question": "TRUE or FALSE: Dogs can eat chocolate.",
+    "question": "Dogs can eat chocolate.",
     "correct_answer": "False",
     "incorrect_answers": ["True"]
   },
   {
-    "category": "Animals",
-    "type": "multiple",
+    "category": "fun",
+    "type": "boolean",
     "difficulty": "medium",
-    "question": "What type of animal is a natterjack?",
-    "correct_answer": "Toad",
-    "incorrect_answers": ["Bird", "Fish", "Insect"]
+    "question": "Newo made the void.",
+    "correct_answer": "True",
+    "incorrect_answers": ["False"]
   },
   {
     "category": "Animals",
     "type": "multiple",
     "difficulty": "easy",
-    "question": "What is the fastest  land animal?",
+    "question": "What is the fastest land animal?",
     "correct_answer": "Cheetah",
     "incorrect_answers": [
       "Lion",
