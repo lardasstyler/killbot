@@ -39,12 +39,24 @@
     "category": "General Knowledge",
     "type": "multiple",
     "difficulty": "easy",
-    "question": "Who is my daddy?",
-    "correct_answer": "Tyler",
+    "question": "What cube game does everyone in this server play?",
+    "correct_answer": "Geometry Dash",
     "incorrect_answers": [
-      "Moldova",
-      "Czech Republic",
-      "Denmark"
+      "Roblox",
+      "Minecraft",
+      "Discord"
+    ]
+  }, 
+      {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who made the void?",
+    "correct_answer": "Newo",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
     ]
   }
 ]
