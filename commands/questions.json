@@ -1,16 +1,16 @@
 [
   {
-    "category": "Animals",
+    "category": "animals",
     "type": "boolean",
     "difficulty": "easy",
-    "question": "The Axolotl is an amphibian that can spend its whole life in a larval state.",
-    "correct_answer": "True",
-    "incorrect_answers": ["False"]
+    "question": "What is the number one dog breed?",
+    "correct_answer": "Labrador Retriever",
+    "incorrect_answers": ["Cat"]
   },
   {
-    "category": "Animals",
+    "category": "server",
     "type": "multiple",
-    "difficulty": "hard",
+    "difficulty": "easy",
     "question": "What was the name of the Ethiopian Wolf before they knew it was related to wolves?",
     "correct_answer": "Simien Jackel",
     "incorrect_answers": ["Ethiopian Coyote", "Amharic Fox", "Canis Simiensis"]
