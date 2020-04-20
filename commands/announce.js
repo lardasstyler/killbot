@@ -11,10 +11,9 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1)
-    let announce = message.guild.channels.cache.get("532779225254723584");
-    let user = message.mentions.users.first();
+    let announce = message.mentions.channels.first();
     const women = message.content.slice(prefix.length).trim().split(/ +/g);
-    let ann = women.slice(1).join(' ') 
+    let ann = women.slice(2).join(' ') 
       let errorEmbed = new Discord.MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Error!")
