@@ -29,5 +29,25 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if(!mutetime) return message.channel.send(errorEmbed2)
+    
+    await(mutee.addRole(muterole.id));
+    let chatEmbed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setDescription(`***${mutee.tag} was muted!**`)
+    message.channel.send(chatEmbed)
+    let logs = message.guild.channels.cache.get("456272126756782101");
+    let embed = new Discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setAuthor(`Mute | ${mutee.tag}`, mutee.displayAvatarURL())
+      .addField("User:", `${mutee.tag}`, true)
+      .addField("Moderator:", `<@${message.author.id}>`, true)
+      .addField("Time:", ms(mutetime), true)
+      .setFooter(`USERS ID: ${mutee.id}`)
+      .setTimestamp();
+    logs.send(embed)
+    
+    setTimeout(function(){
+      mutee.removeRole(muterole)
+    }, ms(mutetime))
   }
 }
