@@ -5,6 +5,13 @@ module.exports = {
   name: "mute",
   aliases: [],
   run: async (bot, message, args) =>{
+          let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You do not have the permission to use this command!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1)
     let mutee = message.mentions.members.first();
     const women = message.content.slice(prefix.length).trim().split(/ +/g);
     let reason = women.slice(3).join(' ') 
@@ -22,13 +29,13 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if(!mutee) return message.channel.send(errorEmbed)
-    let errorEmbed1 = new Discord.MessageEmbed()
+    let errorEmbed4 = new Discord.MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Error!")
     .setDescription("I can't mute this user!")
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
-    if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed1)
+    if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed4)
     let muterole = message.guild.roles.cache.get("674390381856686099");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let mutetime = args[1];
