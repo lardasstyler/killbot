@@ -5,17 +5,8 @@ module.exports = {
   name: "mute",
   aliases: [],
   run: async (bot, message, args) =>{
-        const women = message.content.slice(prefix.length).trim().split(/ +/g);
     let mutee = message.mentions.members.first();
-    let mutetime = women.slice(2).join(' ')
-    let errorEmbed2 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("Please specify the amount of time you want to mute this user for!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!mutetime) return message.channel.send(errorEmbed2)
-
+    const women = message.content.slice(prefix.length).trim().split(/ +/g);
     let reason = women.slice(3).join(' ') 
     let errorEmbed7 = new Discord.MessageEmbed()
     .setColor("#FF0000")
@@ -40,13 +31,20 @@ module.exports = {
     if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed1)
     let muterole = message.guild.roles.cache.get("674390381856686099");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
+    let mutetime = args[1];
+    let errorEmbed2 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("Please specify the amount of time you want to mute this user for!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(!mutetime) return message.channel.send(errorEmbed2)
     
     await(mutee.roles.add(muterole.id));
     await(mutee.roles.remove(verifiedrole.id))
-    await(message.delete())
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setDescription(`***${mutee.user.tag} is muted., ${reason}***`)
+    .setDescription(`***${mutee.user.tag} was muted., ${reason}***`)
     message.channel.send(chatEmbed)
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()

@@ -62,6 +62,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 bot.on("message", async message => {
   if(!message.guild) return;
+
   if (message.content.toLowerCase().includes("nigger")) {
     if (message.author.bot) return;
     message.delete();
