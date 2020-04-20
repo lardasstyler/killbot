@@ -1,4 +1,5 @@
 const http = require("http");
+var schedule = require('node-schedule');
 const express = require("express");
 const app = express();
 app.use(express.static("public"));
@@ -58,6 +59,10 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
 });
+var j = schedule.scheduleJob('0 30 * * * *', function(){
+   let commandFile = require("./commands/Chat Game/chatgame.js");
+       commandFile.run(bot);
+ })
 
 
 bot.on("message", async message => {
