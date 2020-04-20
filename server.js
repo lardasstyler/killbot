@@ -59,19 +59,14 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
 });
-var j = schedule.scheduleJob('0 30 * * * *', function(){
-   let commandFile = require("./commands/chatgame.js");
+
+setInterval(() =>{
+let commandFile = require("./commands/chatgame.js");
        commandFile.run(bot);
- })
+//}, 1000)
 
 
 bot.on("message", async message => {
-  if (message.author.id === '457182175075500053') return;
-  if (message.guild.id === '290987848302067712') {
-    message.delete()
-  }
-  if(!message.guild) return;
-
   if (message.content.toLowerCase().includes("nigger")) {
     if (message.author.bot) return;
     message.delete();
@@ -343,7 +338,6 @@ bot.on("message", async message => {
       .setFooter(`ID: ${message.author.id}`)
       .setTimestamp();
     logs.send(embed);
-  }
   if (message.content.toLowerCase().includes("clit")) {
     if(!message.guild) return;
     if (message.author.bot) return;
