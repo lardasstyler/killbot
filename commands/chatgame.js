@@ -18,7 +18,7 @@ let game = new Discord.MessageEmbed().setTitle('A wild chat game appeared!');
 if (item.type === 'boolean') game.setDescription(`TRUE OR FALSE: ${item.question}`).setFooter(`If you get the answer in the next 5 minutes, you get 250 coins! | Difficulty: ${item.difficulty}`).setColor('RANDOM');
 else game.setDescription(`${item.question}`).setFooter(`If you get the answer in the next 5 minutes, you get 250 coins! | Difficulty: ${item.difficulty}`).setColor('RANDOM')
     bot.channels.cache.get('569682953148432394').send(game).then((lastEmbed) => {
- let collector = lastEmbed.channel.createMessageCollector(filter, { max: 1, time: 0, errors: ['time'] })
+ let collector = lastEmbed.channel.createMessageCollector(filter, { max: 1, time: 280000, errors: ['time'] })
 		collector.on('collect', collected => {
 bot.channels.cache.get('569682953148432394').send(`${collected.author} got the correct answer!`)
   })
