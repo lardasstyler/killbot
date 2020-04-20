@@ -30,7 +30,7 @@ module.exports = {
     .setTimestamp()
     if(!mutetime) return message.channel.send(errorEmbed2)
     
-    await(mutee.addRole(muterole.id));
+    await(mutee.roles.add(muterole.id));
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setDescription(`***${mutee.tag} was muted!**`)
