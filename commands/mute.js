@@ -21,6 +21,7 @@ module.exports = {
     .setTimestamp()
     if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed1)
     let muterole = message.guild.roles.cache.get("674390381856686099");
+    let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let mutetime = args[1];
     let errorEmbed2 = new Discord.MessageEmbed()
     .setColor("#FF0000")
@@ -31,6 +32,7 @@ module.exports = {
     if(!mutetime) return message.channel.send(errorEmbed2)
     
     await(mutee.roles.add(muterole.id));
+    await(mutee.roles.remove(verifiedrole.id))
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setDescription(`**${mutee.user.tag} was muted!**`)
@@ -48,6 +50,7 @@ module.exports = {
     
     setTimeout(function(){
       mutee.roles.remove(muterole.id)
+      mutee.roles.add(verifiedrole.id)
     }, ms(mutetime))
   }
 }
