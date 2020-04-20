@@ -12,7 +12,7 @@
     "type": "multiple",
     "difficulty": "easy",
     "question": "Who is the main coder of the server?",
-    "correct_answer": ["Ty", "Tyler"],
+    "correct_answer": "Tyler",
     "incorrect_answers": ["Ethiopian Coyote", "Amharic Fox", "Canis Simiensis"]
   },
   {

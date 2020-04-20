@@ -6,8 +6,9 @@ module.exports = {
   name: "cg",
   run: (bot, message, args) => {
     if (message) {
-    if (!message.author.id.includes('457182175075500053')) {
+    if (!message.author.id.includes('498495003769700352')) {
     if (!message.author.id.includes('456641711486009355')) return message.channel.send('Error: Missing permissions')
+
     }
     }
 const quiz = require('./questions.json');
