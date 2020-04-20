@@ -33,21 +33,21 @@ module.exports = {
     await(mutee.roles.add(muterole.id));
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setDescription(`***${mutee.tag} was muted!**`)
+    .setDescription(`**${mutee.user.tag} was muted!**`)
     message.channel.send(chatEmbed)
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
       .setColor("RANDOM")
-      .setAuthor(`Mute | ${mutee.tag}`, mutee.displayAvatarURL())
-      .addField("User:", `${mutee.tag}`, true)
+      .setAuthor(`Mute | ${mutee.user.tag}`, mutee.user.displayAvatarURL())
+      .addField("User:", `${mutee.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
-      .addField("Time:", ms(mutetime), true)
+      .addField("Time:", `${ms(mutetime)} milisecs`, true)
       .setFooter(`USERS ID: ${mutee.id}`)
       .setTimestamp();
     logs.send(embed)
     
     setTimeout(function(){
-      mutee.removeRole(muterole)
+      mutee.roles.remove(muterole.id)
     }, ms(mutetime))
   }
 }
