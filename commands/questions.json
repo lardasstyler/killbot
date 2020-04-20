@@ -11,17 +11,17 @@
     "category": "server",
     "type": "multiple",
     "difficulty": "easy",
-    "question": "What was the name of the Ethiopian Wolf before they knew it was related to wolves?",
-    "correct_answer": "Simien Jackel",
+    "question": "Who is the main coder of the server?",
+    "correct_answer": ["Ty", "Tyler"],
     "incorrect_answers": ["Ethiopian Coyote", "Amharic Fox", "Canis Simiensis"]
   },
   {
     "category": "Animals",
     "type": "multiple",
-    "difficulty": "medium",
-    "question": "A carnivorous animal eats flesh, what does a nucivorous animal eat?",
-    "correct_answer": "Nuts",
-    "incorrect_answers": ["Nothing", "Fruit", "Seaweed"]
+    "difficulty": "easy",
+    "question": "TRUE or FALSE: Dogs can eat chocolate.",
+    "correct_answer": "False",
+    "incorrect_answers": ["True"]
   },
   {
     "category": "Animals",
