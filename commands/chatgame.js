@@ -5,7 +5,7 @@ const fs = require('fs')
 module.exports = {
   name: "cg",
   run: (bot, message, args) => {
-    if (message) {
+    if (message) { message.delete()
     if (!message.author.id.includes('498495003769700352')) {
     if (!message.author.id.includes('457182175075500053')) return message.channel.send('Error: Missing permissions')
 
@@ -32,6 +32,7 @@ else game.setDescription(`${item.question}`).setFooter(`You have the next 5 minu
       } 
   })	
 });
+
 function listJson(jsonfile){ // List all json file /return json data
         let  data = fs.readFileSync(jsonfile);
             let json= JSON.parse(data);
