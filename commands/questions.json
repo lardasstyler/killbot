@@ -106,5 +106,17 @@
       "PigPig",
       "Raging"
     ]
+  },
+             {
+    "category": "General Knowledge",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "Discords alpha name was 'Chatcord'",
+    "correct_answer": "False",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
   }
 ]
