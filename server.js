@@ -67,8 +67,6 @@ var j = schedule.scheduleJob('0 30 * * * *', function(){
 
 
 bot.on("message", async message => {
-  let channel = message.guild.channels.cache.get("569682953148432394")
-  message.channel.startTyping()
     if (message.content.toLowerCase().includes("poll")) {
     if (message.channel.id !== "607042156368101437") return;
     message.react("👍");
