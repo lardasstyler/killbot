@@ -14,14 +14,6 @@ module.exports = {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1)
     let mutee = message.mentions.members.first();
     const women = message.content.slice(prefix.length).trim().split(/ +/g);
-    let reason = women.slice(3).join(' ') 
-    let errorEmbed7 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not specify a reason to mute this user therefore, nobody was muted!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!reason) return message.channel.send(errorEmbed7);
     let errorEmbed = new Discord.MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Error!")
@@ -51,7 +43,7 @@ module.exports = {
     await(mutee.roles.remove(verifiedrole.id))
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setDescription(`***${mutee.user.tag} was muted., ${reason}***`)
+    .setDescription(`***${mutee.user.tag} was muted.***`)
     message.channel.send(chatEmbed)
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
@@ -60,7 +52,6 @@ module.exports = {
       .addField("User:", `${mutee.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Time:", `${ms(mutetime)} milisecs`, true)
-      .addField("Reason:", reason, true)
       .setFooter(`USERS ID: ${mutee.id}`)
       .setTimestamp();
     logs.send(embed)
@@ -70,7 +61,6 @@ module.exports = {
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
    .addField("Time:", `${ms(mutetime)} milisecs`, true)
-    .addField("Reason:", `${reason}`, true)
     .setTimestamp()
     mutee.send(muteEmbed)
     
