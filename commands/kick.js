@@ -13,7 +13,6 @@ module.exports = {
       return message.channel.send(
         errorEmbed1
       );
-    message.delete();
     const user = message.mentions.members.first();
     let logs = message.guild.channels.cache.get("456272126756782101");
         let errorEmbed = new Discord.MessageEmbed()
@@ -23,6 +22,14 @@ module.exports = {
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if (!user) return message.channel.send(errorEmbed);
+        let errorEmbed4 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("I can't kick this user!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(user.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorEmbed4)
+     message.delete();
     await user.kick(), message.channel.send(`${user} was kicked!`);
     let embed = new Discord.MessageEmbed()
       .setColor("#E36947")

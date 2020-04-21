@@ -13,7 +13,6 @@ let errorEmbed1 = new Discord.MessageEmbed()
       return message.channel.send(
         errorEmbed1
       );
-    message.delete();
     const user1 = message.mentions.members.first();
     let logs = message.guild.channels.cache.get("456272126756782101");
     let errorEmbed = new Discord.MessageEmbed()
@@ -23,6 +22,14 @@ let errorEmbed1 = new Discord.MessageEmbed()
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if (!user1) return message.channel.send(errorEmbed);
+     let errorEmbed4 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("I can't ban this user!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if(user1.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorEmbed4)
+        message.delete();
     await user1.ban(), message.channel.send(`${user1} was banned!`);
     const embed = new Discord.MessageEmbed()
       .setColor("#E36947")
