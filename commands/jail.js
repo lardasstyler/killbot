@@ -35,7 +35,7 @@ module.exports = {
     .setDescription("I can't jail this user!")
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
-    if(mutee.hasPermission("ADMINSTRATOR")) return message.channel.send(errorEmbed4)
+    if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed4)
     let jailrole = message.guild.roles.cache.get("701986202550665237");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let mutetime = args[1];
@@ -51,7 +51,7 @@ module.exports = {
     await(mutee.roles.remove(verifiedrole.id))
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .setDescription(`***${mutee.user.tag} was muted., ${reason}***`)
+    .setDescription(`***${mutee.user.tag} was jailed., ${reason}***`)
     message.channel.send(chatEmbed)
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
