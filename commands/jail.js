@@ -64,15 +64,15 @@ module.exports = {
       .setFooter(`USERS ID: ${mutee.id}`)
       .setTimestamp();
     logs.send(embed)
-   let muteEmbed = new Discord.MessageEmbed()
-    .setTitle("⚠️ You were jailed! ⚠️")
+   let jailEmbed = new Discord.MessageEmbed()
+    .setTitle("⚠️ You were put in jail! ⚠️")
     .setColor("BLUE")
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
    .addField("Time:", `${ms(mutetime)} milisecs`, true)
     .addField("Reason:", `${reason}`, true)
     .setTimestamp()
-    mutee.send(muteEmbed)
+    mutee.send(jailEmbed)
     
     setTimeout(function(){
       mutee.roles.remove(jailrole.id)
