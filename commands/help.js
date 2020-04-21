@@ -4,11 +4,11 @@ module.exports = {
   aliases: "info",
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
-      let commandsCount = '16'
+      let commandsCount = '17'
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
-    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `report`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `say`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `announce`\n \n **✨ Misc**: `ping`")
+    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `report`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `say`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `jail`, `announce`\n \n **✨ Misc**: `ping`")
     .setFooter(`${message.guild.me.displayName} | Total Commands: ${commandsCount}`, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed)
@@ -18,7 +18,7 @@ module.exports = {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("AutoBots Version", bot.user.displayAvatarURL()) 
-    .setDescription("**✅ Version**: 2.0\n \n**⬆️ Last Update**: A mute command and say command!")
+    .setDescription("**✅ Version**: 2.0.1\n \n**⬆️ Last Update**: Jail command!")
     .setFooter(`${message.guild.me.displayName}'s Version | v2.0`)
     .setTimestamp()
     message.channel.send(embed)
