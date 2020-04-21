@@ -2,8 +2,8 @@
   {
     "category": "General Knowledge",
     "type": "multiple",
-    "difficulty": "easy",
-    "question": "What is the most hated on app in the gamer community?",
+    "difficulty": "medium",
+    "question": "What is the most hated app in the gamer community?",
     "correct_answer": "TikTok",
     "incorrect_answers": [
       "Moldova",
@@ -53,6 +53,42 @@
     "difficulty": "easy",
     "question": "Who made the void?",
     "correct_answer": "Newo",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  },
+        {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who made RoboTop?",
+    "correct_answer": "GD Colon",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  },
+          {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What app am I (AutoBot) hosted on?",
+    "correct_answer": "Glitch",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  }, 
+            {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What app am I (AutoBot) hosted on?",
+    "correct_answer": "Glitch",
     "incorrect_answers": [
       "Tyler",
       "PigPig",

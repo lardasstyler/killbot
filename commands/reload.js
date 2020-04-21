@@ -7,7 +7,7 @@ module.exports = {
          let errorEmbed1 = new Discord.MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Error!")
-    .setDescription(`The reload was unsuccessfull for \`${args[0].toLowerCase()}\`!`)
+    .setDescription(`The reload was unsuccessful for \`${args[0].toLowerCase()}\`!`)
     .setFooter("Check your message you idiot!")
     .setTimestamp()
      let errorEmbed = new Discord.MessageEmbed()
