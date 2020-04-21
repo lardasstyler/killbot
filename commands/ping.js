@@ -6,7 +6,7 @@ module.exports = {
     let embed = new Discord.MessageEmbed()
     .setTitle("Bot Ping")
     .setColor("RANDOM")
-    .setDescription(":ping_pong: Pong! " + Math.round(bot.ws.ping) + "ms!")
+    .setDescription(":ping_pong: Pong! " + ``${Math.round(bot.ws.ping)}` + "ms!")
     .setFooter(`Requested by ${message.author.tag}`)
     .setTimestamp()
     message.channel.send(embed)

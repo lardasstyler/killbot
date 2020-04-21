@@ -85,10 +85,22 @@
   }, 
             {
     "category": "General Knowledge",
-    "type": "multiple",
+    "type": "boolean",
     "difficulty": "easy",
-    "question": "What app am I (AutoBot) hosted on?",
-    "correct_answer": "Glitch",
+    "question": "This server was founded in 2016.",
+    "correct_answer": "False",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  },
+              {
+    "category": "General Knowledge",
+    "type": "boolean",
+    "difficulty": "easy",
+    "question": "I am the best bot in the guild.",
+    "correct_answer": "True",
     "incorrect_answers": [
       "Tyler",
       "PigPig",

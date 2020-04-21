@@ -8,7 +8,7 @@ module.exports = {
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
-    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `report`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `say`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `jail`, `announce`\n \n **✨ Misc**: `ping`")
+    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `report`, `ping`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `say`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `jail`, `announce`")
     .setFooter(`${message.guild.me.displayName} | Total Commands: ${commandsCount}`, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed)
