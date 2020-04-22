@@ -3,7 +3,11 @@ module.exports = {
   name: "kick",
   aliases: [],
   run: async (bot, message, args) =>{
-    let user = message.mentions.members.first();
     if (!message.member.hasPermission('KICK_MEMBERS')) return;
+    let user = message.mentions.members.first();
+    let channel = message.guild.channels.cache.get("456272126756782101");
+    let errorEmbed = new Discord.MessageEmbed()
+    .setDescription("")
+    if (user.hasPermission('MANAGE_MESSAGES')) return message.channel.send()
   }
 }
