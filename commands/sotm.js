@@ -5,7 +5,7 @@ module.exports = {
   run: async (bot, message, args) =>{
     const embed = new Discord.MessageEmbed()
     .setColor('RANDOM')
-    .setDescription("<@285913506212085762> - Nongo")
+    .setDescription("If you ask for members to vote for you, you will be disqualified!")
     message.channel.send(embed)
   }
 }
