@@ -59,10 +59,14 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
 });
-setInterval(() =>{
-let commandFile = require("./commands/chatgame.js");
+var j = schedule.scheduleJob('0 15 * * * *', function(){
+   let commandFile = require("./commands/chatgame.js");
        commandFile.run(bot);
-//}, 1000)
+ })
+var j = schedule.scheduleJob('0 0 * * * *', function(){
+   let commandFile = require("./commands/chatgame.js");
+       commandFile.run(bot);
+ })
 
 
 
