@@ -166,5 +166,17 @@
       "PigPig",
       "Raging"
     ]
+  },
+                       {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Who is the oldest rapper in the world?",
+    "correct_answer": "Ice-T",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
   }
 ]
