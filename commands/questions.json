@@ -74,7 +74,7 @@
           {
     "category": "General Knowledge",
     "type": "multiple",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "question": "What app am I (AutoBot) hosted on?",
     "correct_answer": "Glitch",
     "incorrect_answers": [
@@ -99,7 +99,7 @@
     "category": "General Knowledge",
     "type": "boolean",
     "difficulty": "easy",
-    "question": "I am the best bot in the guild.",
+    "question": "I am the best bot in the server.",
     "correct_answer": "True",
     "incorrect_answers": [
       "Tyler",
@@ -110,9 +110,33 @@
              {
     "category": "General Knowledge",
     "type": "boolean",
-    "difficulty": "easy",
+    "difficulty": "medium",
     "question": "Discords alpha name was 'Chatcord'",
     "correct_answer": "False",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  },
+               {
+    "category": "General Knowledge",
+    "type": "boolean",
+    "difficulty": "medium",
+    "question": "All the underaged people were banned and it took months for one hero to convince the owner to unban them.",
+    "correct_answer": "True",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  },
+                 {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What language am I coded in?",
+    "correct_answer": "Javascript",
     "incorrect_answers": [
       "Tyler",
       "PigPig",
