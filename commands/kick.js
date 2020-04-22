@@ -13,7 +13,7 @@ module.exports = {
     if (user.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed)
     let kickEmbed = new Discord.MessageEmbed()
     .setDescription(`**${user.user.tag} was kicked***`)
-    //await user.kick({reason: reason}), message.channel.send(kickEmbed)
+    await user.kick({reason: reason}), message.channel.send(kickEmbed)
     console.log(reason)
   }
 }
