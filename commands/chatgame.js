@@ -8,6 +8,7 @@ module.exports = {
     if (message) { message.delete()
     if (!message.author.id.includes('498495003769700352')) {
     if (!message.author.id.includes('457182175075500053')) return message.channel.send('Error: Missing permissions')
+    if (!message.author.id.includes('628761679672508461')) return message.channel.send('Error: Missing permissions')
 
     }
     }
