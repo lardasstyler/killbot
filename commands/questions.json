@@ -226,5 +226,17 @@
       "1947",
       "1950"
     ]
+  },
+      {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+      "question": "Find the missing part: ...... Belfort",
+    "correct_answer": "Jordan",
+    "incorrect_answers": [
+      "Drew Barrymore",
+      "PigPig",
+      "Raging"
+    ]
   }
 ]
