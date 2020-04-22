@@ -63,6 +63,10 @@ var j = schedule.scheduleJob('0 30 * * * *', function(){
    let commandFile = require("./commands/chatgame.js");
        commandFile.run(bot);
  })
+var j = schedule.scheduleJob('0 0 * * * *', function(){
+   let commandFile = require("./commands/chatgame.js");
+       commandFile.run(bot);
+ })
 
 
 
