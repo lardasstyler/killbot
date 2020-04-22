@@ -4,7 +4,7 @@ module.exports = {
   aliases: [],
   run: async (bot, message, args) =>{
     if (!message.member.hasPermission('KICK_MEMBERS')) return;
-    let user = message.mentions.members.first() || message.guild.members.get(args[0])
+    let user = message.mentions.members.first();
     let channel = message.guild.channels.cache.get("456272126756782101");
     let reason = args.slice(1).join(" ")
     let errorEmbed = new Discord.MessageEmbed()
@@ -13,6 +13,7 @@ module.exports = {
     if (user.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed)
     let kickEmbed = new Discord.MessageEmbed()
     .setDescription(`**${user.user.tag} was kicked***`)
-    await user.kick({reason: reason}), message.channel.send(kickEmbed)
+    //await user.kick({reason: reason}), message.channel.send(kickEmbed)
+    console.log(reason)
   }
 }
