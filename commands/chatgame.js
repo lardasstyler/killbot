@@ -5,11 +5,14 @@ const fs = require('fs')
 module.exports = {
   name: "cg",
   run: (bot, message, args) => {
-    if (message) { message.delete()
-    if (!message.author.id.includes('498495003769700352')) {
-    if (!message.author.id.includes('457182175075500053')) return message.channel.send('Error: Missing permissions')
-
-    }
+                let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#FF0000")
+    .setTitle("Error!")
+    .setDescription("You do not have the permission to use this command!")
+    .setFooter("Having problems? Contact ty#6653!")
+    .setTimestamp()
+    if (message) { 
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1)
     }
 const quiz = require('./questions.json');
 const item = quiz[Math.floor(Math.random() * quiz.length)];
@@ -32,7 +35,7 @@ else game.setDescription(`${item.question}`).setFooter(`You have the next 5 minu
       } 
   })	
 });
-
+message.delete()
 function listJson(jsonfile){ // List all json file /return json data
         let  data = fs.readFileSync(jsonfile);
             let json= JSON.parse(data);

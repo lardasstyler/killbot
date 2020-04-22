@@ -196,7 +196,7 @@
     "type": "multiple",
     "difficulty": "medium",
       "question": "Who is the richest person in the world?",
-    "correct_answer": "PigPig",
+    "correct_answer": "Jeff Bezos",
     "incorrect_answers": [
       "Tyler",
       "PigPig",
@@ -208,7 +208,7 @@
     "type": "multiple",
     "difficulty": "easy",
       "question": "Who was the first person on the moon?",
-    "correct_answer": "Hitler",
+    "correct_answer": "Neil Armstrong",
     "incorrect_answers": [
       "Drew Barrymore",
       "PigPig",
@@ -243,7 +243,7 @@
     "type": "boolean",
     "difficulty": "easy",
       "question": "ur mom",
-    "correct_answer": "ewbhfgivfuhufhhffuofg",
+    "correct_answer": "True",
     "incorrect_answers": [
       "Drew Barrymore",
       "PigPig",

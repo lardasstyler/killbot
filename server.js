@@ -62,7 +62,8 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
 setInterval(() =>{
 let commandFile = require("./commands/chatgame.js");
        commandFile.run(bot);
-//}, 900000)
+
+}, 900000)
 
 
 
