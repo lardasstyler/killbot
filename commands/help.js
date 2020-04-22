@@ -4,11 +4,11 @@ module.exports = {
   aliases: "info",
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
-      let commandsCount = '17'
+      let commandsCount = '18'
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
-    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `report`, `ping`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `say`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `jail`, `announce`")
+    .setDescription("**❓ Helpful**: `coronavirus`, `createticket`, `report`, `ping`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `say`\n \n **👮 Staff**: `ban`, `dm`, `kick`, `purge`, `warn`, `jokewarn`, `mute`, `jail`, `announce`")
     .setFooter(`${message.guild.me.displayName} | Total Commands: ${commandsCount}`, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed)
