@@ -249,5 +249,17 @@
       "PigPig",
       "Raging"
     ]
+  },
+  {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+      "question": "What year was Discords initial release?",
+    "correct_answer": "2015",
+    "incorrect_answers": [
+      "Drew Barrymore",
+      "PigPig",
+      "Raging"
+    ]
   }
 ]
