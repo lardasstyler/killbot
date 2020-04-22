@@ -148,7 +148,7 @@
     "type": "multiple",
     "difficulty": "easy",
     "question": "What is the most misunderstood dog breed?",
-    "correct_answer": "Pit Bulls",
+    "correct_answer": "Walter",
     "incorrect_answers": [
       "Tyler",
       "PigPig",
@@ -233,6 +233,17 @@
     "difficulty": "easy",
       "question": "Find the missing part: ...... Belfort",
     "correct_answer": "Jordan",
+    "incorrect_answers": [
+      "Drew Barrymore",
+      "PigPig",
+      "Raging"
+    ]
+  },      {
+    "category": "General Knowledge",
+    "type": "boolean",
+    "difficulty": "easy",
+      "question": "ur mom",
+    "correct_answer": "ewbhfgivfuhufhhffuofg",
     "incorrect_answers": [
       "Drew Barrymore",
       "PigPig",
