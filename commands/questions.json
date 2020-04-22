@@ -142,5 +142,29 @@
       "PigPig",
       "Raging"
     ]
+  },
+                   {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the most misunderstood dog breed?",
+    "correct_answer": "Pit Bulls",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
+  },
+                     {
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What famous singer passed away on 12/8/2019?",
+    "correct_answer": "Juice WRLD",
+    "incorrect_answers": [
+      "Tyler",
+      "PigPig",
+      "Raging"
+    ]
   }
 ]
