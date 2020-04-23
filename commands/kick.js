@@ -12,9 +12,8 @@ module.exports = {
     .setDescription("<:exx:702650687145902103> The user you chose is a staff member, I can't kick them!")
     if (user.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed)
     let kickEmbed = new Discord.MessageEmbed()
-    .setDescription(`**${user.user.tag} was kicked***`)
-    let r = reason.toString()
-    await user.kick([r]), message.channel.send(kickEmbed)
+    .setDescription(`***${user.user.tag} was kicked***`)
+    await user.kick(reason), message.channel.send(kickEmbed)
     console.log(reason)
   }
 }
