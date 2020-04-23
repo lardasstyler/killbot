@@ -10,7 +10,7 @@ module.exports = {
     .setDescription("You don't have a second argument!")
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
-    if(!args[1]) return message.channel.send(errorEmbed1)
+    if(!args[0]) return message.channel.send(errorEmbed1)
     var choices = ["Yes", "No", "Maybe", "Probably", "Probably not"];
 
     var output = choices[Math.floor(Math.random() * choices.length)];

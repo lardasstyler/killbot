@@ -43,8 +43,8 @@ bot.on('message', (message) => {
 
 bot.on("message", async message => {
   if (message.channel.id === '569682953148432394') {
-    if (Mes)
-    //message.channel.send("<@515620004784373779>")
+    if (message.author.bot) return;
+    message.channel.send("<@625500466335186967>")
   }
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;

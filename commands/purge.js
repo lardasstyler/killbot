@@ -8,12 +8,13 @@ module.exports = {
         "You do not have the permission to use that command!"
       );
     
-    const deleteCount = parseInt(args[2], 10);
+    const deleteCount = parseInt(args[0], 10);
     if (!deleteCount || deleteCount < 2 || deleteCount > 100)
       
       return message.reply(
         "Please provide a number between 2 and 100 for messages to purge"
       );
+   
     const fetched = await message.channel.messages.fetch({
       limit: deleteCount
     });
