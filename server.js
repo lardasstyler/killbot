@@ -42,10 +42,7 @@ bot.on('message', (message) => {
 })
 
 bot.on("message", async message => {
-  if (message.channel.id === '569682953148432394') {
-    if (message.author.bot) return;
-    message.channel.send("<@622649403693465652>")
-  }
+
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
   if (!message.guild) {
