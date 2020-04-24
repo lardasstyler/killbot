@@ -9,7 +9,7 @@ module.exports = {
     
     
     let user = message.mentions.users.first();
-        let reason = args.slice(2).join(' ') 
+        let reason = args.slice(1).join(' ') 
     
     
     //Command
@@ -30,7 +30,7 @@ module.exports = {
     
     if(!reason) return message.channel.send(noReason);
 
-   message.channel.send(`\`${user.user.tag}\` was warned!`)
+   message.channel.send(`\`${user.tag}\` was warned!`)
     
     let warnEmbed1 = new Discord.MessageEmbed()
     .setTitle("⚠️ You were warned! ⚠️")

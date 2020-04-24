@@ -4,7 +4,7 @@ module.exports = {
   aliases: "info",
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
-      let commandsCount = '18'
+      let commandsCount = '20'
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
@@ -18,8 +18,8 @@ module.exports = {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("AutoBots Version", bot.user.displayAvatarURL()) 
-    .setDescription("**✅ Version**: 2.0.5\n \n**⬆️ Last Update**: Unjail command, Unmute command, Tempjail command, Tempmute command, less")
-    .setFooter(`${message.guild.me.displayName}'s Version | v2.0`)
+    .setDescription("**✅ Version**: 2.0.7\n \n**⬆️ Last Update**: Unjail command, Unmute command, Tempjail command, Tempmute command, less messier code and more benefits for staff members!")
+    .setFooter(`${message.guild.me.displayName}'s Version | v2.0.7`)
     .setTimestamp()
     message.channel.send(embed)
     }
