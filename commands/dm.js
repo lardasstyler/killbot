@@ -10,7 +10,9 @@ module.exports = {
     .setDescription("You do not have the permission to use this command!")
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
+        if (!message.member.id.includes("501824125124214806")) return message.channel.send(noEmbed)
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(noEmbed)
+
     let user = message.mentions.members.first();
     let nouserEmbed = new Discord.MessageEmbed()
     .setColor("#FF0000")
