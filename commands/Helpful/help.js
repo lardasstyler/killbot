@@ -4,7 +4,7 @@ module.exports = {
   aliases: "info",
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
-      let commandsCount = '20'
+      let commandsCount = '21'
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
