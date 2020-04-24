@@ -14,6 +14,6 @@ module.exports = {
     var choices = ["Yes", "No", "Maybe", "Probably", "Probably not"];
 
     var output = choices[Math.floor(Math.random() * choices.length)];
-    message.channel.send(`<@${message.author.id}> => ${output}`);
+    message.channel.send(`<@${message.author.id}> => ` + `\`${output}\``);
   }
 }

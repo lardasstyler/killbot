@@ -7,5 +7,6 @@ module.exports = {
     let adminrole = message.guild.roles.cache.get("421440567084449803");
     let user = message.mentions.members.first();
     await (user.roles.remove(adminrole.id))
+    message.channel.send(`\`${user.user.tag}\`` + " was unadmined!")
   }
 }
