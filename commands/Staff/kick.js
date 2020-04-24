@@ -1,35 +1,37 @@
 const Discord = require('discord.js');
 module.exports = {
-  name: ``,
-  aliases: [`hardban`, `permban`],
+  name: `kick`,
+  aliases: [`boot`, `k`],
   run: async (bot, message, args) => {
-let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You do not have the permission to use this command!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if (!message.member.hasPermission("KICK_MEMBERS"))
-      return message.channel.send(
-        errorEmbed1
-      );
-    const user1 = message.mentions.members.first();
+    if (!message.member.hasPermission("KICK_MEMBERS")) return;
+    //Defining Stuff
+    
+    
+    const user = message.mentions.members.first();
     let logs = message.guild.channels.cache.get("456272126756782101");
-    let errorEmbed = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not state a user to kick therefore, nobody was kicked!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if (!user1) return message.channel.send(errorEmbed);
-        message.delete();
-    await user1.ban(), message.channel.send(`${user1} was kicked!`);
+    
+    
+    //Command
+    
+    let kickEmbed = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Kicking a User**")
+    .setDescription("To kick a user, do `-kick [user]`\n \n You can only ping the user if you want to kick them.")
+    if (!user) return message.channel.send(kickEmbed);
+    
+    
+    message.delete();
+    
+    
+    await user.ban(), message.channel.send(`\`${user.user.tag}\` was kicked!`);
+    
+    
     const embed = new Discord.MessageEmbed()
-      .setColor("#E36947")
+      .setColor("#2F3136")
       .setTitle("Kicked User")
-      .addField("User:", `<@${user1.id}>`, true)
-      .addField("Mod:", `<@${message.author.id}>`, true)
-      .setFooter(`USERS ID: ${user1.id}`)
+      .addField("User:", `<@${user.id}>`, true)
+      .addField("Moderator:", `<@${message.author.id}>`, true)
+      .setFooter(`ID: ${user.id}`)
       .setTimestamp();
     logs.send(embed);
   }
