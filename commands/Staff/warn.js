@@ -4,45 +4,51 @@ module.exports = {
   name: "warn",
   aliases: "alert",
   run: async (bot, message, args) =>{
-            let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You do not have the permission to use this command!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1);
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
+    //Defining
+    
+    
     let user = message.mentions.users.first();
-        let errorEmbed = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not state a user to warn therefore, nobody was warned!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!user) return message.channel.send(errorEmbed)
-    const women = message.content.slice(prefix.length).trim().split(/ +/g);
-    let reason = women.slice(2).join(' ') 
-    if(!reason) return message.channel.send("Please state a reason to warn this user!");
-    let chatEmbed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setDescription(`***${user.tag} was warned., ${reason}***`)
-    message.channel.send(chatEmbed)
+        let reason = args.slice(2).join(' ') 
+    
+    
+    //Command
     let warnEmbed = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Warning a User**")
+    .setDescription("To warn a user, do `-warn [user] (reason)`\n \n You can only ping the user if you want to warn them.")
+    if(!user) return message.channel.send(warnEmbed)
+    
+    
+    
+
+
+      let noReason = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Command: Warn**")
+    .setDescription("Please state a reason to warn this user.")
+    
+    if(!reason) return message.channel.send(noReason);
+
+   message.channel.send(`\`${user.user.tag}\` was warned!`)
+    
+    let warnEmbed1 = new Discord.MessageEmbed()
     .setTitle("⚠️ You were warned! ⚠️")
-    .setColor("BLUE")
+    .setColor("#2F3136")
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
     .addField("Reason:", `${reason}`, true)
     .setTimestamp()
-    user.send(warnEmbed)
+    user.send(warnEmbed1)
     message.delete(); 
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
+      .setColor("#2F3136")
       .setAuthor(`Warn | ${user.tag}`, user.displayAvatarURL())
       .addField("User:", `${user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Reason:", `${reason}`, true)
-      .setFooter(`USERS ID: ${user.id}`)
+      .setFooter(`ID: ${user.id}`)
       .setTimestamp();
     logs.send(embed)
   }
