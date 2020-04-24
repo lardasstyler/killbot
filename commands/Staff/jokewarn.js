@@ -4,23 +4,21 @@ module.exports = {
   name: "jokewarn",
   aliases: "alert",
   run: async (bot, message, args) =>{
-            let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You do not have the permission to use this command!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1);
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return; 
+    
+    
     let user = message.mentions.users.first();
-        let errorEmbed = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not state a user to warn therefore, nobody was warned!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!user) return message.channel.send(errorEmbed)
-    const women = message.content.slice(prefix.length).trim().split(/ +/g);
-    let reason = women.slice(2).join(' ') 
+    
+    
+    
+    let errorEmbed = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Jokewarning a User**")
+    .setDescription("To jokewarn a user, do `-jokewarn [user] (reason)`\n \n You can only ping the user if you want to jokewarn them.")
+    if (!user) return message.channel.send(errorEmbed);
+
+
+    let reason = args.slice(2).join(' ') 
     if(!reason) return message.channel.send("Please state a reason to warn this user!");
     let chatEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
