@@ -22,13 +22,6 @@ let errorEmbed1 = new Discord.MessageEmbed()
     .setFooter("Having problems? Contact ty#6653!")
     .setTimestamp()
     if (!user1) return message.channel.send(errorEmbed);
-     let errorEmbed4 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("I can't ban this user!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(user1.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorEmbed4)
         message.delete();
     await user1.ban(), message.channel.send(`${user1} was banned!`);
     const embed = new Discord.MessageEmbed()
