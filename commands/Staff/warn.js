@@ -30,7 +30,7 @@ module.exports = {
     
     if(!reason) return message.channel.send(noReason);
 
-   message.channel.send(`\`${user.tag}\` was warned!`)
+   message.channel.send(`\`${user.tag}\` was warned for: \`${reason}\``)
     
     let warnEmbed1 = new Discord.MessageEmbed()
     .setTitle("⚠️ You were warned! ⚠️")
