@@ -6,7 +6,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setAuthor("MOTM", message.guild.iconURL())
-    .setDescription("Ends in 1 hour.")
+    .setDescription("Ends in")
     .setFooter('PigPig and Raging’s Discord Server | MOTM')
     message.channel.send(embed)
   }

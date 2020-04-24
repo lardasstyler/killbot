@@ -27,7 +27,7 @@ module.exports = {
     .setDescription(`***${user.tag} was warned., ${reason}***`)
     message.channel.send(chatEmbed)
     let warnEmbed = new Discord.MessageEmbed()
-    .setTitle("⚠️ You were warned! ⚠️")
+    .setTitle("⚠️ You were jokewarned! ⚠️")
     .setColor("BLUE")
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
