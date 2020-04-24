@@ -19,14 +19,19 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
 
 
     let reason = args.slice(2).join(' ') 
-    if(!reason) return message.channel.send("Please state a reason to warn this user!");
-    let chatEmbed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setDescription(`***${user.tag} was warned., ${reason}***`)
-    message.channel.send(chatEmbed)
+    let noReason = new Discord.MessageEmbed()
+        .setColor("#2F3136")
+    .setTitle("**Command: Jokewarn**")
+    .setDescription("Please state a reason to jokewarn this user. ")
+    
+  if(!reason) return message.channel.send(noReason);
+    
+    message.channel.send(`\`${user.user.tag}\` was jokewarned!`)
+   
+    
     let warnEmbed = new Discord.MessageEmbed()
     .setTitle("⚠️ You were jokewarned! ⚠️")
-    .setColor("BLUE")
+    .setColor("#2F3136")
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
     .addField("Reason:", `${reason}`, true)
