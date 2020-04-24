@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
-const prefix = '-';
-const ms = require('ms');
 module.exports = {
-  name: "tempjail",
+  name: "jail",
   aliases: [],
   run: async (bot, message, args) =>{
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
+      if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
     
     //Defining Stuff
     
@@ -13,7 +11,6 @@ module.exports = {
     let user = message.mentions.members.first();
     let jailrole = message.guild.roles.cache.get("701986202550665237");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
-    let jailtime = args[1];
     let logs = message.guild.channels.cache.get("456272126756782101");
     
     //Command
@@ -21,8 +18,8 @@ module.exports = {
     
     let jailEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
-    .setTitle("**Tempjailing a User**")
-    .setDescription("To tempjail a user, do `-tempjail [user] [time]`\n \n You can only ping the user if you want to tempjail them.")
+    .setTitle("**Jailing a User**")
+    .setDescription("To jail a user, do `-jail [user]`\n \n You can only ping the user if you want to jail them.")
     
     
     if (!user) return message.channel.send(jailEmbed);
@@ -30,17 +27,12 @@ module.exports = {
     
     let errorEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
-    .setTitle("**Command: Tempjail**")
-    .setDescription("I can't tempjail this user. Please select a user that is not staff.")
+    .setTitle("**Command: Jail**")
+    .setDescription("I can't jail this user. Please select a user that is not staff.")
     if(user.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorEmbed)
     
     
 
-    let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#2F3136")
-    .setTitle("**Command: Tempjail**")
-    .setDescription("Please specify the amount of time you want to tempjail this user for. If it is forever, do `-jail [user]`.")
-    if(!jailtime) return message.channel.send(errorEmbed1)
     
     await(user.roles.add(jailrole.id));
     await(user.roles.remove(verifiedrole.id)), message.channel.send(`\`${user.user.tag}\` was jailed!`)
@@ -52,7 +44,7 @@ module.exports = {
       .setAuthor(`Tempjail | ${user.user.tag}`, user.user.displayAvatarURL())
       .addField("User:", `${user.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
-      .addField("Time:", `${ms(jailtime)} milisecs`, true)
+      .addField("Time:", `Forever`, true)
       .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
     logs.send(embed)
@@ -61,13 +53,8 @@ module.exports = {
     .setColor("#2F3136")
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
-   .addField("Time:", `${ms(jailtime)} milisecs`, true)
+   .addField("Time:", `Forever`, true)
     .setTimestamp()
     user.send(jailEmbed1)
-    
-    setTimeout(function(){
-      user.roles.remove(jailrole.id)
-      user.roles.add(verifiedrole.id)
-    }, ms(jailtime))
-  }
+}
 }

@@ -1,72 +1,73 @@
 const Discord = require('discord.js');
-const ms = require('ms');
 const prefix = '-';
+const ms = require('ms');
 module.exports = {
-  name: "mute",
+  name: "tempmute",
   aliases: [],
   run: async (bot, message, args) =>{
-          let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You do not have the permission to use this command!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1)
-    let mutee = message.mentions.members.first();
-    const women = message.content.slice(prefix.length).trim().split(/ +/g);
-    let errorEmbed = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You did not specify a user to mute therefore, nobody was muted!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!mutee) return message.channel.send(errorEmbed)
-    let errorEmbed4 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("I can't mute this user!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(mutee.hasPermission("ADMINISTRATOR")) return message.channel.send(errorEmbed4)
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return;
+    
+    //Defining Stuff
+    
+    
+    let user = message.mentions.members.first();
     let muterole = message.guild.roles.cache.get("674390381856686099");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let mutetime = args[1];
-    let errorEmbed2 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("Please specify the amount of time you want to mute this user for!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
-    if(!mutetime) return message.channel.send(errorEmbed2)
-    
-    await(mutee.roles.add(muterole.id));
-    await(mutee.roles.remove(verifiedrole.id))
-    let chatEmbed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setDescription(`***${mutee.user.tag} was muted.***`)
-    message.channel.send(chatEmbed)
     let logs = message.guild.channels.cache.get("456272126756782101");
+    
+    //Command
+    
+    
+    let jailEmbed = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Tempmuting a User**")
+    .setDescription("To tempmute a user, do `-tempmute [user] [time]`\n \n You can only ping the user if you want to tempmute them.")
+    
+    
+    if (!user) return message.channel.send(jailEmbed);
+    
+    
+    let errorEmbed = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Command: Tempmute**")
+    .setDescription("I can't tempmute this user. Please select a user that is not staff.")
+    if(user.hasPermission("MANAGE_MESSAGES")) return message.channel.send(errorEmbed)
+    
+    
+
+    let errorEmbed1 = new Discord.MessageEmbed()
+    .setColor("#2F3136")
+    .setTitle("**Command: Tempmute**")
+    .setDescription("Please specify the amount of time you want to tempmute this user for. If it is forever, do `-mute [user]`.")
+    if(!mutetime) return message.channel.send(errorEmbed1)
+    
+    await(user.roles.add(muterole.id));
+    await(user.roles.remove(verifiedrole.id)), message.channel.send(`\`${user.user.tag}\` was muted!`)
+
+  
+
     let embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
-      .setAuthor(`Mute | ${mutee.user.tag}`, mutee.user.displayAvatarURL())
-      .addField("User:", `${mutee.user.tag}`, true)
+      .setColor("#2F3136")
+      .setAuthor(`Tempmute | ${user.user.tag}`, user.user.displayAvatarURL())
+      .addField("User:", `${user.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Time:", `${ms(mutetime)} milisecs`, true)
-      .setFooter(`USERS ID: ${mutee.id}`)
+      .setFooter(`USERS ID: ${user.id}`)
       .setTimestamp();
     logs.send(embed)
-   let muteEmbed = new Discord.MessageEmbed()
+   let jailEmbed1 = new Discord.MessageEmbed()
     .setTitle("⚠️ You were muted! ⚠️")
-    .setColor("BLUE")
+    .setColor("#2F3136")
     .addField("Server:", message.guild.name, true)
     .addField("Moderator:", `${message.author.tag}`, true)
    .addField("Time:", `${ms(mutetime)} milisecs`, true)
     .setTimestamp()
-    mutee.send(muteEmbed)
+    user.send(jailEmbed1)
     
     setTimeout(function(){
-      mutee.roles.remove(muterole.id)
-      mutee.roles.add(verifiedrole.id)
+      user.roles.remove(muterole.id)
+      user.roles.add(verifiedrole.id)
     }, ms(mutetime))
   }
 }
