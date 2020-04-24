@@ -3,6 +3,7 @@ module.exports = {
   name: "motm",
   aliases: [],
   run: async (bot, message, args) =>{
+    if (message.author.id !== '457182175075500053') return;
     const embed = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setAuthor("MOTM", message.guild.iconURL())
