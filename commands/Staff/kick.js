@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 module.exports = {
-  name: `ban`,
+  name: ``,
   aliases: [`hardban`, `permban`],
   run: async (bot, message, args) => {
 let errorEmbed1 = new Discord.MessageEmbed()
