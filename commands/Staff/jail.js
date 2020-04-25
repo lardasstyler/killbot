@@ -41,7 +41,7 @@ module.exports = {
 
     let embed = new Discord.MessageEmbed()
       .setColor("#2F3136")
-      .setAuthor(`Tempjail | ${user.user.tag}`, user.user.displayAvatarURL())
+      .setAuthor(`Jail | ${user.user.tag}`, user.user.displayAvatarURL())
       .addField("User:", `${user.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Time:", `Forever`, true)
