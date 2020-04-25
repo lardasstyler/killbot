@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = '-';
+const prefix = '?';
 const ms = require('ms');
 module.exports = {
   name: "tempmute",
