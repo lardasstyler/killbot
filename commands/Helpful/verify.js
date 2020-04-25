@@ -3,7 +3,8 @@ module.exports = {
   name: "verify",
   aliases: [],
   run: async (bot, message, args) =>{
-  if (message.member.roles.cache.some(role => role.name === 'Verified ✔')) return;
+    if (message.channel.id !== "581579298381627392") return;
+    if(message.channel.id == "581579298381627392") return message.delete()
   let verifiedrole = message.guild.roles.cache.get("581580272399679595");
   await(message.member.roles.add(verifiedrole.id))
     let embed = new Discord.MessageEmbed()
