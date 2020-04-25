@@ -12,7 +12,8 @@ module.exports = {
     .setTitle("**Changing a Users Nickname**")
     .setDescription("To change a users nickname, do `-nick [user] (nickname)`. \n \n You can only mention a user to change their nickname.")
     if(!user) return message.channel.send(nickEmbed)
-  
+    
+    
     
     if(!nickname) return user.removeNickname()
     
