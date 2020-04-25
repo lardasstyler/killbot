@@ -21,5 +21,6 @@ module.exports = {
     if(!nickname) return message.channel.send(nonickEmbed)
     
     user.setNickname(nickname)
+    message.channel.send(`\`${user.user.username}\`s nickname was set to \`${nickname}\`.`)
   }
 }
