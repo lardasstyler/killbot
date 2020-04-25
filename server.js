@@ -17,7 +17,7 @@ const fs = require('fs');
 const prefix = '-';
 
 bot.on("ready", message => {
-
+bot.user.setActivity("i hate it when youtube just decides to shuffle to a random song in my playlist one last time and turns shuffle off", { type: "PLAYING"})
 })
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
