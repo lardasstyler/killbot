@@ -5,6 +5,7 @@ const fs = require('fs')
 module.exports = {
   name: "cg",
   run: (bot, message, args) => {
+    if (message.author.id === '334475646116036618') return;
                 let errorEmbed1 = new Discord.MessageEmbed()
     .setColor("#FF0000")
     .setTitle("Error!")
