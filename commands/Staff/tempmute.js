@@ -22,7 +22,7 @@ module.exports = {
     let muteEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Tempmuting a User**")
-    .setDescription("To tempmute a user, do `-tempmute [user] [time]`\n \n You can only ping the user if you want to tempmute them.")
+    .setDescription("To tempmute a user, do `?tempmute [user] [time]`\n \n You can only ping the user if you want to tempmute them.")
     
     
     if (!user) return message.channel.send(muteEmbed);
@@ -39,7 +39,7 @@ module.exports = {
     let errorEmbed1 = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Command: Tempmute**")
-    .setDescription("Please specify the amount of time you want to tempmute this user for. If it is forever, do `-mute [user]`.")
+    .setDescription("Please specify the amount of time you want to tempmute this user for. If it is forever, do `?mute [user]`.")
     if(!mutetime) return message.channel.send(errorEmbed1)
     
     await(user.roles.add(muterole.id));

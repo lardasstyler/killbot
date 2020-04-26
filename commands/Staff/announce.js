@@ -14,7 +14,7 @@ module.exports = {
     let annEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Announcing**")
-    .setDescription("To announce anything to any channel, do `-announce #channel (announcement)`.")
+    .setDescription("To announce anything to any channel, do `?announce #channel (announcement)`.")
     if(!ann) return message.channel.send(annEmbed);
     let announceEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")

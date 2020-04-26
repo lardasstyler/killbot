@@ -22,7 +22,7 @@ module.exports = {
     let jailEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Tempjailing a User**")
-    .setDescription("To tempjail a user, do `-tempjail [user] [time]`\n \n You can only ping the user if you want to tempjail them.")
+    .setDescription("To tempjail a user, do `?tempjail [user] [time]`\n \n You can only ping the user if you want to tempjail them.")
     
     
     if (!user) return message.channel.send(jailEmbed);
@@ -39,7 +39,7 @@ module.exports = {
     let errorEmbed1 = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Command: Tempjail**")
-    .setDescription("Please specify the amount of time you want to tempjail this user for. If it is forever, do `-jail [user]`.")
+    .setDescription("Please specify the amount of time you want to tempjail this user for. If it is forever, do `?jail [user]`.")
     if(!jailtime) return message.channel.send(errorEmbed1)
     
     await(user.roles.add(jailrole.id));

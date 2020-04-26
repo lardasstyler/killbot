@@ -19,7 +19,7 @@ module.exports = {
     let jailEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Jailing a User**")
-    .setDescription("To jail a user, do `-jail [user]`\n \n You can only ping the user if you want to jail them.")
+    .setDescription("To jail a user, do `?jail [user]`\n \n You can only ping the user if you want to jail them.")
     
     
     if (!user) return message.channel.send(jailEmbed);

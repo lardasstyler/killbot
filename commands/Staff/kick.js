@@ -16,7 +16,7 @@ module.exports = {
     let kickEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Kicking a User**")
-    .setDescription("To kick a user, do `-kick [user]`\n \n You can only ping the user if you want to kick them.")
+    .setDescription("To kick a user, do `?kick [user]`\n \n You can only ping the user if you want to kick them.")
     if (!user) return message.channel.send(kickEmbed);
     
     

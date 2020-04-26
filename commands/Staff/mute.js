@@ -19,7 +19,7 @@ module.exports = {
     let muteEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Muting a User**")
-    .setDescription("To mute a user, do `-mute [user]`\n \n You can only ping the user if you want to mute them.")
+    .setDescription("To mute a user, do `?mute [user]`\n \n You can only ping the user if you want to mute them.")
     
     
     if (!user) return message.channel.send(muteEmbed);

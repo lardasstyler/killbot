@@ -11,7 +11,7 @@ module.exports = {
     let nouserEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**DM'ing a User**")
-    .setDescription("To DM a user, do `-dm [user] [content]`\n \n You can only ping the user if you want to DM them.")
+    .setDescription("To DM a user, do `?dm [user] [content]`\n \n You can only ping the user if you want to DM them.")
     
     if(!user) return message.channel.send(nouserEmbed)
     

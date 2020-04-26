@@ -16,7 +16,7 @@ module.exports = {
     let warnEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Warning a User**")
-    .setDescription("To warn a user, do `-warn [user] (reason)`\n \n You can only ping the user if you want to warn them.")
+    .setDescription("To warn a user, do `?warn [user] (reason)`\n \n You can only ping the user if you want to warn them.")
     if(!user) return message.channel.send(warnEmbed)
     
     
