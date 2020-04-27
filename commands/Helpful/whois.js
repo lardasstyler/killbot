@@ -25,28 +25,15 @@ module.exports = {
         const embed = new MessageEmbed()
             .setAuthor(member.user.tag, member.user.displayAvatarURL())
             .setDescription(`<@${member.user.id}>`)
-            .setFooter("ID: ")
-            .setThumbnail(member.user.displayAvatarURL)
+            .setFooter(`ID: ${member.user.id}`)
+            .setTimestamp()
+            .setThumbnail(member.user.displayAvatarURL())
             .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
     
-            .addField('User information:', stripIndents`**> ID:** ${member.user.id}
-            **> Username**: ${member.user.username}
-
-            **> Tag**: ${member.user.tag}
-
-            **> Created at**: ${created}`, true)
-        
-        
-            .addField('Member information:', stripIndents`**> Display name:** ${member.displayName}
-
-            **> Joined at:** ${joined}
-
-            **> Roles:** ${roles}`, true)
-            .setTimestamp()
-
-        if (member.user.presence.game) 
-            embed.addField('Currently playing', stripIndents`**> Name:** ${member.user.presence.game.name}`);
+            .addField('Joined', joined, true)
+            .addField('Registered', created, true)
+           .addField('Roles', roles)
 
         message.channel.send(embed);
     }
