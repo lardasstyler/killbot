@@ -33,6 +33,8 @@ module.exports = {
     
             .addField('Joined', joined, true)
             .addField('Registered', created, true)
+        .addField('Display Name', member.displayName)
+            .addField('Status', member.presence.status)
            .addField('Roles', roles)
 
         message.channel.send(embed);
