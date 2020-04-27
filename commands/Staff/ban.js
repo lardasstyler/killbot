@@ -7,7 +7,7 @@ module.exports = {
     //Defining Stuff
     
     
-    const user = message.mentions.members.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let logs = message.guild.channels.cache.get("456272126756782101");
     
     
