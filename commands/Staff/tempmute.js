@@ -10,7 +10,7 @@ module.exports = {
     //Defining Stuff
     
     
-    let user = message.mentions.members.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let muterole = message.guild.roles.cache.get("674390381856686099");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let mutetime = args[1];
@@ -22,7 +22,7 @@ module.exports = {
     let muteEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Tempmuting a User**")
-    .setDescription("To tempmute a user, do `?tempmute [user] [time]`\n \n You can only ping the user if you want to tempmute them.")
+    .setDescription("To tempmute a user, do `?tempmute [user] [time]`\n \n You can mention the user to tempmute them or use their id!")
     
     
     if (!user) return message.channel.send(muteEmbed);

@@ -8,7 +8,7 @@ module.exports = {
     //Defining
     
     
-    let user = message.mentions.users.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         let reason = args.slice(1).join(' ') 
     
     
@@ -16,7 +16,7 @@ module.exports = {
     let warnEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Warning a User**")
-    .setDescription("To warn a user, do `?warn [user] (reason)`\n \n You can only ping the user if you want to warn them.")
+    .setDescription("To warn a user, do `?warn [user] (reason)`\n \n You can mention the user to warn them or use their id!")
     if(!user) return message.channel.send(warnEmbed)
     
     

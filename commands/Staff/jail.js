@@ -8,7 +8,7 @@ module.exports = {
     //Defining Stuff
     
     
-    let user = message.mentions.members.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let jailrole = message.guild.roles.cache.get("701986202550665237");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let logs = message.guild.channels.cache.get("456272126756782101");
@@ -19,7 +19,7 @@ module.exports = {
     let jailEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Jailing a User**")
-    .setDescription("To jail a user, do `?jail [user]`\n \n You can only ping the user if you want to jail them.")
+    .setDescription("To jail a user, do `?jail [user]`\n \n You can mention the user to jail them or use their id!")
     
     
     if (!user) return message.channel.send(jailEmbed);

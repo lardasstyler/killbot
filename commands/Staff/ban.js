@@ -16,7 +16,7 @@ module.exports = {
     let banEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Banning a User**")
-    .setDescription("To ban a user, do `?ban [user]`\n \n You can only ping the user if you want to ban them.")
+    .setDescription("To ban a user, do `?ban [user]`\n \n You can mention the user to ban them or use their id!")
     if (!user) return message.channel.send(banEmbed);
     
     

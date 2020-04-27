@@ -5,12 +5,12 @@ module.exports = {
   run: async (bot, message, args) =>{
     if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
     
-    let user = message.mentions.members.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let nickname = args.slice(1).join(" ")
       let nickEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Changing a Users Nickname**")
-    .setDescription("To change a users nickname, do `?nick [user] (nickname)`. \n \n You can only mention a user to change their nickname.")
+    .setDescription("To change a users nickname, do `?nick [user] (nickname)`. \n \n You can mention the user to nickname them or use their id!")
     if(!user) return message.channel.send(nickEmbed)
           let nonickEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")

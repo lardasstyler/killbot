@@ -10,7 +10,7 @@ module.exports = {
     //Defining Stuff
     
     
-    let user = message.mentions.members.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let jailrole = message.guild.roles.cache.get("701986202550665237");
     let verifiedrole = message.guild.roles.cache.get("581580272399679595");
     let jailtime = args[1];
@@ -22,7 +22,7 @@ module.exports = {
     let jailEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Tempjailing a User**")
-    .setDescription("To tempjail a user, do `?tempjail [user] [time]`\n \n You can only ping the user if you want to tempjail them.")
+    .setDescription("To tempjail a user, do `?tempjail [user] [time]`\n \n You can mention the user to tempjail them or use their id!")
     
     
     if (!user) return message.channel.send(jailEmbed);

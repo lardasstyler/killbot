@@ -7,7 +7,7 @@ module.exports = {
     //Defining Stuff
     
     
-    const user = message.mentions.members.first();
+    let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let logs = message.guild.channels.cache.get("456272126756782101");
     
     
@@ -16,14 +16,14 @@ module.exports = {
     let kickEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Kicking a User**")
-    .setDescription("To kick a user, do `?kick [user]`\n \n You can only ping the user if you want to kick them.")
+    .setDescription("To kick a user, do `?kick [user]`\n \n You can mention the user to kick them or use their id!")
     if (!user) return message.channel.send(kickEmbed);
     
     
     message.delete();
     
     
-    await user.ban(), message.channel.send(`\`${user.user.tag}\` was kicked!`);
+    await user.kick(), message.channel.send(`\`${user.user.tag}\` was kicked!`);
     
     
     const embed = new Discord.MessageEmbed()
