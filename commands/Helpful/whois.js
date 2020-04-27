@@ -33,6 +33,7 @@ module.exports = {
             .addField('Joined', joined, true)
             .addField('Display Name', member.displayName, true)
             .addField('Status', member.presence.status, true)
+            .addField('Avatar', `[Link](${member.displayAvatarURL})`)
             .addField('Roles', roles)
         
 
