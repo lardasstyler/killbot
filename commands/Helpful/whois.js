@@ -11,7 +11,7 @@ module.exports = {
       
       
       
-        const member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
+        const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || getMember(message, args.join(" "))
  
         // Member variables
         const joined = formatDate(member.joinedAt);
@@ -21,7 +21,7 @@ module.exports = {
 
         // User variables
         const created = formatDate(member.user.createdAt);
-
+      
         const embed = new MessageEmbed()
             .setAuthor(member.user.tag, member.user.displayAvatarURL())
             .setDescription(`<@${member.user.id}>`)

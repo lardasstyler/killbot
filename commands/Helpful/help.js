@@ -4,11 +4,11 @@ module.exports = {
   aliases: "info",
   run: async (bot, message, args) => {
     if (args[0] === 'commands') {
-      let commandsCount = '21'
+      let commandsCount = '22'
       let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands List", message.guild.iconURL()) 
-    .setDescription("**❓ Helpful**: `coronavirus`, `report`, `ping`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `avatar`\n \n **👮 Staff**: `say`, `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `jail`, `tempjail`, `tempmute`, `unjail`, `unmute`, `announce`")
+    .setDescription("**❓ Helpful**: `whois`, `coronavirus`, `report`, `ping`, `help`\n \n **😂 Fun**: `gamermeter`, `yesno`, `8ball`, `avatar`\n \n **👮 Staff**: `say`, `ban`, `dm`, `kick`, `purge`, `warn`, `mute`, `jail`, `tempjail`, `tempmute`, `unjail`, `unmute`, `announce`")
     .setFooter(`${message.guild.me.displayName} | Total Commands: ${commandsCount}`, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed)
@@ -18,8 +18,8 @@ module.exports = {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("AutoBots Version", bot.user.displayAvatarURL()) 
-    .setDescription("**✅ Version**: 2.0.9\n \n**⬆️ Last Update**: ?whois command! Do ?whois for more info!")
-    .setFooter(`${message.guild.me.displayName}'s Version | v2.0.7`)
+    .setDescription("**✅ Version**: 2.0.9\n \n**⬆️ Last Update**: ?whois command!")
+    .setFooter(`${message.guild.me.displayName}'s Version | v2.0.9`)
     .setTimestamp()
     message.channel.send(embed)
     }
