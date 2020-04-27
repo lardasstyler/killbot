@@ -18,7 +18,7 @@ module.exports = {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("AutoBots Version", bot.user.displayAvatarURL()) 
-    .setDescription("**✅ Version**: 2.0.7\n \n**⬆️ Last Update**: More benefits for staff members, again!")
+    .setDescription("**✅ Version**: 2.0.9\n \n**⬆️ Last Update**: ?whois command! Do ?whois for more info!")
     .setFooter(`${message.guild.me.displayName}'s Version | v2.0.7`)
     .setTimestamp()
     message.channel.send(embed)

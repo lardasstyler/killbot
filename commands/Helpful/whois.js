@@ -29,14 +29,13 @@ module.exports = {
             .setTimestamp()
             .setThumbnail(member.user.displayAvatarURL())
             .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
-
-    
-            .addField('Joined', joined, true)
             .addField('Registered', created, true)
-        .addField('Display Name', member.displayName)
-            .addField('Status', member.presence.status)
-           .addField('Roles', roles)
+            .addField('Joined', joined, true)
+            .addField('Display Name', member.displayName, true)
+            .addField('Status', member.presence.status, true)
+            .addField('Roles', roles)
 
         message.channel.send(embed);
+
     }
 }
