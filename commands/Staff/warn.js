@@ -44,8 +44,8 @@ module.exports = {
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
       .setColor("#2F3136")
-      .setAuthor(`Warn | ${user.user.tag}`, user.displayAvatarURL())
-      .addField("User:", `${user.tag}`, true)
+      .setAuthor(`Warn | ${user.user.tag}`, user.user.displayAvatarURL())
+      .addField("User:", `${user.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Reason:", `${reason}`, true)
       .setFooter(`ID: ${user.id}`)
