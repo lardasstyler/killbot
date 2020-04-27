@@ -33,6 +33,7 @@ module.exports = {
             .addField('Joined', joined, true)
             .addField('Display Name', member.displayName, true)
             .addField('Status', member.presence.status, true)
+        .addField('Activity', member.user.presence.activity, true)
             .addField('Roles', roles)
         
 
