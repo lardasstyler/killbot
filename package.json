@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "ascii-table": "0.0.9",
+    "common-tags": "^1.8.0",
     "covid19-stats": "^1.0.5",
     "discord.js": "^12.1.1",
     "express": "^4.17.1",
