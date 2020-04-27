@@ -34,6 +34,7 @@ module.exports = {
             .addField('Display Name', member.displayName, true)
             .addField('Status', member.presence.status, true)
             .addField('Roles', roles)
+        
 
         message.channel.send(embed);
 
