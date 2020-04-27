@@ -30,7 +30,7 @@ module.exports = {
     
     if(!reason) return message.channel.send(noReason);
 
-   message.channel.send(`\`${user.tag}\` was warned for: \`${reason}\``)
+   message.channel.send(`\`${user.user.tag}\` was warned for: \`${reason}\``)
     
     let warnEmbed1 = new Discord.MessageEmbed()
     .setTitle("⚠️ You were warned! ⚠️")
@@ -44,7 +44,7 @@ module.exports = {
     let logs = message.guild.channels.cache.get("456272126756782101");
     let embed = new Discord.MessageEmbed()
       .setColor("#2F3136")
-      .setAuthor(`Warn | ${user.tag}`, user.displayAvatarURL())
+      .setAuthor(`Warn | ${user.user.tag}`, user.displayAvatarURL())
       .addField("User:", `${user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .addField("Reason:", `${reason}`, true)
