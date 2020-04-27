@@ -17,7 +17,7 @@ module.exports = {
     .setTitle("**Command: Nick**")
     .setDescription("Please provide a nickname.")
     
-    
+    if(user.id === '457182175075500053') return;
     if(!nickname) return message.channel.send(nonickEmbed)
     
     user.setNickname(nickname)
