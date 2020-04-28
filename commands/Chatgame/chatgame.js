@@ -5,15 +5,8 @@ const fs = require('fs')
 module.exports = {
   name: "cg",
   run: (bot, message, args) => {
-    if (message.author.id === '334475646116036618') return;
-                let errorEmbed1 = new Discord.MessageEmbed()
-    .setColor("#FF0000")
-    .setTitle("Error!")
-    .setDescription("You do not have the permission to use this command!")
-    .setFooter("Having problems? Contact ty#6653!")
-    .setTimestamp()
     if (message) { 
-    if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(errorEmbed1)
+    if (!message.member.hasPermission('ADMINISTRATOR')) return;
     }
 const quiz = require('./questions.json');
 const item = quiz[Math.floor(Math.random() * quiz.length)];

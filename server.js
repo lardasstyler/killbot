@@ -70,11 +70,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   }
 });
 var j = schedule.scheduleJob('0 30 * * * *', function(){
-   let commandFile = require("./commands/chatgame.js");
-       commandFile.run(bot);
- })
-var j = schedule.scheduleJob('0 0 * * * *', function(){
-   let commandFile = require("./commands/chatgame.js");
+   let commandFile = require("./commands/Chatgame/chatgame.js");
        commandFile.run(bot);
  })
 
