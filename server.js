@@ -42,9 +42,6 @@ table.setHeading("Command", "Load status");
   });
   console.log(table.toString());
 bot.on('message', (message) => {
-    if(message.author.id === '622649403693465652'){
-    message.delete()
-  }
   if (message.author.bot) return;
   if (message.content.indexOf(prefix) !== 0) return;
   const args = message.content.slice(prefix.length).trim().split(/ +/g);

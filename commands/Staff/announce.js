@@ -10,7 +10,7 @@ module.exports = {
     let announce = message.mentions.channels.first();
     
 
-    let ann = args.slice(2).join(' ') 
+    let ann = args.slice(1).join(' ') 
     let annEmbed = new Discord.MessageEmbed()
     .setColor("#2F3136")
     .setTitle("**Announcing**")
