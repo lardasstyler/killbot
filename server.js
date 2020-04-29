@@ -68,6 +68,9 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.content === 'brb') {
    message.channel.send("don't come back")
   }
+  if(message.channel.id === '581579298381627392') {
+    //message.delete()
+  }
 });
 var j = schedule.scheduleJob('0 30 * * * *', function(){
    let commandFile = require("./commands/Chatgame/chatgame.js");
