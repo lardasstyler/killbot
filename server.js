@@ -108,7 +108,14 @@ bot.on("guildMemberRemove", member => {
       " just left the server 🙁"
   );
 });
-
+bot.on('messageReactionAdd', (message, reaction, user) => {
+  let embed = new Discord.MessageEmbed()
+  .setTitle("**New Starboard!**")
+  .setDescription(`\n \n **🌟 Author:** ${message.author.username}\n \n **🗨️ Content:** ${message.content}`)
+  let star = 6; 
+  if(reaction.emoji.name === '⭐' && reaction.count <= star) 
+  if (reaction.emoji.name == '👎' && reaction.count >=  bruh) reaction.message.delete();
+});
 bot.on('messageDelete', async message =>{
   if (message.author.id === '457182175075500053') return
   if (message.author.bot) return;
