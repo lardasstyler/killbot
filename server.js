@@ -124,6 +124,7 @@ bot.on('messageDelete', async message =>{
   logs.send(embed)
 })
 bot.on('messageUpdate', async (oldMessage, newMessage) =>{
+  if(oldMessage.includes("https://")) return;
   if (oldMessage.author.bot) return;
   let embed = new Discord.MessageEmbed()
   .setColor("RED")
