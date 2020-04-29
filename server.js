@@ -17,7 +17,7 @@ const fs = require('fs');
 const prefix = '?';
 
 bot.on("ready", message => {
-bot.user.setActivity("have fun with corona ", { type: "PLAYING"})
+bot.user.setActivity("have fun with corona", { type: "PLAYING"})
 })
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
