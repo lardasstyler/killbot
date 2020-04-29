@@ -3,7 +3,7 @@ module.exports = {
   name: "nick",
   aliases: [],
   run: async (bot, message, args) =>{
-    if (!message.member.hasPermission('ADMINISTATOR')) return;
+if (!message.member.hasPermission('ADMINISTATOR')) return;
     
     let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
     let nickname = args.slice(1).join(" ")
