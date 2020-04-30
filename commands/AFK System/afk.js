@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
+const variable = require('./afk.json')
 module.exports = {
   name: "afk",
   aliases: [],
   run: async (bot, message, args) =>{
     //Defining
     
-    let rafk = args.slice(0).join(" ")
-    if(!rafk) rafk.set("AFK")
+    let reason = args.slice(0).join(" ")
+    if(!reason) reason.set("AFK")
     
     //Command
     
