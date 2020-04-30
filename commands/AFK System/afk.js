@@ -6,8 +6,9 @@ module.exports = {
     //Defining
     
     let rafk = args.slice(0).join(" ")
+    if(!rafk) rafk.set("AFK")
     
     //Command
-  
+    
   }
 }
