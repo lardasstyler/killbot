@@ -15,6 +15,7 @@ bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 const fs = require('fs');
 const prefix = '?';
+const db = require('quick.db')
 
 bot.on("ready", message => {
 bot.user.setActivity("have fun with corona", { type: "PLAYING"})
@@ -87,6 +88,15 @@ bot.on("message", async message => {
   if (message.content.toLowerCase().includes("why is he spinning")) {
     message.channel.send("oh i dont know, ask yourself that! or just ask <@412782358358523905>")
   }
+  if (message.content.includes("😉")) {
+  // if (message.author.id == '529462265934643230') return;
+  if (message.channel.id === "605121757166436406") return;
+let winks = await db.fetch(`winks_${message.author.id}`);
+ db.add(`winks_${message.author.id}`, 1)
+   if (winks == null) winks = 1
+    message.channel.send(`That's another wink from ${message.author.username}! They have sent a total of ${winks} winks!`)
+    console.log(winks)
+  }
   });
 bot.on("guildMemberAdd", member => {
   let logs = member.guild.channels.cache.get("688867784947531857")
@@ -111,6 +121,7 @@ bot.on("guildMemberRemove", member => {
       " just left the server 🙁"
   );
 });
+
 bot.on('messageDelete', async message =>{
   if (message.author.id === '457182175075500053') return
   if (message.author.bot) return;
