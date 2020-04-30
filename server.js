@@ -88,13 +88,13 @@ bot.on("message", async message => {
   if (message.content.toLowerCase().includes("why is he spinning")) {
     message.channel.send("oh i dont know, ask yourself that! or just ask <@412782358358523905>")
   }
-  if (message.content.includes("😉")) {
+  if (message.content.includes("<:Da_Gram:697468382643224656>")) {
   // if (message.author.id == '529462265934643230') return;
   if (message.channel.id === "605121757166436406") return;
 let winks = await db.fetch(`winks_${message.author.id}`);
  db.add(`winks_${message.author.id}`, 1)
    if (winks == null) winks = 1
-    message.channel.send(`That's another wink from ${message.author.username}! They have sent a total of ${winks} winks!`)
+    message.channel.send(`${message.author.username} has been on da gram for a bit... They have been on it a  total of ${winks} times!`)
     console.log(winks)
   }
   });
