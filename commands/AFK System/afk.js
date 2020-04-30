@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const variable = require('./afk.json')
+const rafk = require('./afk.json')
 module.exports = {
   name: "afk",
   aliases: [],
