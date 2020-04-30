@@ -94,7 +94,7 @@ bot.on("message", async message => {
 let winks = await db.fetch(`winks_${message.author.id}`);
  db.add(`winks_${message.author.id}`, 1)
    if (winks == null) winks = 1
-    message.channel.send(`${message.author.username} has been on da gram for a bit... They have been on it a  total of ${winks} times!`)
+    message.channel.send(`${message.author.username} has been on da gram for a bit... They have been on it a total of ${winks} times!`)
     console.log(winks)
   }
   });
