@@ -88,6 +88,7 @@ bot.on("message", async message => {
     message.react("👍");
     message.react("👎");
   } 
+
   if (message.content.toLowerCase().includes("why is he spinning")) {
     message.channel.send("oh i dont know, ask yourself that! or just ask <@412782358358523905>")
   }
