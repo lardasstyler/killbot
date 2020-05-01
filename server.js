@@ -163,15 +163,14 @@ bot.on('messageReactionAdd', async (reaction, user) => {
         const existingMsg = msgs.find(msg => 
             msg.embeds.length === 1 ?
             (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
-        if(existingMsg) existingMsg.edit(`${reaction.count} - 🌟`);
+        if(existingMsg) existingMsg.edit(`This message got **${reaction.count}** stars!`);
         else {
             const embed = new Discord.MessageEmbed()
                 .setAuthor(reaction.message.author.tag, reaction.message.author.displayAvatarURL())
-                .setDescription(`\n \n **🙎 Author:** ${reaction.message.author} \n \n **🗨️ Content:** ${reaction.message.content}\n \n **`)
-                .setDescription(reaction.message.content)
+                .setDescription(`\n \n **🙎 Author:** ${reaction.message.author} \n \n **🗨️ Content:** ${reaction.message.content}\n \n **🔗 URL:** ${reaction.message.url}`)
                 .setFooter(reaction.message.id + ' - ' + new Date(reaction.message.createdTimestamp));
             if(starboard)
-                starboard.send('1 - 🌟', embed);
+                starboard.send(embed);
         }
     }
     if(reaction.emoji.name === '🌟') {
