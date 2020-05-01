@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const prefix = '?';
 module.exports = {
- name: "announce",
+  name: "announce",
   aliases: [],
   run: async (bot, message, args) =>{
 
