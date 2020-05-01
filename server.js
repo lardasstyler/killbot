@@ -163,14 +163,15 @@ bot.on('messageReactionAdd', async (reaction, user) => {
         const existingMsg = msgs.find(msg => 
             msg.embeds.length === 1 ?
             (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
-        if(existingMsg) existingMsg.edit(`This message got **${reaction.count}** stars!`);
+        if(existingMsg) existingMsg.edit(`${reaction.count} - 🌟`);
         else {
             const embed = new Discord.MessageEmbed()
                 .setAuthor(reaction.message.author.tag, reaction.message.author.displayAvatarURL())
-                .setDescription(`\n \n **🙎 Author:** ${reaction.message.author} \n \n **🗨️ Content:** ${reaction.message.content}\n \n **🔗 URL:** ${reaction.message.url}`)
-            .setFooter(reaction.message.id)
+                .addField('Url', reaction.message.url)
+                .setDescription(reaction.message.content)
+                .setFooter(reaction.message.id + ' - ' + new Date(reaction.message.createdTimestamp));
             if(starboard)
-                starboard.send(`1 - 🌟`, embed);
+                starboard.send('1 - 🌟', embed);
         }
     }
     if(reaction.emoji.name === '🌟') {
@@ -187,7 +188,7 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 
 bot.on('messageReactionRemove', async (reaction, user) => {
     const handleStarboard = async () => {
-        const starboard = bot.channels.cache.get("704504755577159780");
+        const starboard = bot.channels.cache.find(channel => channel.name.toLowerCase() === 'starboard');
         const msgs = await starboard.messages.fetch({ limit: 100 });
         const existingMsg = msgs.find(msg => 
             msg.embeds.length === 1 ? 
@@ -210,7 +211,6 @@ bot.on('messageReactionRemove', async (reaction, user) => {
             handleStarboard();
     }
 });
-
 
 
 bot.login(process.env.TOKEN);
