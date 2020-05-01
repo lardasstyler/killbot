@@ -19,7 +19,7 @@ module.exports = {
     let announceEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Announcement", message.guild.iconURL())
-    .setDescription("I QUIT THIS FUCKING SERVER")
+    .setDescription(ann)
     .setFooter(`Announced by ${message.author.tag}`)
     .setTimestamp()
     announce.send(announceEmbed)
