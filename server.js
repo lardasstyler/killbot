@@ -166,11 +166,11 @@ bot.on('messageReactionAdd', async (reaction, user) => {
         if(existingMsg) existingMsg.edit(`This message got **${reaction.count}** stars!`);
         else {
             const embed = new Discord.MessageEmbed()
-                .setAuthor(reaction.message.author.tag, reaction.message.author.displayAvatarURL())
+                .setAuthor("🌟 New Rated Message!")
                 .setDescription(`\n \n **🙎 Author:** ${reaction.message.author} \n \n **🗨️ Content:** ${reaction.message.content}\n \n **🔗 URL:** ${reaction.message.url}`)
-                .setFooter(reaction.message.id + ' - ' + new Date(reaction.message.createdTimestamp));
+                .setFooter(`MESSAGE ID: ${reaction.message.id}`);
             if(starboard)
-                starboard.send(embed);
+                starboard.send(existingMsg, embed);
         }
     }
     if(reaction.emoji.name === '🌟') {
