@@ -162,8 +162,8 @@ bot.on('messageReactionAdd', async (reaction, user) => {
         const msgs = await starboard.messages.fetch({ limit: 100 });
         const existingMsg = msgs.find(msg => 
             msg.embeds.length === 1 ?
-            (msg.embeds[0].footer.text.startsWith(reaction.message.id) ? true : false) : false);
-        if(existingMsg) existingMsg.edit(`${reaction.count} - 🌟`);
+            (msg.embeds[0].footer.startsWith(reaction.message.id) ? true : false) : false);
+        if(existingMsg) existingMsg.edit(`${reaction.count} - ⭐`);
         else {
             const embed = new Discord.MessageEmbed()
                 .setAuthor(reaction.message.author.tag, reaction.message.author.displayAvatarURL())
@@ -171,10 +171,10 @@ bot.on('messageReactionAdd', async (reaction, user) => {
                 .setDescription(reaction.message.content)
                 .setFooter(reaction.message.id + ' - ' + new Date(reaction.message.createdTimestamp));
             if(starboard)
-                starboard.send('1 - 🌟', embed);
+                starboard.send('1 - ⭐', embed);
         }
     }
-    if(reaction.emoji.name === '🌟') {
+    if(reaction.emoji.name === '⭐') {
         if(reaction.message.channel.name.toLowerCase() === 'starboard') return;
         if(reaction.message.partial) {
             await reaction.fetch();
@@ -188,7 +188,7 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 
 bot.on('messageReactionRemove', async (reaction, user) => {
     const handleStarboard = async () => {
-        const starboard = bot.channels.cache.find(channel => channel.name.toLowerCase() === 'starboard');
+        const starboard = bot.channels.cache.find("704504755577159780");
         const msgs = await starboard.messages.fetch({ limit: 100 });
         const existingMsg = msgs.find(msg => 
             msg.embeds.length === 1 ? 
@@ -197,7 +197,7 @@ bot.on('messageReactionRemove', async (reaction, user) => {
             if(reaction.count === 0)
                 existingMsg.delete({ timeout: 2500 });
             else
-                existingMsg.edit(`${reaction.count} - 🌟`)
+                existingMsg.edit(`${reaction.count} - ⭐`)
         };
     }
     if(reaction.emoji.name === '🌟') {
