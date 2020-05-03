@@ -18,7 +18,7 @@ const prefix = '?';
 const db = require('quick.db')
 
 bot.on("ready", message => {
-bot.user.setActivity("have fun with corona", { type: "PLAYING"})
+bot.user.setActivity("single and ready to mingle", { type: "PLAYING"})
 })
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
