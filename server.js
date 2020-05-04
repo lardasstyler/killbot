@@ -101,7 +101,7 @@ let winks = await db.fetch(`winks_${message.author.id}`);
     message.channel.send(`${message.author.username} has been on da gram for a bit... They have been on it a total of ${winks} times!`)
     console.log(winks)
   }
-  if(message.channel.id === '561008923453423657') {
+  if(message.channel.id === '581579298381627392') {
     message.delete()
   }
   });
