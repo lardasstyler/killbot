@@ -73,7 +73,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
   if(message.channel.id === '581579298381627392') {
-    message.delete()
+    //message.delete()
   }
 });
 var j = schedule.scheduleJob('0 30 * * * *', function(){
