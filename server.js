@@ -18,6 +18,7 @@ const prefix = '?';
 const db = require('quick.db')
  
 bot.on("ready", message => {
+bot.user.setStatus("offline")
 bot.user.setActivity("BIG BIG CHUNGUS BIG CHUNGUS BIG CHUNGUS", { type: "PLAYING"})
 })
 const ascii = require("ascii-table");
@@ -53,7 +54,7 @@ bot.on('message', (message) => {
 
 bot.on("message", async message => {
 if (message.channel.id === '569682953148432394') {
-  if(message.author.id === '334475646116036618') return;
+  if(message.author.id === '457182175075500053') return;
     message.delete()
 }
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -130,5 +131,4 @@ bot.on("guildMemberRemove", member => {
 });
 
 
-
-bot.login(process.env.TOKEN);
+//////////////////////////////////////////////////////////////bot.login(process.env.TOKEN);
