@@ -20,7 +20,7 @@ module.exports = {
     .setColor("RANDOM")
     .setAuthor("Announcement", message.guild.iconURL())
     .setDescription(ann)
-    .setFooter(`Announced by pee`)
+    .setFooter(`Announced by ${message.author.tag}`)
     .setTimestamp()
     announce.send(announceEmbed)
   }
