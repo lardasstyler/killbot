@@ -16,7 +16,7 @@ bot.aliases = new Discord.Collection();
 const fs = require('fs');
 const prefix = '?';
 const db = require('quick.db')
-
+ 
 bot.on("ready", message => {
 bot.user.setActivity("BIG BIG CHUNGUS BIG CHUNGUS BIG CHUNGUS", { type: "PLAYING"})
 })
@@ -53,8 +53,8 @@ bot.on('message', (message) => {
 
 bot.on("message", async message => {
 if (message.channel.id === '569682953148432394') {
-  if(message.author.id === '457182175075500053') return;
- // message.delete()
+  if(message.author.id === '334475646116036618') return;
+    message.delete()
 }
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.author.bot) return;
