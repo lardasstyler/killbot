@@ -72,9 +72,10 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.content === 'brb') {
    message.channel.send("don't come back")
   }
-  if(message.channel.id === 'pigpen') {
-    message.channel.setName("ur mom")
-  }
+let pigpen = message.guild.channels.cache.get("569682953148432394")
+if (pigpen.name !== 'apex kiss me') {
+//pigpen.setName("apex kiss me")
+}
 
 });
 
