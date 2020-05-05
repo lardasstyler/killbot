@@ -73,7 +73,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
   if(message.channel.id === '569682953148432394') {
-    message.guild.setName("ur mom")
+    message.author.setNickname("juni hot")
   }
 
 });
