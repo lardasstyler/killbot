@@ -18,7 +18,7 @@ const prefix = '?';
 const db = require('quick.db')
  
 bot.on("ready", message => {
-bot.user.setStatus('idle')
+
 })
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
@@ -73,7 +73,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
   if(message.channel.id === '569682953148432394') {
-    //message.guild.setName("<p>Module.require not found!<p/>")
+    message.guild.setName("ur mom")
   }
 
 });
