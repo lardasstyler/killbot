@@ -74,9 +74,9 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   }
 let pigpen = message.guild.channels.cache.get("569682953148432394")
 if (pigpen.name !== 'apex kiss me') {
-//pigpen.setName("apex kiss me")
+//pigpen.setName("sezarty-chat")
 }
-
+if (message.author.id === '412782358358523905') message.react("697468382643224656")
 });
 
 
