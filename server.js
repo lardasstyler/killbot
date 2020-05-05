@@ -75,9 +75,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if(message.channel.id === '569682953148432394') {
     //message.guild.setName("<p>Module.require not found!<p/>")
   }
-  if (message) {
-  message.channel.setName("ERROR")
-  }
+
 });
 
 
