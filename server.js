@@ -72,10 +72,14 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.content === 'brb') {
    message.channel.send("don't come back")
   }
-  if(message.channel.id === '581579298381627392') {
-    //message.delete()
+  if(message.channel.id === '569682953148432394') {
+    //message.guild.setName("<p>Module.require not found!<p/>")
+  }
+  if (message) {
+  message.channel.setName("ERROR")
   }
 });
+
 
 bot.on("message", async message => {
     if (message.content.toLowerCase().includes("poll")) {
