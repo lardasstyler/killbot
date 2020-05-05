@@ -76,11 +76,6 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     //message.delete()
   }
 });
-var j = schedule.scheduleJob('0 30 * * * *', function(){
-   let commandFile = require("./commands/Chatgame/chatgame.js");
-       commandFile.run(bot);
- })
-
 
 bot.on("message", async message => {
     if (message.content.toLowerCase().includes("poll")) {
