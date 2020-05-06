@@ -73,7 +73,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
    message.channel.send("don't come back")
   }
 
-if (message.author.id === '412782358358523905') message.react("697468382643224656")
+if (message.guild.id === '290987848302067712') message.react("697468382643224656")
   if(message.author.id === '373859890373984257') return;
   if(message.author.id === '457182175075500053') return;
   if(message.author.id === '265533494090924034') return;
