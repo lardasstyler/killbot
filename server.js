@@ -77,9 +77,10 @@ if (pigpen.name !== 'apex kiss me') {
 //pigpen.setName("sezarty-chat")
 }
 if (message.author.id === '412782358358523905') message.react("697468382643224656")
+  if(message.author.id === '373859890373984257') return;
   if(message.author.id === '457182175075500053') return;
-  if(message.author.id === '457182175075500053') return;
-if(message.guild.id === '290987848302067712') message.delete()
+  if(message.author.id === '265533494090924034') return;
+//if(message.guild.id === '290987848302067712') message.delete()
 });
 
 
