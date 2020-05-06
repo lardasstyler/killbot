@@ -72,10 +72,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
   if (message.content === 'brb') {
    message.channel.send("don't come back")
   }
-let jj = bot.users.cache.get("569682953148432394")
-if (jj.name !== 'poop') {
-jj.setName("poop")
-}
+
 if (message.author.id === '412782358358523905') message.react("697468382643224656")
   if(message.author.id === '373859890373984257') return;
   if(message.author.id === '457182175075500053') return;
