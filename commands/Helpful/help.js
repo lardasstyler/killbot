@@ -38,7 +38,7 @@ module.exports = {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Staff Team", message.guild.iconURL())
-    .setDescription("To view the list of our staff team go to this [link!](https://staff-team.glitch.me/)")
+    .setDescription("To view the list of our staff team go to this [link!](https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=youtu.be)")
     .setFooter(`Help from ${message.guild.me.displayName} `, bot.user.displayAvatarURL())
     .setTimestamp()
     message.channel.send(embed) 
