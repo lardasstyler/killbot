@@ -23,13 +23,13 @@ module.exports = {
     message.delete();
     
     
-    await user.ban(), message.channel.send(`\`${user.user.tag}\` was banned!`);
+    await user.kick(), message.channel.send(`\`${user.user.tag}\` was banned!`);
     
     
     const embed = new Discord.MessageEmbed()
       .setColor("#2F3136")
       .setTitle("Banned User")
-      .addField("User:", `<@${user.id}>`, true)
+      .addField("User:", `${user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .setFooter(`ID: ${user.id}`)
       .setTimestamp();
