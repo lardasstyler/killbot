@@ -29,7 +29,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setColor("#2F3136")
       .setTitle("Banned User")
-      .addField("User:", `${user.tag}`, true)
+      .addField("User:", `${user.user.tag}`, true)
       .addField("Moderator:", `<@${message.author.id}>`, true)
       .setFooter(`ID: ${user.id}`)
       .setTimestamp();
