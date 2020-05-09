@@ -23,7 +23,7 @@ module.exports = {
     message.delete();
     
     
-    await user.kick(), message.channel.send(`\`${user.user.tag}\` was banned!`);
+    await user.ban(), message.channel.send(`\`${user.user.tag}\` was banned!`);
     
     
     const embed = new Discord.MessageEmbed()
