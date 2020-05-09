@@ -18,8 +18,8 @@ module.exports = {
           let embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("AutoBots Version", bot.user.displayAvatarURL()) 
-    .setDescription("**✅ Version**: 2.0.9\n \n**⬆️ Last Update**: ?whois command!")
-    .setFooter(`${message.guild.me.displayName}'s Version | v2.0.9`)
+    .setDescription("**✅ Version**: 2.1.0\n \n**⬆️ Last Update**: Fixed the purge command!")
+    .setFooter(`${message.guild.me.displayName}'s Version | v2.1.0`)
     .setTimestamp()
     message.channel.send(embed)
     }
