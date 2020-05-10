@@ -22,7 +22,7 @@ module.exports = {
     .setTimestamp()
     if(!report) return message.channel.send(errorEmbed)
     message.delete()
-    let logs = message.guild.channels.cache.get("701399067397455942");
+    let logs = message.guild.channels.cache.get("708874123924996106");
     let logEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor(`Report | ${user.tag}`, user.displayAvatarURL())
