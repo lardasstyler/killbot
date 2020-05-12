@@ -1,19 +1,10 @@
-
-// 
-
-//nah, all .js files have to do // 
-
-//all .env files have to do #
-
-//if you want to see the commands code, click the command folder
-const http = require("http");
-var schedule = require('node-schedule');
-const express = require("express");
+const http = require('http');
+const express = require('express');
 const app = express();
-app.use(express.static("public"));
+app.use(express.static('public'));
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
+  response.sendStatus(200)
 });
 app.listen(process.env.PORT);
 const Discord = require('discord.js');
