@@ -7,7 +7,7 @@ module.exports = {
   description: 'Stops the music playing',
   aliases: [],
   run: async (bot, message, args, ops) => {
-  let vError = new Discord.RichEmbed()
+  let vError = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setTitle('Error!')
                 .setDescription('You have to be in a voice channel to do that!')
