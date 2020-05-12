@@ -1,6 +1,10 @@
 const Discord = require('discord.js')
 const ytdl = require('ytdl-core');
 const rm = require('discord.js-reaction-menu');
+const active = new Map();
+   let ops = {
+    active: active
+  };
 
 module.exports = {
   name: "play",
@@ -9,7 +13,7 @@ module.exports = {
   aliases: ['p'],
   run: async (bot, message, args, ops) => {
 
-  if (!message.member.voiceChannel) return message.channel.send('You aren\'t connected to a VC!');
+  if (!message.member.voice.channel) return message.channel.send('You aren\'t connected to a VC!');
 
 
     if (!args[0]) return message.channel.send('Please remember to put a URL or video name!');
@@ -25,7 +29,7 @@ module.exports = {
 
     let info = await  ytdl.getInfo(args[0]);
 
-   let data = ops.active.get(message.guild.id) || {};
+   let data = ops.active.cache.get(message.guild.id) || {};
     if (!data.connection) data.connection = await message.member.voiceChannel.join();
     if(!data.queue) data.queue = [];
     data.guildID = message.guild.id;

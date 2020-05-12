@@ -8,10 +8,10 @@ module.exports = {
 
   search(args.join(''), function(err, res){
         if(err)
-            return message.channel.send("Something went wrong");
+            return console.log(err), message.channel.send("Something went wrong");
         let videos = res.videos.slice(0,10);
         
-        let resp = new Discord.RichEmbed();
+        let resp = new Discord.MessageEmbed();
         for(var i in videos){
             resp.addField(`[${parseInt(i)+1}]`, `${videos[i].title}\n`, true);
         }

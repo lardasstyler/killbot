@@ -16,6 +16,10 @@ bot.aliases = new Discord.Collection();
 const fs = require('fs');
 const prefix = '?';
 const db = require('quick.db')
+const active = new Map();
+   let ops = {
+    active: active
+  };
  
 bot.on("ready", message => {
 
