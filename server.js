@@ -1,3 +1,11 @@
+
+// 
+
+//nah, all .js files have to do // 
+
+//all .env files have to do #
+
+//if you want to see the commands code, click the command folder
 const http = require("http");
 var schedule = require('node-schedule');
 const express = require("express");

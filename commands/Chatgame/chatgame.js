@@ -1,3 +1,8 @@
+//i didnt code this btw, newo did
+
+//holy shit
+
+//if you wanna see big code go to music section or staff section
 const Discord = require('discord.js');
 const overide = '456641711486009355';
 var schedule = require('node-schedule');

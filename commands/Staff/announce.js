@@ -25,3 +25,7 @@ module.exports = {
     announce.send(announceEmbed)
   }
 }
+//ok so go to the glitch website on another tab
+
+//and
+//go to discord in a minute
