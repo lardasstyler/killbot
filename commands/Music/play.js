@@ -1,10 +1,7 @@
 const Discord = require('discord.js')
 const ytdl = require('ytdl-core');
 const rm = require('discord.js-reaction-menu');
-const active = new Map();
-   let ops = {
-    active: active
-  };
+
 
 module.exports = {
   name: "play",
@@ -29,8 +26,8 @@ module.exports = {
 
     let info = await  ytdl.getInfo(args[0]);
 
-   let data = ops.active.cache.get(message.guild.id) || {};
-    if (!data.connection) data.connection = await message.member.voiceChannel.join();
+   let data = ops.active.get(message.guild.id) || {};
+    if (!data.connection) data.connection = await message.member.voice.channel.join();
     if(!data.queue) data.queue = [];
     data.guildID = message.guild.id;
 
@@ -52,7 +49,7 @@ module.exports = {
 }
 }
 async function play(bot, ops, data) {
-  bot.channels.get(data.queue[0].announceChannel).send(`🎧 \`Now playing: ${data.queue[0].songTitle}\``);//`🎧 \`Now playing: ${data.queue[0].songTitle}\``
+  bot.channels.cache.get(data.queue[0].announceChannel).send(`🎧 \`Now playing: ${data.queue[0].songTitle}\``);//`🎧 \`Now playing: ${data.queue[0].songTitle}\``
 
     data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, {filter: 'audioonly'}));
     data.dispatcher.guildID = data.guildID;
