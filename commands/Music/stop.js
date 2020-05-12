@@ -11,12 +11,12 @@ module.exports = {
                 .setColor("RANDOM")
                 .setTitle('Error!')
                 .setDescription('You have to be in a voice channel to do that!')
-                if (!message.member.voiceChannel) return message.channel.send(vError);
+                if (!message.member.voice.channel) return message.channel.send(vError);
                 let vcotError = new Discord.RichEmbed()
                 .setColor("RANDOM")
                 .setTitle('Error!')
                 .setDescription('The bot is not in a voice channel!')
-                if (!message.guild.me.voiceChannel) return message.channel.send(vcotError);
-                message.guild.me.voiceChannel.leave();
+                if (!message.guild.me.voice.channel) return message.channel.send(vcotError);
+                message.guild.me.voice.channel.leave();
 }
 };

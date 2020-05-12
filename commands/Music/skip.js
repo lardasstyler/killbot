@@ -11,7 +11,7 @@ module.exports = {
   
   if (message.member.voiceChannel !== message.guild.me.voiceChannel) return message.channel.send('Tu n\'est pas connecté à un channel vocal');
   
-  let userCount = message.member.voiceChannel.members.size;
+  let userCount = message.member.voice.channel.members.size;
   
   let required = Math.ceil(userCount/2);
   

@@ -16,7 +16,7 @@ module.exports = {
                 .setColor("RANDOM")
                 .setTitle('Error!')
                 .setDescription('The bot is not in a voice channel!')
-                if (!message.guild.me.voiceChannel) return message.channel.send(vcotError);
+                if (!message.guild.me.voice.channel) return message.channel.send(vcotError);
                 message.guild.me.voiceChannel.leave();
 }
 };
