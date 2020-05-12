@@ -1,22 +1,18 @@
 const fs = require('fs')
-const Discord = require('discord.js')
-
 module.exports = {
-  name: 'stop',
+  name: 'volume',
+  description: 'Sets the volume of the music between 1 and 200',
   category: 'Music',
-  description: 'Stops the music playing',
-  aliases: [],
-  run: async (bot, message, args, ops) => {
-  let vError = new Discord.RichEmbed()
-                .setColor("RANDOM")
-                .setTitle('Error!')
-                .setDescription('You have to be in a voice channel to do that!')
-                if (!message.member.voiceChannel) return message.channel.send(vError);
-                let vcotError = new Discord.RichEmbed()
-                .setColor("RANDOM")
-                .setTitle('Error!')
-                .setDescription('The bot is not in a voice channel!')
-                if (!message.guild.me.voiceChannel) return message.channel.send(vcotError);
-                message.guild.me.voiceChannel.leave();
+  run:(client, message, args, ops) => {
+  let fetched = ops.active.get(message.guild.id);
+  
+  if (!fetched) return message.channel.send('Nothing is playing!');
+  
+  if (message.member.voiceChannel !== message.guild.me.voiceChannel) return message.channel.send('We are not in the same VC right now!');
+  
+  if (!args[0] || args[0] > 200 || args[0] < 0) return message.channel.send('An error occured! Please set the volume to something between 0 and 200 by doing \`;volume [1-200]\`');
+
+  fetched.dispatcher.setVolume(args[0]/100) 
+  message.channel.send(`\`Set the volume to ${args[0]} successfully.\``)
 }
 };
