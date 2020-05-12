@@ -7,7 +7,7 @@ module.exports = {
   description: 'Stops the music playing',
   aliases: [],
   run: async (bot, message, args, ops) => {
-  let vError = new Discord.MessageEmbed()
+  let vError = new Discord.RichEmbed()
                 .setColor("RANDOM")
                 .setTitle('Error!')
                 .setDescription('You have to be in a voice channel to do that!')
@@ -16,7 +16,7 @@ module.exports = {
                 .setColor("RANDOM")
                 .setTitle('Error!')
                 .setDescription('The bot is not in a voice channel!')
-                if (!message.guild.me.voice.channel) return message.channel.send(vcotError);
+                if (!message.guild.me.voiceChannel) return message.channel.send(vcotError);
                 message.guild.me.voiceChannel.leave();
 }
 };
