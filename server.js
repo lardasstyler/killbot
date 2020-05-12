@@ -133,4 +133,4 @@ bot.on("guildMemberRemove", member => {
 });
 
 
-bot.login(process.env.TOKEN);
+bot.login(process.env.token);
