@@ -17,7 +17,7 @@ module.exports = {
     
     
 
-    let dm = args.slice(2).join(' ')
+    let dm = args.slice(1).join(' ')
     
     
     user.send(dm)
