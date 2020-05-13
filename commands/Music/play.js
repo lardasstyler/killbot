@@ -63,7 +63,7 @@ async function play(bot, ops, data) {
 }
 function end(bot, ops, dispatcher){
 
-    let fetched = ops.active.get(dispatcher.guildID);
+    let fetched = ops.active.cache.get(dispatcher.guildID);
 
     fetched.queue.shift();
   
@@ -73,7 +73,7 @@ function end(bot, ops, dispatcher){
     } else {
         ops.active.delete(dispatcher.guildID);
 
-        let vc = bot.guilds.get(dispatcher.guildID).me.voiceChannel;  
+        let vc = bot.guilds.get(dispatcher.guildID).me.voice.channel;  
 
         if (vc) vc.leave();
 
