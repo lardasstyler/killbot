@@ -7,6 +7,10 @@ module.exports = {
     
     message.channel.send(`📰 ${user}, you were challenged to a game of RPS! ✂️\n \n To accept type "yes"\n \n To decline type "no"`)
     
-    if (user.messageContent === 'yes') message.channel.send("test")
+   const filter = message => message.content.startsWith('yes')
+
+message.channel.awaitMessages(filter, { time: 30000, errors: ['time'] })
+  .then(collected => console.log(collected.size))
+  .catch(collected => message.channel.send(`Fight!`));
   }
 }
