@@ -1,4 +1,5 @@
 const fs = require('fs')
+const Discord = require('discord.js')
 
 module.exports = {
   name: 'queue',
@@ -14,12 +15,16 @@ module.exports = {
   
   let nowPlaying = queue[0];
   
-  let resp = `__**Now Playing**__\n**${nowPlaying.songTitle}** -- **Requested By:** *${nowPlaying.requester}*\n\n__**In queue**__\n`;
+   
+    
+  let resp = `__Now Playing__\n[${nowPlaying.songTitle}](${nowPlaying.url}) | \`Requested By: ${nowPlaying.requester}\`\n\n__In queue__\n`;
   
   for (var i=1; i < queue.length; i++) {
-    resp += `${i}. **${queue[i].songTitle}** -- **Requested By:** *${queue[i].requester}*\n`;
+    resp += ``${i}.\` **[${queue[i].songTitle}](${queue[i].url})** | \`Requested By: ${queue[i].requester}\`\n`;
   }
-  message.channel.send(resp);
+    let embed = new Discord.MessageEmbed() 
+    .setDescription(resp)
+  message.channel.send(embed);
 
 }
 };
