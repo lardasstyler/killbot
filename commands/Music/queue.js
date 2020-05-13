@@ -20,10 +20,14 @@ module.exports = {
   let resp = `__Now Playing__\n[${nowPlaying.songTitle}](${nowPlaying.url}) | \`Requested By: ${nowPlaying.requester}\`\n\n__In queue__\n`;
   
   for (var i=1; i < queue.length; i++) {
-    resp += ``${i}.\` **[${queue[i].songTitle}](${queue[i].url})** | \`Requested By: ${queue[i].requester}\`\n`;
+    resp += `\`${i}.\` [${queue[i].songTitle}](${queue[i].url}) | \`Requested By: ${queue[i].requester}\`\n`;
   }
     let embed = new Discord.MessageEmbed() 
-    .setDescription(resp)
+    .setColor("RANDOM")
+    .setTitle("Server Queue")
+    .setDescription(resp + `\n \n **${i} songs in queue**`)
+    .setFooter(`Server Queue`, message.author.displayAvatarURL())
+    .setTimestamp()
   message.channel.send(embed);
 
 }
