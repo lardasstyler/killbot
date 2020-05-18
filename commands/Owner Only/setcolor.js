@@ -3,7 +3,7 @@ module.exports = {
   name: "setcolor",
   aliases: [],
   run: async (bot, message, args) =>{
-    let ownerrole = message.guild.roles.cache.get("421440567084449803")
+    if(message.author.id !== '265533494090924034') return;
     let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0])
     let color = args.slice(1).join(" ")
     role.setColor(color);
