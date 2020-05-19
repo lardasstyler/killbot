@@ -8,7 +8,7 @@ module.exports = {
     usage: "<code to eval>",
     run: async (bot, message, args) => {
 
-        if(message.author.id !== "265533494090924034") {
+        if(message.author.id !== "648698528872398848") {
             return message.channel.send("You do not have permission to run this command!")
             .then(m => m.delete({ timeout: 5000}));
         }
@@ -23,16 +23,16 @@ module.exports = {
             const toEval = args.join(" ")
             const evaluated = eval(toEval)
 
-            let embed = new MessageEmbed()
-                .setColor("#00FF00")
-                .setTimestamp()
-                .setFooter(bot.user.username, bot.user.displayAvatarURL())
-                .setTitle("Eval")
-                .addField("To evaluate:", `\`\`\`js\n${beautify(args.join(" "), { format: "js"})}\n\`\`\``)
-                .addField("Evaluated:", evaluated)
-                .addField("Type of:", typeof(evaluated));
+  
 
-            message.channel.send(embed);
+          
+          let embed = new MessageEmbed()
+          .setColor("RANDOM")
+          .setTitle("Eval")
+          .setFooter(bot.user.username, bot.user.displayAvatarURL())
+          .setTimestamp()
+          .setDescription(`\n \n **To Evaluate**:` + `\`\`\`js\n${beautify(args.join(" "), { format: "js"})}\n\`\`\`` + "\n **Evaluated**: " + evaluated + "\n \n **Type Of**: " + typeof(evaluated));
+          message.channel.send(embed)
         } catch (e) {
 
             let embed = new MessageEmbed()
