@@ -1,23 +1,23 @@
 const Discord = require('discord.js');
+const { inspect } = require("util");
+const me = "648698528872398848";
 module.exports = {
   name: "eval",
   run: async (bot, message, args) =>{
-    if(message.author.id !== "648698528872398848") return;
-    
-    if(!args[0]) return message.channel.send("Please include something to evaluate.")
-    
-    try {
-       if(args.join(" ").toLowerCase().includes("token")) return;
-      
-      const toEval = args.join(" ");
-      const evaluated = eval(toEval);
-      
-      let embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
-      .setTimestamp()
-      .setFooter("")
-    } catch (e) {
-      
+    if(message.author.id == me) {
+      let toEval = args.join(" ");
+      let evaluated = inspect(eval(toEval, { depth: 0} ))
+      try {
+        if(!toEval) {
+          message.channel.send("I can't eval that!")
+        } else {
+          
+        }
+       } catch(e) {
+        message.channel.send(`Error!: \`${e.message}\``)
+      }
+    } else {
+      return;
     }
     
 }

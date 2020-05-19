@@ -21,7 +21,7 @@
     "ytdl-core": "^2.1.0",
     "yt-search": "^1.1.2",
     "discord.js-reaction-menu": "^1.0.1",
-    "opusscript": "0.0.7"
+    "util": "^0.12.3"
   },
   "engines": {
     "node": "12.x"
