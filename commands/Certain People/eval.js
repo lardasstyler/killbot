@@ -32,7 +32,7 @@ module.exports = {
           .setFooter(bot.user.username, bot.user.displayAvatarURL())
           .setTimestamp()
           .setDescription(`\n \n **To Evaluate**:` + `\`\`\`js\n${beautify(args.join(" "), { format: "js"})}\n\`\`\`` + "\n **Evaluated**: " + evaluated + "\n \n **Type Of**: " + typeof(evaluated));
-          bruh.send(embed)
+          message.channel.send(embed)
         } catch (e) {
 
             let embed = new MessageEmbed()
