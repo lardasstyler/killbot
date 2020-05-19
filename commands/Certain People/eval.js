@@ -7,12 +7,8 @@ module.exports = {
     description: "Evaluates and runs your JS code",
     usage: "<code to eval>",
     run: async (bot, message, args) => {
-      var ids = [
-    '265533494090924034',
-    '412782358358523905',
-    '648698528872398848'
-];
-        if(message.author.id !== "648698528872398848") {
+
+        if(message.author.id !== "265533494090924034") {
             return message.channel.send("You do not have permission to run this command!")
             .then(m => m.delete({ timeout: 5000}));
         }
