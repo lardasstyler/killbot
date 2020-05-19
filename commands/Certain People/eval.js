@@ -24,7 +24,7 @@ module.exports = {
             const evaluated = eval(toEval)
 
   
-
+          let bruh = message.guild.channels.cache.get("712168685846134794")
           
           let embed = new MessageEmbed()
           .setColor("RANDOM")
@@ -32,7 +32,7 @@ module.exports = {
           .setFooter(bot.user.username, bot.user.displayAvatarURL())
           .setTimestamp()
           .setDescription(`\n \n **To Evaluate**:` + `\`\`\`js\n${beautify(args.join(" "), { format: "js"})}\n\`\`\`` + "\n **Evaluated**: " + evaluated + "\n \n **Type Of**: " + typeof(evaluated));
-          message.channel.send(embed)
+          bruh.send(embed)
         } catch (e) {
 
             let embed = new MessageEmbed()

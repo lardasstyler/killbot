@@ -10,6 +10,7 @@ module.exports = {
     
     let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         let reason = args.slice(1).join(' ') 
+        
     
     
     //Command
