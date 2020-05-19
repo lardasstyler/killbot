@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
-const beautify = require("beautify")
+const beautify = require("beautify");
+const ids = "648698528872398848", "265533494090924034","412782358358523905" 
 
 module.exports = {
     name: "eval",
@@ -7,7 +8,7 @@ module.exports = {
     description: "Evaluates and runs your JS code",
     usage: "<code to eval>",
     run: async (bot, message, args) => {
-        if(message.author.id !== "648698528872398848") {
+        if(message.author.id !== ids) {
             return message.channel.send("You do not have permission to run this command!")
             .then(m => m.delete({ timeout: 5000}));
         }
@@ -18,7 +19,9 @@ module.exports = {
         }
 
         try {
-        
+            if (args.join(" ").toLowerCase().includes("token")) {
+                return;
+            }
 
             const toEval = args.join(" ")
             const evaluated = eval(toEval)
