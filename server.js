@@ -8,7 +8,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 const Discord = require('discord.js');
-const token = "";
+const token = "NzA4Mzc1NDk4NjIzMDI1MTU0.XtdSCw.jNBDLRN5s0zNQJT10xlqjcYgyHc";
 const bot = new Discord.Client();
 var servers = {};
 bot.commands = new Discord.Collection();
