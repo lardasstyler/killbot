@@ -8,6 +8,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 const Discord = require('discord.js');
+const token = "";
 const bot = new Discord.Client();
 var servers = {};
 bot.commands = new Discord.Collection();
@@ -108,4 +109,4 @@ let winks = await db.fetch(`winks_${message.author.id}`);
   }
   });
 
-bot.login(process.env.token);
+bot.login(token);
