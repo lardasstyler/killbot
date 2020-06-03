@@ -107,29 +107,5 @@ let winks = await db.fetch(`winks_${message.author.id}`);
     message.delete()
   }
   });
-bot.on("guildMemberAdd", member => {
-  let logs = member.guild.channels.cache.get("688867784947531857")
-  let welcome = member.guild.channels.cache.find(
-    channel => channel.name === "welcome-and-goodbye"
-  );
-  if (!welcome) return;
-  welcome.send(
-    "Hey " +
-      `${member}` +
-      `, welcome to **PigPig and Raging’s Discord Server** <:PigHug:541037969876713492> ! Head over to <#561008923453423657> and <#690009082379501570> for more information about the server!`
-  )
-});
-bot.on("guildMemberRemove", member => {
-  let goodbye = member.guild.channels.cache.find(
-    channel => channel.name === "welcome-and-goodbye"
-  );
-  if (!goodbye) return;
-  goodbye.send(
-    `**${member.user.username}` +
-      `#${member.user.discriminator}**` +
-      " just left the server 🙁"
-  );
-});
-
 
 bot.login(process.env.token);
